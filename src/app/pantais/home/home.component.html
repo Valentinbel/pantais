@@ -1,0 +1,117 @@
+<div class="container-fluid">
+        
+  <!--NAVBAR-->
+  <nav class="navbar navbar-expand navbar-light topnavbar fixed-top">
+    <img src="./assets/Images/crotzblanca.png" class="navicon"/>
+    <div class="" #navbarSupportedContent>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item titolmenu">
+          <b>PANTAIS CLUS</b>
+        </li>
+        <li class="nav-item dropdown underline">
+            <a href #theme class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Themes</a>
+            <div class="dropdown-menu" aria-labelledby="theme">
+            <!--   <a (click)="changetheme(theme1)" class="dropdown-item" aria-labelledby="Theme1">Thème1</a>
+              <a (click)="changetheme(theme2)" class="dropdown-item" aria-labelledby="Theme2">Thème2</a>
+              <a (click)="changetheme(theme3)" class="dropdown-item" aria-labelledby="Theme3">Thème3</a>
+              <a (click)="changetheme(theme4)" class="dropdown-item" aria-labelledby="Theme4">Thème4</a>-->
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link underline" (click)="displaywindow(draggablecredits)">Credits</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div #draggingzone >                
+    <!-----------SOCIAU--------------->
+    <div #draggablesociau class="draggable todrag hide sociau" (click)="addzindex(draggablesociau)" cdkDragBoundary="#draggingzone" cdkDrag>
+      <div #draggablesociauheader class="drag-header todrag" cdkDragHandle>
+        <span><img src="./assets/Images/crotzblanca.png" #iconclosesociau (click)="closewindow(draggablesociau)" class="draggableheadericon"alt="icon_crotz"></span> PANTAIS CLUS social links
+      </div>
+      <div class="insideframe"> <!-----------cadre interieur--------------->
+        <!--Computer-->
+        <div class="d-flex fenestra computermenu">
+          <a class="apple" href="https://music.apple.com/fr/artist/rod%C3%ADn/1495701565" target="_blank"></a>
+          <a class="spotify" href="https://open.spotify.com/artist/7cMWfV0yjQ0GPs8fiDp3UA?si=GxRTmzsrSHCsYbFS-_ipHw" target="_blank"></a>
+          <a class="instagram" href="https://instagram.com/rodiin" target="_blank"></a>
+          <a class="facebook" href="https://www.facebook.com/pantaisclus" target="_blank"></a>
+          <a class="twitter" href="https://twitter.com/pantaisclus" target="_blank"></a>
+          <a class="bandcamp" href="https://rodiin.bandcamp.com" target="_blank"></a>
+          <a class="soundcloud" href="https://soundcloud.com/rodiin" target="_blank"></a>
+          <a class="youtube" href="https://www.youtube.com/c/rodínmusica" target="_blank"></a>
+        </div>
+        <!--Mobile1-->
+        <div class="d-flex fenestra mobilemenu">
+            <a class="apple" href="https://music.apple.com/fr/artist/rod%C3%ADn/1495701565" target="_blank"></a>
+            <a class="spotify" href="https://open.spotify.com/artist/7cMWfV0yjQ0GPs8fiDp3UA?si=GxRTmzsrSHCsYbFS-_ipHw" target="_blank"></a>
+            <a class="instagram" href="https://instagram.com/rodiin" target="_blank"></a>
+            <a class="facebook" href="https://www.facebook.com/pantaisclus" target="_blank"></a>
+        </div>
+        <!--Mobile2-->
+        <div class="d-flex fenestra mobilemenu">
+            <a class="twitter" href="https://twitter.com/pantaisclus" target="_blank"></a>
+            <a class="bandcamp" href="https://rodiin.bandcamp.com" target="_blank"></a>
+            <a class="soundcloud" href="https://soundcloud.com/rodiin" target="_blank"></a>
+            <a class="youtube" href="https://www.youtube.com/c/rodínmusica" target="_blank"></a>
+        </div>
+      </div>    
+    </div>
+
+    <!-----------CREDITS--------------->
+    <div #draggablecredits class="draggable todrag credits hide" (click)="addzindex(draggablecredits)"  cdkDragBoundary="#draggingzone" cdkDrag>
+      <div #draggablecreditsheader class="drag-header todrag" cdkDragHandle>
+        <span><img src="./assets/Images/crotzblanca.png" #iconclosecredits (click)="closewindow(draggablecredits)" class="draggableheadericon"alt="icon_crotz"></span> PANTAIS CLUS Credits
+      </div>
+      <div class="insideframe"> <!-----------cadre interieur--------------->
+        <div class=" d-flex fenestra">
+          <p class="text-center">pantaisclus.art ©Valentin Belhomme + <a href="https://neblum.art/pantaislabel" target="_blank" class="textlink">PantaisRecords</a> 2021 </p>
+        </div>
+      </div>    
+    </div>
+
+
+    <!-----------LYRICS--------------->
+    <div #draggablelyrics class="draggable todrag lyrics hide" (click)="addzindex(draggablelyrics)"  cdkDragBoundary="#draggingzone" cdkDrag>
+      <div #draggablelyricsheader class="drag-header todrag" cdkDragHandle>
+        <span><img src="./assets/Images/crotzblanca.png" #iconcloselyrics (click)="closewindow(draggablelyrics)" class="draggableheadericon"alt="icon_crotz"></span> PANTAIS CLUS lyrics
+      </div>
+      <div class="insideframe"> <!-----------cadre interieur--------------->
+        <div class=" d-flex fenestra iconas">
+          <a href="./assets/Images/pantaisclus.pdf" target="_blank">
+            <img class="img-fluid" src="./assets/Images/icone_Lyrics.png" alt="lyrics">
+          </a>
+          <a href="./assets/Images/pantaisclus_eng.pdf" target="_blank">
+            <img class="img-fluid" src="./assets/Images/icone_English.png" alt="english">
+          </a>
+          <a href="./assets/Images/pantaisclus_fr.pdf" target="_blank">
+            <img class="img-fluid" src="./assets/Images/iconeFrançais.png" alt="francais">
+          </a>
+        </div>
+      </div>    
+    </div>
+  
+    <div class="cosdepagina">
+      <div class="justify-content-center d-flex margin_topbottom grostitreorange">
+        <img src="./assets/Images/GrosTitreOrange.png" class="img-fluid">            
+      </div>
+      <div class="justify-content-center d-flex margin_topbottom">
+        <div class="iconas">
+          <a #iconlyrics (click)="displaywindow(draggablelyrics)" >
+            <img class="img-fluid" src="./assets/Images/icones/lyrics.png" alt="lyrics">
+          </a>
+          <a #iconlinkssociau (click)="displaywindow(draggablesociau)" >
+            <img class="img-fluid" src="./assets/Images/icones/links.png" alt="links">
+          </a>
+          <a #iconvideos href="http://pantaisclus.tv/" target="_blank">
+            <img class="img-fluid" src="./assets/Images/icones/videos.png" alt="videos">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>   
+</div>
+  
+ 
+  

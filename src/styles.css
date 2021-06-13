@@ -1,1 +1,320 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --orange_background: #fe9d5d;
+    --rouge_text: #ff014c;
+
+    --noir-background: #131518;
+    --white: white;
+
+    --grisclar: rgb(169, 205, 229);
+    --grisescur: rgb(144, 159, 171);
+}
+
+* {
+    box-sizing: border-box;
+    cursor: url('./assets/Images/cursor/cursor.svg'), url('./assets/Images/cursorlite/cursor.svg'),auto!important;
+  }
+
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+a:-webkit-any-link, a img, .underline, .dropdown-item {
+    cursor: url('./assets/Images/cursor/cursor_det.svg'), url('./assets/Images/cursorlite/cursordet.png') 3 0, auto!important;
+}
+
+.draggable a, .cosdepagina a, .iconas a, .iconas a img, 
+#iconclosesociau, #iconclosecredits,
+.underline, .dropdown-item{
+    cursor: url('./assets/Images/cursor/cursor_det.svg'), url('./assets/Images/cursorlite/cursordet.png') 3 0, auto!important;
+}
+
+.global-item:not(.no-drag) .drag-header, .global-item:not(.no-drag)
+.drag-header .spacer, .global-item:not(.no-drag) .drag-header
+.spacer i, .global-item:not(.no-drag) .drag-header h2{
+    cursor: url('./assets/Images/cursor/cursor_man.svg'), url('./assets/Images/cursorlite/cursor_man.svg'),auto!important
+}
+
+@font-face {
+    font-family: 'WeissModernGothic';
+    src: url('./assets/Fonts/WeissModernGothic.otf') format('truetype'), url('./assets/Fonts/WeissModernGothic.otf') format('truetype');
+}
+@font-face {
+    font-family: 'ChicagoFLF';
+    src: url('./assets/Fonts/ChicagoFLF.ttf') format('truetype'), url('./assets/Fonts/ChicagoFLF.ttf') format('truetype');
+}
+
+@media (min-width:576px) {
+    .row{
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+}
+
+body {
+    font-family: 'ChicagoFLF';
+    margin: 0px;
+    background-color: var(--orange_background);
+    color: var(--rouge_text);
+}
+body, .ng-isolate-scope, home, index2, index, headerview{
+    overflow: visible;
+}
+
+@media (pointer: coarse) and (hover: none) {  
+  .embed-responsive{
+      height: 100%
+    }
+}
+
+.weissModern{
+    font-family: 'WeissModernGothic';
+}
+
+@media (max-width: 445px){
+    .computermenu {
+        display: none !important;
+    }
+}
+@media (min-width: 446px){
+    .mobilemenu {
+        display: none !important;
+    }
+}
+
+.cosdepagina{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.iconas a {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+#draggingzone {
+    /*position: absolute; /*ATTENTION SI ça pete pas des trucs!!! */
+    margin-top: 24.19px;
+    max-width: 100%;
+    width:100vw;
+    height: 100vh;
+}
+
+.fenestra{
+    justify-content: center !important;
+    margin: 20px 6px;
+    color: var(--noir-background);
+    font-size: 0.9rem;
+    /*flex-wrap: wrap;*/
+}
+
+.grostitreorange{
+    margin-left:1rem;
+    margin-right: 1rem;
+}
+
+.sociau{
+    top: 50%;
+    left: 50%;
+}
+.credits{
+    top:10%;
+    left: 10%;
+}
+.lyrics{
+    top:30%;
+    left: 70%;
+}
+
+
+.text-center{
+    text-align:center!important;
+}
+
+.footertext, .drag-header{
+    font-size: 0.7rem;
+}
+
+a, a:hover {
+    color: transparent;
+}
+
+.textlink{
+    color: var(--rouge_text);
+    text-decoration: underline;
+}
+.textlink:hover{
+    color: var(--rouge_text);
+}
+
+.margin_topbottom{
+    margin-bottom: 2em;
+    margin-top: 3em;
+}
+
+
+.hide, .dropdown-toggle::after {
+    display: none;
+}
+
+/*------DragAndDrop-------*/
+.drag-header, .drag-header img{
+    user-select: none;
+    cursor: url('./assets/Images/cursor/cursor_man.svg'), auto!important;
+    color: var(--white);
+}
+
+.drag-header {
+    line-height: 1;
+    margin-top: 4px;
+    margin-bottom: 1px;
+}
+
+.draggableheadericon{
+    height: 16px;
+    width: 16px;
+    margin-left: 2px;
+}
+
+.draggable{
+    position: absolute;
+    z-index: 99;
+
+    background-color: var(--rouge_text);
+    border: 1px solid var(--noir-background);
+    -webkit-box-shadow: 5px 5px 0px -2px #131518b0; 
+    box-shadow: 5px 5px 0px -2px #131518b0;
+}
+
+.insideframe{
+    border: 1px solid var(--noir-background);
+    margin: 0px 5px 8px;
+    background: var(--orange_background);
+    background-image: radial-gradient(var(--rouge_text) 20%, transparent 0), radial-gradient(var(--rouge_text) 20%, transparent 0);
+    background-size: 5px 5px;
+    background-position: 0px 0px, 10px 10px;
+}
+  
+/*******NavbarMenu*******/
+
+.navicon {
+    height: 18px;
+}
+
+.topnavbar {
+    background-color: var(--grisclar);
+    border-color: var(--grisescur);
+}
+  
+.navbar {
+    padding: 0rem 0.5rem;
+}
+
+.nav-link{
+    font-size: 0.9rem;
+    padding: 0.1rem 1rem
+}
+
+.titolmenu{
+    display: block;
+    font-size: 0.9rem;
+    padding: 0.1rem 1rem;
+    -webkit-font-smoothing: antialiased;
+}
+
+.navbar-light .navbar-nav .nav-link, .titolmenu {
+    color: rgba(0,0,0,.5);
+}
+
+.navbar-expand .navbar-nav .nav-link, .titolmenu {
+    padding-right: .5rem;
+    padding-left: .5rem;
+}
+.dropdown-menu{
+    background-color: var(--grisclar);
+    min-width: 8rem;
+    padding: 0.1rem 0;
+    min-width: 8rem;
+    padding: 0.1rem 0;
+    font-size: 0.9rem;
+}
+
+.dropdown-item{
+    padding: .2rem .3rem;
+}
+
+.underline::first-letter, .dropdown-item::first-letter{
+    text-decoration:underline;
+}
+
+/*------SOCIAU-------*/
+.facebook{
+	background: url('./assets/Images/sociau/fb_link.png') no-repeat;
+    height: 45px;
+	width: 26px;
+	background-size: 26px 45px;}
+.facebook:hover{
+    background-image: url('./assets/Images/sociau/fb_hover.png');
+    }
+    
+.instagram{
+	background: url('./assets/Images/sociau/insta_link.png') no-repeat;
+    height: 45px;
+	width: 49px;
+	background-size: 49px 45px;}
+.instagram:hover{
+    background-image: url('./assets/Images/sociau/insta_hover.png');}
+
+.twitter{
+	background: url('./assets/Images/sociau/twitter_link.png') no-repeat;
+    height: 45px;
+	width: 54px;
+	background-size: 54px 45px;}
+.twitter:hover{
+    background-image: url('./assets/Images/sociau/twitter_hover.png');}
+    
+.apple{
+	background: url('./assets/Images/sociau/apple_link.png') no-repeat;
+    height: 45px;
+	width: 40px;
+	background-size: 40px 45px;}
+.apple:hover{
+    background-image: url('./assets/Images/sociau/apple_hover.png');}
+
+.spotify{
+	background: url('./assets/Images/sociau/spot_link.png') no-repeat;
+    height: 45px;
+	width: 49px;
+	background-size: 49px 45px;}
+.spotify:hover{
+    background-image: url('./assets/Images/sociau/spot_hover.png');}
+
+.bandcamp{
+	background: url('./assets/Images/sociau/bc_link.png') no-repeat;
+    height: 45px;
+	width: 65px;
+	background-size: 65px 45px;}
+.bandcamp:hover{
+    background-image: url('./assets/Images/sociau/bc_hover.png');}
+
+.soundcloud{
+	background: url('./assets/Images/sociau/sound_link.png') no-repeat;
+    height: 45px;
+	width: 64px;
+	background-size: 64px 45px;}
+.soundcloud:hover{
+    background-image: url('./assets/Images/sociau/sound_hover.png');}
+
+.youtube {
+	background: url('./assets/Images/sociau/ytb_link.png') no-repeat;
+    height: 45px;
+    width: 42px;
+    background-size: 42px 45px;}
+.youtube:hover{
+    background-image: url('./assets/Images/sociau/ytb_hover.png');}
+

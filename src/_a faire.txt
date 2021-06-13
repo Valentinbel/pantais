@@ -1,0 +1,36 @@
+// icone lyrics icones paroles dedans. 
+
+//variable --primarycolor: xxx
+//--secondqrycolor: XXX
+//On ne change que cette variable dans le changement de thème. 
+
+// Icones remplissent la largeur du png (space between)
+
+
+// Fond d'écran + couleurs qui changent. 
+
+// 404
+
+
+
+
+Faire un lecteur audio: 
+    * https://www.hongkiat.com/blog/customize-soundcloud-audio-player-toneden/
+https://youtu.be/hc2Gnhb1pNk
+
+    * https://github.com/soundcloud/soundcloud-custom-player
+
+
+Youtube: 
+    * https://developers.google.com/youtube/player_parameters?hl=fr
+
+
+Drumkit: 
+    * https://github.com/BlackTafita/electron-drum-machine
+
+//verifier que le component no found fonctionne et le renommer manuellement
+
+// Icone Lyrics: ouvre fenetre avec les icones 
+
+
+// Installer NPM + Yarn et lancer le projet Solitaire > Voir si on peut choper juste la partie SCSS/HTML /JS a exporter dans notre projet 
