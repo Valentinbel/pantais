@@ -98,8 +98,13 @@ body, .ng-isolate-scope, home, index2, index, headerview{
 }
 
 #draggingzone {
-    /*position: absolute; /*ATTENTION SI ça pete pas des trucs!!! */
     margin-top: 24.19px;
+    max-width: 100%;
+    width:100vw;
+    height: 100vh;
+}
+
+#dragginzonenotfound{
     max-width: 100%;
     width:100vw;
     height: 100vh;
@@ -128,7 +133,7 @@ body, .ng-isolate-scope, home, index2, index, headerview{
 }
 .lyrics{
     top:30%;
-    left: 70%;
+    left: 12%;
 }
 
 
@@ -160,6 +165,15 @@ a, a:hover {
 
 .hide, .dropdown-toggle::after {
     display: none;
+}
+
+.embed-responsive {
+    position: relative;
+    display: block;
+    width: 100%;
+    max-height: 100%;
+    padding: 0;
+    overflow: hidden;
 }
 
 /*------DragAndDrop-------*/
@@ -250,6 +264,10 @@ a, a:hover {
 
 .underline::first-letter, .dropdown-item::first-letter{
     text-decoration:underline;
+}
+.iconaslyrics a img{
+    height: 54px;
+    width: 59px
 }
 
 /*------SOCIAU-------*/

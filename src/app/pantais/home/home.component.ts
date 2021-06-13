@@ -10,8 +10,8 @@ export class HomeComponent implements OnInit, ElementRef{
   constructor() { }
   nativeElement: any;
   public uppedzindexreference: number =1;
-  public uppedzindexcredit: number=0;
-  public uppedzindexsociau: number=0;
+  //public uppedzindexcredit: number=0;
+  //public uppedzindexsociau: number=0;
   
   ngOnInit(): void {
   }

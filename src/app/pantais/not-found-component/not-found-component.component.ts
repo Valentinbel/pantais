@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-not-found-component',
@@ -8,8 +8,17 @@ import { Component, OnInit } from '@angular/core';
 export class NotFoundComponentComponent implements OnInit {
 
   constructor() { }
+  nativeElement: any;
+   
 
   ngOnInit(): void {
+  let draggablenotfound:any= document.getElementById("draggablenotfound");
+    if (draggablenotfound.classList.contains('hide') ) {
+      draggablenotfound.classList.remove('hide');
+    }
   }
+  closewindow(windowid: any): void{
+    windowid.classList.add('hide');
+    }
 
 }

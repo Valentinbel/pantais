@@ -1,4 +1,5 @@
-// 404
+
+//  faire un 404 qui marche (app-routing-module)
 //verifier que le component no found fonctionne et le renommer manuellement
 
 //variable --primarycolor: xxx

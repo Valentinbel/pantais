@@ -6,8 +6,8 @@ import {NotFoundComponentComponent} from './pantais/not-found-component/not-foun
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
-  {path: '404', component: NotFoundComponentComponent},
-  {path: '**', redirectTo: '/404'}
+  //{path: '404', component: NotFoundComponentComponent},
+  {path: '**', component: HomeComponent, }// redirectTo: '/404'
 ];
 
 @NgModule({
