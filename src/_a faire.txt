@@ -1,17 +1,14 @@
-// icone lyrics icones paroles dedans. 
+// 404
+//verifier que le component no found fonctionne et le renommer manuellement
 
 //variable --primarycolor: xxx
 //--secondqrycolor: XXX
 //On ne change que cette variable dans le changement de thème. 
 
-// Icones remplissent la largeur du png (space between)
-
-
 // Fond d'écran + couleurs qui changent. 
+//document.documentElement.style.setProperty('--your-variable', '#YOURCOLOR');
 
-// 404
-
-
+// Icones remplissent la largeur du png (space between)
 
 
 Faire un lecteur audio: 
@@ -28,9 +25,6 @@ Youtube:
 Drumkit: 
     * https://github.com/BlackTafita/electron-drum-machine
 
-//verifier que le component no found fonctionne et le renommer manuellement
 
-// Icone Lyrics: ouvre fenetre avec les icones 
-
-
-// Installer NPM + Yarn et lancer le projet Solitaire > Voir si on peut choper juste la partie SCSS/HTML /JS a exporter dans notre projet 
+Solitaire:
+    * lancer le projet Solitaire > Voir si on peut choper juste la partie SCSS/HTML /JS a exporter dans notre projet 

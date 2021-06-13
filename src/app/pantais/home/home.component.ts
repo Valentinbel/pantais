@@ -33,5 +33,4 @@ closewindow(windowid: any): void{
   windowid.classList.add('hide');
   }
    
-   //document.documentElement.style.setProperty('--your-variable', '#YOURCOLOR');
 }
