@@ -1,12 +1,14 @@
 :root {
-    --orange_background: #fe9d5d;
-    --rouge_text: #ff014c;
+    --orange_background: #DF9F1F; /*ACABAT*/
+    
 
     --noir-background: #131518;
+    --grisescur: #95979C;
+    --grisclar: #D9F3FF;
+    --rouge_text: #DF9F1F;
     --white: white;
+    --bgimg: url(./assets/Images/backgrounds/godas.jpg);
 
-    --grisclar: rgb(169, 205, 229);
-    --grisescur: rgb(144, 159, 171);
 }
 
 * {
@@ -57,8 +59,10 @@ a:-webkit-any-link, a img, .underline, .dropdown-item {
 body {
     font-family: 'ChicagoFLF';
     margin: 0px;
-    background-color: var(--orange_background);
-    color: var(--rouge_text);
+    background-image: var(--bgimg);
+    background-position: center;
+    /*background-color: var(--orange_background);
+    color: var(--noir-background);*/
 }
 body, .ng-isolate-scope, home, index2, index, headerview{
     overflow: visible;
@@ -180,7 +184,7 @@ a, a:hover {
 .drag-header, .drag-header img{
     user-select: none;
     cursor: url('./assets/Images/cursor/cursor_man.svg'), auto!important;
-    color: var(--white);
+    color: var(--noir-background);
 }
 
 .drag-header {
@@ -199,7 +203,7 @@ a, a:hover {
     position: absolute;
     z-index: 99;
 
-    background-color: var(--rouge_text);
+    background-color: var(--grisclar);
     border: 1px solid var(--noir-background);
     -webkit-box-shadow: 5px 5px 0px -2px #131518b0; 
     box-shadow: 5px 5px 0px -2px #131518b0;
@@ -208,8 +212,8 @@ a, a:hover {
 .insideframe{
     border: 1px solid var(--noir-background);
     margin: 0px 5px 8px;
-    background: var(--orange_background);
-    background-image: radial-gradient(var(--rouge_text) 20%, transparent 0), radial-gradient(var(--rouge_text) 20%, transparent 0);
+    background: var(--grisescur);
+    background-image: radial-gradient(var(--grisescur) 20%, transparent 0), radial-gradient(var(--grisescur) 20%, transparent 0);
     background-size: 5px 5px;
     background-position: 0px 0px, 10px 10px;
 }
@@ -242,7 +246,7 @@ a, a:hover {
 }
 
 .navbar-light .navbar-nav .nav-link, .titolmenu {
-    color: rgba(0,0,0,.5);
+    color: var(--noir-background)
 }
 
 .navbar-expand .navbar-nav .nav-link, .titolmenu {

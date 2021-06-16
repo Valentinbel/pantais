@@ -14,12 +14,34 @@ export class HomeComponent implements OnInit, ElementRef{
   
   constructor(private activatedroute: ActivatedRoute) {}
   
-  
   ngOnInit() {
     const data = this.activatedroute.snapshot.data;
       if(data.hasOwnProperty('error')) {
         this.errorView = data.error;
       }
+  }
+
+  changetheme(theme:any):void{
+    //document.documentElement.style.setProperty('--your-variable', '#YOURCOLOR');
+    let root = document.documentElement;
+    if(theme=="lura"){
+      root.style.setProperty('--bgimg', 'url(./assets/Images/backgrounds/lura.jpg)');
+    }
+    if(theme=="marselha"){
+      root.style.setProperty('--bgimg', 'url(./assets/Images/backgrounds/marselha.jpg)');
+    }
+    if(theme=="godas"){
+      root.style.setProperty('--bgimg', 'url(./assets/Images/backgrounds/godas.jpg)');
+    }
+    if(theme=="vitrolas"){
+      root.style.setProperty('--bgimg', 'url(./assets/Images/backgrounds/vitrolas.jpg)');
+    }
+    if(theme=="salagon"){
+      root.style.setProperty('--bgimg', 'url(./assets/Images/backgrounds/salagon.jpg)');
+    }
+    if(theme=="venturi"){
+      root.style.setProperty('--bgimg', 'url(./assets/Images/backgrounds/venturi.jpg)');
+    }
   }
 
   addzindex(windowid: any){

@@ -1,6 +1,3 @@
-
-//verifier que le component no found fonctionne et le renommer manuellement
-
 //variable --primarycolor: xxx
 //--secondqrycolor: XXX
 //On ne change que cette variable dans le changement de thème. 
