@@ -1,4 +1,5 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,13 +8,18 @@ import { Component, OnInit, ElementRef } from '@angular/core';
 })
 export class HomeComponent implements OnInit, ElementRef{
 
-  constructor() { }
   nativeElement: any;
   public uppedzindexreference: number =1;
-  //public uppedzindexcredit: number=0;
-  //public uppedzindexsociau: number=0;
+  errorView: number | undefined;
   
-  ngOnInit(): void {
+  constructor(private activatedroute: ActivatedRoute) {}
+  
+  
+  ngOnInit() {
+    const data = this.activatedroute.snapshot.data;
+      if(data.hasOwnProperty('error')) {
+        this.errorView = data.error;
+      }
   }
 
   addzindex(windowid: any){
