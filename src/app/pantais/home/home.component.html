@@ -28,7 +28,7 @@
 
   <div id="draggingzone" >                
     <!-----------SOCIAU--------------->
-    <div #draggablesociau class="draggable todrag hide sociau" (click)="addzindex(draggablesociau)" cdkDragBoundary="#draggingzone" cdkDrag>
+    <div #draggablesociau id="draggablesociau" class="draggable todrag hide sociau" (click)="addzindex(draggablesociau)" cdkDragBoundary="#draggingzone" cdkDrag>
       <div #draggablesociauheader class="drag-header todrag" cdkDragHandle>
         <span><img src="./assets/Images/crotzblanca.png" #iconclosesociau (click)="closewindow(draggablesociau)" class="draggableheadericon"alt="icon_crotz"></span> PANTAIS CLUS social links
       </div>
@@ -62,7 +62,7 @@
     </div>
 
     <!-----------CREDITS--------------->
-    <div #draggablecredits class="draggable todrag credits hide" (click)="addzindex(draggablecredits)"  cdkDragBoundary="#draggingzone" cdkDrag>
+    <div #draggablecredits id="draggablecredits" class="draggable todrag credits hide" (click)="addzindex(draggablecredits)"  cdkDragBoundary="#draggingzone" cdkDrag>
       <div #draggablecreditsheader class="drag-header todrag" cdkDragHandle>
         <span><img src="./assets/Images/crotzblanca.png" #iconclosecredits (click)="closewindow(draggablecredits)" class="draggableheadericon"alt="icon_crotz"></span> PANTAIS CLUS Credits
       </div>
@@ -73,9 +73,20 @@
       </div>    
     </div>
 
+        <!-----------TV--------------->
+        <div #draggabletv id="draggabletv" class="draggable todrag tv hide" (click)="addzindex(draggabletv)"  cdkDragBoundary="#draggingzone" cdkDrag>
+          <div #draggabletvheader class="drag-header todrag" cdkDragHandle>
+            <span><img src="./assets/Images/crotzblanca.png" #iconclosetv (click)="closewindow(draggabletv)" class="draggableheadericon"alt="icon_crotz"></span> PANTAIS CLUS television
+          </div>
+          <div class="insideframe"> <!-----------cadre interieur--------------->
+            <div id="player" class=" d-flex"><!--#videoContainer id="videoContainer"-->
+              <!--<iframe #myIframe id="myIframe" width="100%" height="100%" src="nHP4GznSV0U&list=PL81csO796eDB_jrvC1As4g4LHHxd7RYry?controls=0&rel=0&showinfo=0&modestbranding=0" title="YouTube video player" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>-->
+            </div>
+          </div>
+        </div>
 
     <!-----------LYRICS--------------->
-    <div #draggablelyrics class="draggable todrag lyrics hide" (click)="addzindex(draggablelyrics)"  cdkDragBoundary="#draggingzone" cdkDrag>
+    <div #draggablelyrics  id="draggablelyrics" class="draggable todrag lyrics hide" (click)="addzindex(draggablelyrics)"  cdkDragBoundary="#draggingzone" cdkDrag>
       <div #draggablelyricsheader class="drag-header todrag" cdkDragHandle>
         <span><img src="./assets/Images/crotzblanca.png" #iconcloselyrics (click)="closewindow(draggablelyrics)" class="draggableheadericon"alt="icon_crotz"></span> PANTAIS CLUS lyrics
       </div>
@@ -107,6 +118,9 @@
           </a>
           <a #iconlinkssociau (click)="displaywindow(draggablesociau)" >
             <img class="img-fluid" src="./assets/Images/icones/links.png" alt="links">
+          </a>
+          <a #iconyoutube (click)="displaywindow(draggabletv)" >
+            <img class="img-fluid" src="./assets/Images/icones/tv.png" alt="links">
           </a>
           <a #iconvideos href="http://pantaisclus.tv/" target="_blank">
             <img class="img-fluid" src="./assets/Images/icones/videos.png" alt="videos">

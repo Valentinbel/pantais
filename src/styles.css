@@ -24,12 +24,12 @@
     padding-left: 0px;
 }
 
-a:-webkit-any-link, a img, .underline, .dropdown-item {
+a:-webkit-any-link, a img, .underline, .dropdown-item, .draggableheadericon, .drag-header span img {
     cursor: url('./assets/Images/cursor/cursor_det.svg'), url('./assets/Images/cursorlite/cursordet.png') 3 0, auto!important;
 }
 
 .draggable a, .cosdepagina a, .iconas a, .iconas a img, 
-#iconclosesociau, #iconclosecredits,
+#iconclosesociau, #iconclosecredits, .draggableheadericon, .drag-header span img,
 .underline, .dropdown-item{
     cursor: url('./assets/Images/cursor/cursor_det.svg'), url('./assets/Images/cursorlite/cursordet.png') 3 0, auto!important;
 }
@@ -135,10 +135,15 @@ body, .ng-isolate-scope, home, index2, index, headerview{
     top:10%;
     left: 10%;
 }
+.tv{
+    top:15%;
+    left: 5%;
+}
 .lyrics{
     top:30%;
     left: 12%;
 }
+
 
 
 .text-center{
