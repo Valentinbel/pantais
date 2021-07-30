@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit, ElementRef {
   // 1. Some required variables which will be used by YT API
   public YT: any;
   public video: any;
+  public playlist: any;
   public player: any;
   public reframed: Boolean = false;
   
@@ -28,9 +29,12 @@ export class HomeComponent implements OnInit, ElementRef {
       this.errorView = data.error;
     }
 
-    this.video = 'playlist?list=PL81csO796eDB_jrvC1As4g4LHHxd7RYry';//'EY6cOlFPkpU';
-    //this.init();
+    this.video = 'nHP4GznSV0U';//'nHP4GznSV0U'; 'PL81csO796eDB_jrvC1As4g4LHHxd7RYry'
+    this.playlist = 'playlist'
   }
+  //Comme dan cet exemple essayer une seule partie de l'id. et aussi avec listType
+  // Sachez que vous devez ajouter les lettres PL au début de l'ID de playlist, tel qu'illustré dans l'exemple ci-dessous :
+  // listType=playlist&list=PLC77007E23FF423C6
 
   // 2. Initialize method for YT IFrame API 
   init() {
@@ -40,13 +44,12 @@ export class HomeComponent implements OnInit, ElementRef {
     firstScriptTag.parentNode!.insertBefore(tag, firstScriptTag);
     // 3. startVideo() will create an <iframe> (and YouTube player) after the API code downloads. 
      window['onYouTubeIframeAPIReady'] = () => this.startVideo();
-    
   }
 
   startVideo() {
     this.reframed = false;
     this.player = new window['YT'].Player('player', {
-      videoId: this.video,
+      //videoId: this.video,  
       playerVars: {
         autoplay: 1,
         modestbranding: 1,
@@ -55,7 +58,8 @@ export class HomeComponent implements OnInit, ElementRef {
         rel: 0,
         showinfo: 0,
         fs: 0,
-        playsinline: 1
+        playsinline: 1, list:'PL81csO796eDB_jrvC1As4g4LHHxd7RYry',
+        listType: 'player'//this.playlist
       },
       events: {
         'onStateChange': this.onPlayerStateChange.bind(this),
@@ -87,6 +91,7 @@ export class HomeComponent implements OnInit, ElementRef {
         };
         break;
       case window['YT'].PlayerState.ENDED:
+        //this.player.cuePlaylist({listType:'playlist',list:'PL81csO796eDB_jrvC1As4g4LHHxd7RYry',index:1});
         console.log('ended ');
         break;
     }
@@ -165,8 +170,6 @@ export class HomeComponent implements OnInit, ElementRef {
     }
     if(windowid.id==="draggabletv"){
       this.init();
-      // 3. startVideo() will create an <iframe> (and YouTube player) after the API code downloads. 
-      //window['onYouTubeIframeAPIReady'] = () => this.startVideo();
     }
     // this.onPlayerReady(event)
   }
@@ -174,8 +177,6 @@ export class HomeComponent implements OnInit, ElementRef {
   // playthevideo(windowid: any){
 
     // if(windowid.id==="draggabletv"){
-      // 3. startVideo() will create an <iframe> (and YouTube player) after the API code downloads. 
-      //window['onYouTubeIframeAPIReady'] = () => this.startVideo();
 
       // var videoContainer: any = document.getElementById("videoContainer");
       // var myIframe:any = document.getElementById("myIframe");

@@ -1,5 +1,7 @@
-REVOIR DERNIERE PARTIE DE https://betterprogramming.pub/integrate-youtubes-iframe-player-api-in-angular-4e87f0ec98f4
-SURTOUT LA RESOLUTION D'ERREURS
+Remplacer player par playlists
+
+//REVOIR DERNIERE PARTIE DE https://betterprogramming.pub/integrate-youtubes-iframe-player-api-in-angular-4e87f0ec98f4
+
 
 
 
@@ -38,3 +40,5 @@ Solitaire:
 ng serve --open
 
 https://gouravkajal.medium.com/integrate-youtube-iframe-player-api-in-angular-98ab9661aff6
+
+
