@@ -1,33 +1,19 @@
-Remplacer player par playlists
-
-//REVOIR DERNIERE PARTIE DE https://betterprogramming.pub/integrate-youtubes-iframe-player-api-in-angular-4e87f0ec98f4
-
-
-
-
-relation idelement //parametre
-YOUTUBE control=0
-youtube autoplayu onclic display
-
 oninit random theme
-    let salagon;
-    let vitrolas;...
-    random....
-    changetheme()
+
 
 // Icones remplissent la largeur du png (space between)
 
 
 Faire un lecteur audio: 
-    * https://www.hongkiat.com/blog/customize-soundcloud-audio-player-toneden/
-    * https://scotch.io/tutorials/build-a-music-player-with-angular-electron-iii-bringing-it-all-together
-    * https://github.com/soundcloud/soundcloud-custom-player
+    * https://npm.io/package/ngx-audio-player
+    * https://developers.soundcloud.com/docs/api/html5-widget.html 
 
+Botiga: 
+    * images avec lien
+    * https://drive.google.com/drive/folders/10H0bdhVUyNZJzXkvU4G3GVj9STcycQ70
 
-Youtube: 
-    * https://developers.google.com/youtube/player_parameters?hl=fr
-    * https://youtu.be/hc2Gnhb1pNk
-
+Electron: 
+    * https://www.npmjs.com/package/ngx-electron 
 
 Drumkit: 
     * https://github.com/BlackTafita/electron-drum-machine
@@ -38,7 +24,5 @@ Solitaire:
 
 ------
 ng serve --open
-
-https://gouravkajal.medium.com/integrate-youtube-iframe-player-api-in-angular-98ab9661aff6
 
 
