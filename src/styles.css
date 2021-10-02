@@ -3,8 +3,8 @@
     
 
     --noir-background: #131518;
-    --grisescur: #95979C;
-    --grisclar: #D9F3FF;
+    --bordFenetre: #b55c5c; /*navbar+ bordsFenetres*/
+    --typoPonchs: #ffba00; /*Typo + fond fenetres (ponchs)*/
     --rouge_text: #DF9F1F;
     --white: white;
     --bgimg: url(./assets/Images/backgrounds/godas.jpg);
@@ -139,6 +139,10 @@ body, .ng-isolate-scope, home, index2, index, headerview{
     top:15%;
     left: 5%;
 }
+.radio{
+    top:5%;
+    left: 25%;
+}
 .lyrics{
     top:30%;
     left: 12%;
@@ -189,7 +193,7 @@ a, a:hover {
 .drag-header, .drag-header img{
     user-select: none;
     cursor: url('./assets/Images/cursor/cursor_man.svg'), auto!important;
-    color: var(--noir-background);
+    color: var(--typoPonchs);
 }
 
 .drag-header {
@@ -207,8 +211,7 @@ a, a:hover {
 .draggable{
     position: absolute;
     z-index: 99;
-
-    background-color: var(--grisclar);
+    background-color: var(--bordFenetre);
     border: 1px solid var(--noir-background);
     -webkit-box-shadow: 5px 5px 0px -2px #131518b0; 
     box-shadow: 5px 5px 0px -2px #131518b0;
@@ -217,21 +220,33 @@ a, a:hover {
 .insideframe{
     border: 1px solid var(--noir-background);
     margin: 0px 5px 8px;
-    background: var(--grisescur);
-    background-image: radial-gradient(var(--grisescur) 20%, transparent 0), radial-gradient(var(--grisescur) 20%, transparent 0);
+    background: var(--typoPonchs);
+    background-image: radial-gradient(var(--bordFenetre) 20%, transparent 0), radial-gradient(var(--bordFenetre) 20%, transparent 0);
     background-size: 5px 5px;
     background-position: 0px 0px, 10px 10px;
+}
+
+.iconaslyrics a img{
+    height: 60px;
+    width: 55px;
+}
+.gifK7{
+    max-width: 50vw;;
+    height: auto;
 }
   
 /*******NavbarMenu*******/
 
-.navicon {
-    height: 18px;
+.quatreponchs{
+    background: url('./assets/Images/crotzponchs/godas_ponchs.png') no-repeat;
+    width: 10px;
+    height: 13px;
+	background-size: 10px 13px;
 }
 
 .topnavbar {
-    background-color: var(--grisclar);
-    border-color: var(--grisescur);
+    background-color: var(--bordFenetre);
+    border-color: var(--noir-background);
 }
   
 .navbar {
@@ -251,7 +266,7 @@ a, a:hover {
 }
 
 .navbar-light .navbar-nav .nav-link, .titolmenu {
-    color: var(--noir-background)
+    color: var(--typoPonchs)
 }
 
 .navbar-expand .navbar-nav .nav-link, .titolmenu {
@@ -259,7 +274,7 @@ a, a:hover {
     padding-left: .5rem;
 }
 .dropdown-menu{
-    background-color: var(--grisclar);
+    background-color: var(--bordFenetre);
     min-width: 8rem;
     padding: 0.1rem 0;
     min-width: 8rem;
@@ -273,10 +288,6 @@ a, a:hover {
 
 .underline::first-letter, .dropdown-item::first-letter{
     text-decoration:underline;
-}
-.iconaslyrics a img{
-    height: 54px;
-    width: 59px
 }
 
 /*------SOCIAU-------*/
@@ -344,4 +355,5 @@ a, a:hover {
     background-size: 42px 45px;}
 .youtube:hover{
     background-image: url('./assets/Images/sociau/ytb_hover.png');}
+
 

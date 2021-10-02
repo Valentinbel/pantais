@@ -2,14 +2,14 @@
         
   <!--NAVBAR-->
   <nav class="navbar navbar-expand navbar-light topnavbar fixed-top">
-    <img src="./assets/Images/crotzblanca.png" class="navicon"/>
+    <img  class="quatreponchs"/> <!--src="./assets/Images/crotzblanca.png"-->
     <div class="" #navbarSupportedContent>
       <ul class="navbar-nav mr-auto">
         <li class="nav-item titolmenu">
           <b>PANTAIS CLUS</b>
         </li>
         <li class="nav-item dropdown underline">
-            <a href #theme class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Themes</a>
+            <a href #theme class="nav-link dropdown-toggle underline" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Themes</a>
             <div class="dropdown-menu" aria-labelledby="theme">
               <a (click)="changetheme('lura')" class="dropdown-item" aria-labelledby="Lura">Lura</a>
               <a (click)="changetheme('marselha')" class="dropdown-item" aria-labelledby="Marselha">Marselha</a>
@@ -73,17 +73,78 @@
       </div>    
     </div>
 
-        <!-----------TV--------------->
-        <div #draggabletv id="draggabletv" class="draggable todrag tv hide" (click)="addzindex(draggabletv)"  cdkDragBoundary="#draggingzone" cdkDrag>
-          <div #draggabletvheader class="drag-header todrag" cdkDragHandle>
-            <span><img src="./assets/Images/crotzblanca.png" #iconclosetv (click)="closewindow(draggabletv)" class="draggableheadericon"alt="icon_crotz"></span> PANTAIS CLUS television
-          </div>
-          <div class="insideframe"> <!-----------cadre interieur--------------->
-            <div id="player" class=" d-flex"><!--#videoContainer id="videoContainer"-->
-              <!--<iframe #myIframe id="myIframe" width="100%" height="100%" src="nHP4GznSV0U&list=PL81csO796eDB_jrvC1As4g4LHHxd7RYry?controls=0&rel=0&showinfo=0&modestbranding=0" title="YouTube video player" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>-->
-            </div>
-          </div>
+    <!-----------TV--------------->
+    <div #draggabletv id="draggabletv" class="draggable todrag tv hide" (click)="addzindex(draggabletv)"  cdkDragBoundary="#draggingzone" cdkDrag>
+      <div #draggabletvheader class="drag-header todrag" cdkDragHandle>
+        <span><img src="./assets/Images/crotzblanca.png" #iconclosetv (click)="closewindow(draggabletv)" class="draggableheadericon"alt="icon_crotz"></span> PANTAIS CLUS television
+      </div>
+      <div class="insideframe"> <!-----------cadre interieur--------------->
+        <div id="player" class=" d-flex">
         </div>
+      </div>
+    </div>
+    
+    <!-----------Radio--------------->
+    <div #draggableradio id="draggableradio" class="draggable todrag radio hide" (click)="addzindex(draggableradio)"  cdkDragBoundary="#draggingzone" cdkDrag>
+      <div #draggableradioheader class="drag-header todrag" cdkDragHandle>
+        <span><img src="./assets/Images/crotzblanca.png" #iconcloseradio (click)="closewindow(draggableradio)" class="draggableheadericon"alt="icon_crotz"></span> PANTAIS CLUS radio
+      </div>
+      <div class="insideframe"> 
+        <div > <!-- [ngStyle]="backgroundStyle" -->
+          <img class="gifK7" src="./assets/Images/GIFk7.gif" alt="gifK7">
+          
+          <iframe 
+            width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" class="hide"
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1295133985&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">
+          </iframe>
+          <div 
+            style="font-size: 10px; color: #cccccc;line-break: anywhere;
+            word-break: normal;overflow: hidden;white-space: nowrap; text-overflow: ellipsis; 
+            font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;
+            font-weight: 100;">
+              <a href="https://soundcloud.com/valentin-belhme-264588954" 
+                title="Valentin Belhomme" target="_blank" 
+                style="color: #cccccc; text-decoration: none;">
+                  Valentin Belhomme
+              </a> · 
+              <a href="https://soundcloud.com/valentin-belhme-264588954/sets/maplaylist" 
+                title="Maplaylist" target="_blank" style="color: #cccccc; text-decoration: none;">
+                  Maplaylist
+              </a>
+          </div>
+          <!-- ---- On le met pas ---- <music-search (query)="handleQuery($event)" (update)="handleUpdate($event)" [tracks]="filteredTracks"></music-search>-->
+        
+          <!-- ---- Ca oui---- <music-details
+            [title]="title"
+          ></music-details>
+        
+          <music-player
+            (random)="handleRandom()" 
+            (backward)="handleBackward()"
+            (forward)="handleForward()"
+            (pauseplay)="handlePausePlay()"
+            (stop)="handleStop()"
+            [paused]="paused"
+          ></music-player>--> <!-- ---- non ---- (random)="handleRandom($event)"-->
+        
+          <!-- --- oui--- <music-progress
+            [current]="position"
+            [elapsed]="elapsed"
+            [total]="duration"
+          ></music-progress>-->
+        
+          <!-- ---- non --- <music-footer></music-footer>-->
+        
+        </div>
+        <!-- <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/293&amp;"></iframe> -->
+       <!-- <ngx-audio-player [playlist]="msaapPlaylist" [displayTitle]="msaapDisplayTitle" [autoPlay]="true" 
+        muted="muted" [displayPlaylist]="msaapDisplayPlayList" 
+        [displayVolumeControls]="msaapDisplayVolumeControls" [displayRepeatControls]="msaapDisplayRepeatControls"
+        [disablePositionSlider]="msaapDisablePositionSlider" [displayArtist]="msaapDisplayArtist" 
+        [displayDuration]="msaapDisplayDuration" [expanded]="true"></ngx-audio-player> -->
+      </div>
+    </div> 
+    <!--[pageSizeOptions]="pageSizeOptions" trackEnded)="onEnded($event)" -->
 
     <!-----------LYRICS--------------->
     <div #draggablelyrics  id="draggablelyrics" class="draggable todrag lyrics hide" (click)="addzindex(draggablelyrics)"  cdkDragBoundary="#draggingzone" cdkDrag>
@@ -93,13 +154,13 @@
       <div class="insideframe"> <!-----------cadre interieur--------------->
         <div class="d-flex fenestra iconas iconaslyrics">
           <a href="./assets/Images/pantaisclus.pdf" target="_blank">
-            <img class="img-fluid" src="./assets/Images/icone_Lyrics.png" alt="lyrics">
+            <img class="img-fluid" src="./assets/Images/icones/lyrics_art.png" alt="lyrics"> 
           </a>
           <a href="./assets/Images/pantaisclus_eng.pdf" target="_blank">
-            <img class="img-fluid" src="./assets/Images/icone_English.png" alt="english">
+            <img class="img-fluid" src="./assets/Images/icones/lyrics_eng.png" alt="english">
           </a>
           <a href="./assets/Images/pantaisclus_fr.pdf" target="_blank">
-            <img class="img-fluid" src="./assets/Images/iconeFrançais.png" alt="francais">
+            <img class="img-fluid" src="./assets/Images/icones/lyrics_fr.png" alt="francais">
           </a>
         </div>
       </div>    
@@ -108,19 +169,22 @@
     <app-not-found *ngIf="errorView === 404"></app-not-found>
   
     <div class="cosdepagina">
-      <div class="justify-content-center d-flex margin_topbottom grostitreorange">
+      <!--<div class="justify-content-center d-flex margin_topbottom grostitreorange">
         <img src="./assets/Images/GrosTitreOrange.png" class="img-fluid">            
-      </div>
+      </div> -->
       <div class="justify-content-center d-flex margin_topbottom">
         <div class="iconas">
           <a #iconlyrics (click)="displaywindow(draggablelyrics)" >
-            <img class="img-fluid" src="./assets/Images/icones/lyrics.png" alt="lyrics">
+            <img class="img-fluid" src="./../../../assets/Images/icones/lyrics.png" alt="lyrics">
           </a>
           <a #iconlinkssociau (click)="displaywindow(draggablesociau)" >
             <img class="img-fluid" src="./assets/Images/icones/links.png" alt="links">
           </a>
           <a #iconyoutube (click)="displaywindow(draggabletv)" >
             <img class="img-fluid" src="./assets/Images/icones/tv.png" alt="links">
+          </a>
+          <a #iconradio (click)="displaywindow(draggableradio)" >
+            <img class="img-fluid" src="./assets/Images/icones/radio.png" alt="links">
           </a>
           <a #iconvideos href="http://pantaisclus.tv/" target="_blank">
             <img class="img-fluid" src="./assets/Images/icones/videos.png" alt="videos">
@@ -130,6 +194,3 @@
     </div>
   </div>   
 </div>
-  
- 
-  

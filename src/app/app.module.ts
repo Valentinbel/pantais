@@ -1,26 +1,38 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {CDK_DRAG_CONFIG, DragDropModule} from '@angular/cdk/drag-drop';
+
+//import { FormsModule } from '@angular/forms';
+//import { HttpClientModule } from "@angular/common/http";
+//import { CommonModule } from '@angular/common';
+
 import { YouTubePlayerModule } from "@angular/youtube-player";
+// import { NgxAudioPlayerModule } from 'ngx-audio-player';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pantais/home/home.component';
 import { NotFoundComponent } from './pantais/not-found/not-found.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MusicModule } from './music/music.module'
 
 @NgModule({
   declarations: [
     AppComponent, 
     HomeComponent,
-    NotFoundComponent
+    NotFoundComponent, 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule, 
     DragDropModule, 
-    YouTubePlayerModule
+    YouTubePlayerModule, 
+    BrowserAnimationsModule, 
+    MusicModule
+    //NgxAudioPlayerModule, 
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
