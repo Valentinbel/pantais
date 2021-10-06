@@ -8,6 +8,7 @@
     --rouge_text: #DF9F1F;
     --white: white;
     --bgimg: url(./assets/Images/backgrounds/godas.jpg);
+    /*--ponchs: url(./assets/Images/crotzponchs/godas_ponchs.png);*/
 
 }
 
@@ -59,7 +60,6 @@ a:-webkit-any-link, a img, .underline, .dropdown-item, .draggableheadericon, .dr
 body {
     font-family: 'ChicagoFLF';
     margin: 0px;
-    background-image: var(--bgimg);
     background-position: center;
     /*background-color: var(--orange_background);
     color: var(--noir-background);*/
@@ -94,6 +94,9 @@ body, .ng-isolate-scope, home, index2, index, headerview{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 3%;
 }
 
 .iconas a {
@@ -102,10 +105,13 @@ body, .ng-isolate-scope, home, index2, index, headerview{
 }
 
 #draggingzone {
-    margin-top: 24.19px;
-    max-width: 100%;
-    width:100vw;
+    background-image: var(--bgimg);
+    position: relative;
+    width: 100%;
     height: 100vh;
+    background-position: 0 1rem;
+    background-repeat: repeat;
+    background-size: contain;
 }
 
 #dragginzonenotfound{
@@ -203,9 +209,10 @@ a, a:hover {
 }
 
 .draggableheadericon{
-    height: 16px;
-    width: 16px;
-    margin-left: 2px;
+    height: 15px;
+    width: 15px;
+    margin-left: 4px;
+    padding: 1px 1px;
 }
 
 .draggable{
@@ -237,12 +244,12 @@ a, a:hover {
   
 /*******NavbarMenu*******/
 
-.quatreponchs{
-    background: url('./assets/Images/crotzponchs/godas_ponchs.png') no-repeat;
+/*.quatreponchs{
+    background-image: var(--ponchs);
     width: 10px;
     height: 13px;
 	background-size: 10px 13px;
-}
+} */
 
 .topnavbar {
     background-color: var(--bordFenetre);

@@ -2,7 +2,7 @@
         
   <!--NAVBAR-->
   <nav class="navbar navbar-expand navbar-light topnavbar fixed-top">
-    <img  class="quatreponchs"/> <!--src="./assets/Images/crotzblanca.png"-->
+    <img id="quatreponchs" src="./assets/Images/crotzponchs/godas_ponchs.png"/> <!--;class="quatreponchs"-->
     <div class="" #navbarSupportedContent>
       <ul class="navbar-nav mr-auto">
         <li class="nav-item titolmenu">
@@ -30,7 +30,7 @@
     <!-----------SOCIAU--------------->
     <div #draggablesociau id="draggablesociau" class="draggable todrag hide sociau" (click)="addzindex(draggablesociau)" cdkDragBoundary="#draggingzone" cdkDrag>
       <div #draggablesociauheader class="drag-header todrag" cdkDragHandle>
-        <span><img src="./assets/Images/crotzblanca.png" #iconclosesociau (click)="closewindow(draggablesociau)" class="draggableheadericon"alt="icon_crotz"></span> PANTAIS CLUS social links
+        <span><img id="crotzsociau" src="./assets/Images/crotzponchs/godas_crotz.png" #iconclosesociau (click)="closewindow(draggablesociau)" class="draggableheadericon"alt="icon_crotz"></span> PANTAIS CLUS social links
       </div>
       <div class="insideframe"> <!-----------cadre interieur--------------->
         <!--Computer-->
@@ -64,7 +64,7 @@
     <!-----------CREDITS--------------->
     <div #draggablecredits id="draggablecredits" class="draggable todrag credits hide" (click)="addzindex(draggablecredits)"  cdkDragBoundary="#draggingzone" cdkDrag>
       <div #draggablecreditsheader class="drag-header todrag" cdkDragHandle>
-        <span><img src="./assets/Images/crotzblanca.png" #iconclosecredits (click)="closewindow(draggablecredits)" class="draggableheadericon"alt="icon_crotz"></span> PANTAIS CLUS Credits
+        <span><img id="crotzcredits" src="./assets/Images/crotzponchs/godas_crotz.png" #iconclosecredits (click)="closewindow(draggablecredits)" class="draggableheadericon"alt="icon_crotz"></span> PANTAIS CLUS Credits
       </div>
       <div class="insideframe"> <!-----------cadre interieur--------------->
         <div class=" d-flex fenestra">
@@ -76,7 +76,7 @@
     <!-----------TV--------------->
     <div #draggabletv id="draggabletv" class="draggable todrag tv hide" (click)="addzindex(draggabletv)"  cdkDragBoundary="#draggingzone" cdkDrag>
       <div #draggabletvheader class="drag-header todrag" cdkDragHandle>
-        <span><img src="./assets/Images/crotzblanca.png" #iconclosetv (click)="closewindow(draggabletv)" class="draggableheadericon"alt="icon_crotz"></span> PANTAIS CLUS television
+        <span><img id="crotztv" src="./assets/Images/crotzponchs/godas_crotz.png" #iconclosetv (click)="closewindow(draggabletv)" class="draggableheadericon"alt="icon_crotz"></span> PANTAIS CLUS television
       </div>
       <div class="insideframe"> <!-----------cadre interieur--------------->
         <div id="player" class=" d-flex">
@@ -87,31 +87,30 @@
     <!-----------Radio--------------->
     <div #draggableradio id="draggableradio" class="draggable todrag radio hide" (click)="addzindex(draggableradio)"  cdkDragBoundary="#draggingzone" cdkDrag>
       <div #draggableradioheader class="drag-header todrag" cdkDragHandle>
-        <span><img src="./assets/Images/crotzblanca.png" #iconcloseradio (click)="closewindow(draggableradio)" class="draggableheadericon"alt="icon_crotz"></span> PANTAIS CLUS radio
+        <span><img id="crotzradio" src="./assets/Images/crotzponchs/godas_crotz.png" #iconcloseradio (click)="closewindow(draggableradio)" class="draggableheadericon"alt="icon_crotz"></span> PANTAIS CLUS radio
       </div>
       <div class="insideframe"> 
         <div > <!-- [ngStyle]="backgroundStyle" -->
           <img class="gifK7" src="./assets/Images/GIFk7.gif" alt="gifK7">
           
-          <iframe 
-            width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" class="hide"
-            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1295133985&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">
+          <iframe id="iframesoundcloud" class="hide"
+            width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" 
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1019226721&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">
           </iframe>
           <div 
-            style="font-size: 10px; color: #cccccc;line-break: anywhere;
-            word-break: normal;overflow: hidden;white-space: nowrap; text-overflow: ellipsis; 
+            style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;
+            overflow: hidden;white-space: nowrap;text-overflow: ellipsis; 
             font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;
             font-weight: 100;">
-              <a href="https://soundcloud.com/valentin-belhme-264588954" 
-                title="Valentin Belhomme" target="_blank" 
-                style="color: #cccccc; text-decoration: none;">
-                  Valentin Belhomme
-              </a> · 
-              <a href="https://soundcloud.com/valentin-belhme-264588954/sets/maplaylist" 
-                title="Maplaylist" target="_blank" style="color: #cccccc; text-decoration: none;">
-                  Maplaylist
-              </a>
+            <a href="https://soundcloud.com/rodiin" title="rodín" target="_blank" 
+              style="color: #cccccc; text-decoration: none;">rodín
+            </a> · 
+            <a href="https://soundcloud.com/rodiin/sets/pantaisclus" 
+              title="Pantais Clus" target="_blank" style="color: #cccccc; text-decoration: none;">
+              Pantais Clus
+            </a>
           </div>
+
           <!-- ---- On le met pas ---- <music-search (query)="handleQuery($event)" (update)="handleUpdate($event)" [tracks]="filteredTracks"></music-search>-->
         
           <!-- ---- Ca oui---- <music-details
@@ -149,7 +148,7 @@
     <!-----------LYRICS--------------->
     <div #draggablelyrics  id="draggablelyrics" class="draggable todrag lyrics hide" (click)="addzindex(draggablelyrics)"  cdkDragBoundary="#draggingzone" cdkDrag>
       <div #draggablelyricsheader class="drag-header todrag" cdkDragHandle>
-        <span><img src="./assets/Images/crotzblanca.png" #iconcloselyrics (click)="closewindow(draggablelyrics)" class="draggableheadericon"alt="icon_crotz"></span> PANTAIS CLUS lyrics
+        <span><img id="crotzlyrics" src="./assets/Images/crotzponchs/godas_crotz.png" #iconcloselyrics (click)="closewindow(draggablelyrics)" class="draggableheadericon"alt="icon_crotz"></span> PANTAIS CLUS lyrics
       </div>
       <div class="insideframe"> <!-----------cadre interieur--------------->
         <div class="d-flex fenestra iconas iconaslyrics">
