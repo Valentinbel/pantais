@@ -1,60 +1,40 @@
+apisoundcloud.js copié dans SRC /Users/valentin/Documents/IT/Pantaisclus/PantaisclusART/Pantaisclus/pantais/node_modules/@angular-devkit/build-angular/src
 Soundcloud
-    GifK7
+    Boutons play/pause/next...
     Play on open https://developers.soundcloud.com/docs/api/html5-widget#playground
 
 Overlay tv bgTv (z-index+1) https://www.w3schools.com/howto/howto_css_overlay.asp + GIF
-Fond fixe/ pas de scroll
-Icones en bas sur 2 lignes
-Fenestra Shop
-Fonds Fenestra
-Icones 
-MAIL Rodin: 
-    + Point en haut à gauche de la navbar
-    ? il faudrait qu'il soit fixe en bas sur deux lignes comme sur le jpg joint (peu importe le nombre) 
+.overlayInPoolside{
+    background: url(./.../...//..//.png;
+    background-size: 2px 2px;
+}
 
-    iste actuelle (sur une seule ligne en bas):
-    -- TV --> pantaisclus.tv
-    -- lyrics --> ouvre une fenêtre dans laquelle il y a 3 icones: art, FR et ENG --> link pdf (lourds haha) 
-    -- links --> ouvre une fenêtre avec les links (que je vais ptet refaire pour que ce soit plus raccord)  
-    pro --> ouvrira une fenêtre avec des pdfs à download et leurs icones respectives (revue de presse, epk, etc)
-    FM --> Soundcloud + le GIF avec la cassette 
-    shop --> ouvrira une fenêtre avec des png et un scroll, chaque png correspondant à un article, et si tu cliques sur le png ça ouvre la page de l'article sur big cartel (jouable?) [ou alors en jpg sur fond papier, version catalogue imprimé, un peu pixel comme les catalogues 90's ça pourrait être cool ça] 
-    mag: des photos, faudra voir comment on peut présenter ça de façon 90's. Je me disais que ça pourrait s'ouvrir en pleine page, comme le 404, et avoir une anim pour tourner les pages comme un magazine. 
-    solet --> si on se chauffe de faire le solitaire custom 
+* Oninit random theme
 
-    et le plus chiant: 
-    TV --> ce serait bien d'avoir les vidéos dans une fenêtre (les teasers) 
-    Films --> pareil mais avec les clips 
-    peut-être avec 2 tailles de fenêtres fixes, genre les teasers en 4:3 plus petit que les clips en 16:9 
+* Icones en bas sur 2 lignes
+* Point en haut à gauche de la navbar
+* Croix fenetre
+* pro --> ouvrira une fenêtre avec des pdfs à download et leurs icones respectives (revue de presse, epk, etc)
+* shop --> ouvrira une fenêtre avec des png et un scroll, 
+    chaque png correspondant à un article, 
+    et si tu cliques sur le png ça ouvre la page de l'article sur big cartel (jouable?) 
+        https://stackoverflow.com/questions/24561322/how-to-open-another-website-within-the-body-of-my-website
+    [ou alors en jpg sur fond papier, version catalogue imprimé, un peu pixel comme les catalogues 90's ça pourrait être cool ça] 
+* mag: des photos, faudra voir comment on peut présenter ça de façon 90's. Je me disais que ça pourrait s'ouvrir en pleine page, comme le 404, et avoir une anim pour tourner les pages comme un magazine. 
+* solet --> si on se chauffe de faire le solitaire custom 
 
+* Films --> pareil mais avec les clips en 16:9 
 
-
-Chapitre à faire: App Component Template
-
-Search Component Events & Properties > pas créé
-Déclarer musicModule dans appModule? > done
+/*** SOUNDCLOUD ANGULAR API ***/
+Search Component Events & Properties + footerComponent > pas créé
 Erreur du detailsMusic Constructor?
-On a pas mis le footerComponent. Ca peut se rajouter. 
 Qaudn le site dit AppComponent, j'ai mis ça dans HomeComponent
 Music.Service.ts >randomTrack(tracks) : elements en comment dans la fonction. Check si ok
-
->> Si pas de playlist >>Mettre le footer component avec lien vers le Soundcloud
 https://scotch.io/tutorials/build-a-music-player-with-angular-2-electron-i-setup-basics-concepts
 https://scotch.io/tutorials/build-a-music-player-with-angular-electron-ii-making-the-ui#toc-up-next
 https://scotch.io/tutorials/build-a-music-player-with-angular-electron-iii-bringing-it-all-together
-import { Http } from '@angular/http';
 
 
-    .overlay{
-        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAEAQMAAACTPww9AAAABlBMVEUAAAAAAAClZ7nPAAAAAXRSTlMAQObYZgAAAA1JREFUCNdjOACEQAAACQgBgeEHEZ0AAAAASUVORK5CYII=);
-        background-size: 2px 2px;
-    }
-
-
-oninit random theme
-
-
-// Icones remplissent la largeur du png (space between)
 
 
 Faire un lecteur audio: 

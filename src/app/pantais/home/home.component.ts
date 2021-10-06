@@ -2,6 +2,8 @@ import { Component, OnInit, ElementRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MusicService } from './../../music/shared/music.service';
 //import { Track } from 'ngx-audio-player'; 
+//import * as SC from './../../../assets/apisoundcloud.js';
+
 
 @Component({
   selector: 'app-home',
@@ -18,18 +20,21 @@ export class HomeComponent implements OnInit, ElementRef {
   public YT: any;
   public player: any;
   public reframed: Boolean = false;
+  
+  declare apisoundcloud: any ;
+  declare SC: any;
 
   title: any;
   position: any;
   elapsed: any;
   duration: any;
-  tracks: any[] = [];
+  tracks: any[] = ['9bf3978a80a14f1284cda6b659eb2bde'];
   backgroundStyle: any;
 
   paused = true;
 
-  // public SC: any;
-  // public soundcloudClient: any;
+   //public SC: any;
+   public soundcloudClient: any;
 
   msaapDisplayTitle = true;
   msaapDisplayPlayList = true;
@@ -43,7 +48,7 @@ export class HomeComponent implements OnInit, ElementRef {
 
 
   constructor(private  musicService: MusicService, private activatedroute: ActivatedRoute,) {
-    // this.soundcloudClient = 264588954;
+    this.soundcloudClient = 264588954;
     
   }
   
@@ -62,7 +67,8 @@ export class HomeComponent implements OnInit, ElementRef {
     if(data.hasOwnProperty('error')) {
       this.errorView = data.error;
     };
-    //this.soundcloudAuthentication()
+    
+    this.soundcloudAuthentication()
   }
 
   handleEnded(e:any) {
@@ -256,32 +262,79 @@ export class HomeComponent implements OnInit, ElementRef {
       root.style.setProperty('--bgimg', 'url(./assets/Images/backgrounds/lura.jpg)');
       root.style.setProperty('--bordFenetre', '#39378e');
       root.style.setProperty('--typoPonchs', '#ec7744');
+      document.getElementById("quatreponchs")?.setAttribute('src', './assets/Images/crotzponchs/lura_ponchs.png');
+      
+      document.getElementById("crotzsociau")?.setAttribute('src', './assets/Images/crotzponchs/lura_crotz.png')
+      document.getElementById("crotzcredits")?.setAttribute('src', './assets/Images/crotzponchs/lura_crotz.png')
+      document.getElementById("crotztv")?.setAttribute('src', './assets/Images/crotzponchs/lura_crotz.png')
+      document.getElementById("crotzradio")?.setAttribute('src', './assets/Images/crotzponchs/lura_crotz.png')
+      document.getElementById("crotzlyrics")?.setAttribute('src', './assets/Images/crotzponchs/lura_crotz.png')
+      document.getElementById("crotz404")?.setAttribute('src', './assets/Images/crotzponchs/lura_crotz.png')
     }
     if(theme=="marselha"){
       root.style.setProperty('--bgimg', 'url(./assets/Images/backgrounds/marselha.jpg)');
       root.style.setProperty('--bordFenetre', '#b7e1ff');
       root.style.setProperty('--typoPonchs', '#11584d');
+      document.getElementById("quatreponchs")?.setAttribute('src', './assets/Images/crotzponchs/marselha_ponchs.png');
+
+      document.getElementById("crotzsociau")?.setAttribute('src', './assets/Images/crotzponchs/marselha_crotz.png')
+      document.getElementById("crotzcredits")?.setAttribute('src', './assets/Images/crotzponchs/marselha_crotz.png')
+      document.getElementById("crotztv")?.setAttribute('src', './assets/Images/crotzponchs/marselha_crotz.png')
+      document.getElementById("crotzradio")?.setAttribute('src', './assets/Images/crotzponchs/marselha_crotz.png')
+      document.getElementById("crotzlyrics")?.setAttribute('src', './assets/Images/crotzponchs/marselha_crotz.png')
+      document.getElementById("crotz404")?.setAttribute('src', './assets/Images/crotzponchs/marselha_crotz.png')
     }
     if(theme=="godas"){
       root.style.setProperty('--bgimg', 'url(./assets/Images/backgrounds/godas.jpg)');
       root.style.setProperty('--bordFenetre', '#b55c5c');
       root.style.setProperty('--typoPonchs', '#ffba00');
+      document.getElementById("quatreponchs")?.setAttribute('src', './assets/Images/crotzponchs/godas_ponchs.png');
+
+      document.getElementById("crotzsociau")?.setAttribute('src', './assets/Images/crotzponchs/godas_crotz.png')
+      document.getElementById("crotzcredits")?.setAttribute('src', './assets/Images/crotzponchs/godas_crotz.png')
+      document.getElementById("crotztv")?.setAttribute('src', './assets/Images/crotzponchs/godas_crotz.png')
+      document.getElementById("crotzradio")?.setAttribute('src', './assets/Images/crotzponchs/godas_crotz.png')
+      document.getElementById("crotzlyrics")?.setAttribute('src', './assets/Images/crotzponchs/godas_crotz.png')
+      document.getElementById("crotz404")?.setAttribute('src', './assets/Images/crotzponchs/godas_crotz.png')
     }
     if(theme=="vitrolas"){
       root.style.setProperty('--bgimg', 'url(./assets/Images/backgrounds/vitrolas.jpg)');
       root.style.setProperty('--bordFenetre', '#ffe400');
       root.style.setProperty('--typoPonchs', '#476d55');
+      document.getElementById("quatreponchs")?.setAttribute('src', './assets/Images/crotzponchs/vitrolas_ponchs.png');
+
+      document.getElementById("crotzsociau")?.setAttribute('src', './assets/Images/crotzponchs/vitrolas_crotz.png')
+      document.getElementById("crotzcredits")?.setAttribute('src', './assets/Images/crotzponchs/vitrolas_crotz.png')
+      document.getElementById("crotztv")?.setAttribute('src', './assets/Images/crotzponchs/vitrolas_crotz.png')
+      document.getElementById("crotzradio")?.setAttribute('src', './assets/Images/crotzponchs/vitrolas_crotz.png')
+      document.getElementById("crotzlyrics")?.setAttribute('src', './assets/Images/crotzponchs/vitrolas_crotz.png')
+      document.getElementById("crotz404")?.setAttribute('src', './assets/Images/crotzponchs/vitrolas_crotz.png')
     }
     if(theme=="salagon"){
       root.style.setProperty('--bgimg', 'url(./assets/Images/backgrounds/salagon.jpg)');
       root.style.setProperty('--bordFenetre', '#3b8b7f');
       root.style.setProperty('--typoPonchs', '#ffffff');
+      document.getElementById("quatreponchs")?.setAttribute('src', './assets/Images/crotzponchs/salagon_ponchs.png');
+
+      document.getElementById("crotzsociau")?.setAttribute('src', './assets/Images/crotzponchs/salagon_crotz.png')
+      document.getElementById("crotzcredits")?.setAttribute('src', './assets/Images/crotzponchs/salagon_crotz.png')
+      document.getElementById("crotztv")?.setAttribute('src', './assets/Images/crotzponchs/salagon_crotz.png')
+      document.getElementById("crotzradio")?.setAttribute('src', './assets/Images/crotzponchs/salagon_crotz.png')
+      document.getElementById("crotzlyrics")?.setAttribute('src', './assets/Images/crotzponchs/salagon_crotz.png')
+      document.getElementById("crotz404")?.setAttribute('src', './assets/Images/crotzponchs/salagon_crotz.png')
     }
     if(theme=="venturi"){
       root.style.setProperty('--bgimg', 'url(./assets/Images/backgrounds/venturi.jpg)');
       root.style.setProperty('--bordFenetre', '#b085cc');
       root.style.setProperty('--typoPonchs', '#3e4abb');
-      
+      document.getElementById("quatreponchs")?.setAttribute('src', './assets/Images/crotzponchs/venturi_ponchs.png');
+
+      document.getElementById("crotzsociau")?.setAttribute('src', './assets/Images/crotzponchs/venturi_crotz.png')
+      document.getElementById("crotzcredits")?.setAttribute('src', './assets/Images/crotzponchs/venturi_crotz.png')
+      document.getElementById("crotztv")?.setAttribute('src', './assets/Images/crotzponchs/venturi_crotz.png')
+      document.getElementById("crotzradio")?.setAttribute('src', './assets/Images/crotzponchs/venturi_crotz.png')
+      document.getElementById("crotzlyrics")?.setAttribute('src', './assets/Images/crotzponchs/venturi_crotz.png')
+      document.getElementById("crotz404")?.setAttribute('src', './assets/Images/crotzponchs/venturi_crotz.png')
     }
   }
 
@@ -296,6 +349,27 @@ export class HomeComponent implements OnInit, ElementRef {
 
     if ( windowid.classList.contains('hide') ) { windowid.classList.remove('hide'); }
     if ( windowid.id === "draggabletv" ) { this.init(); }
+    if ( windowid.id === "draggableradio" ) { 
+      var iframesoundcloud = document.getElementById('iframesoundcloud');
+      var widget1         = this.SC.Widget(iframesoundcloud);
+      //var widget2         = SC.Widget(iframeElementID);
+      widget1.play();
+     }
+  }
+
+  soundcloudAuthentication(){
+    this.SC = document.createElement('script');
+    this.SC.src="https://connect.soundcloud.com/sdk/sdk-3.3.2.js";
+    //this.SC.src="https://w.soundcloud.com/player/api.js";
+    this.SC.initialize({
+      client_id: this.soundcloudClient
+    });
+    var iframesoundcloud:any = document.getElementById('iframesoundcloud');
+    var myiframe = document.querySelector('iframe');
+    var widget1         = this.SC.Widget(iframesoundcloud);
+    var widget2         = this.SC.Widget(myiframe);
+    //widget1.play();
+    iframesoundcloud.play();
   }
 
   videoStopper(event:any):void {
