@@ -165,6 +165,71 @@
       </div>    
     </div>
 
+    <!-----------MAG--------------->
+    <div #draggablemag  id="draggablemag" class="draggable todrag mag hide" (click)="addzindex(draggablemag)"  cdkDragBoundary="#draggingzone" cdkDrag>
+      <div #draggablemagheader class="drag-header todrag" cdkDragHandle>
+        <span><img id="crotzmag" src="./assets/Images/crotzponchs/godas_crotz.png" #iconclosemag (click)="closewindow(draggablemag)" class="draggableheadericon"alt="icon_crotz"></span> PANTAIS CLUS mag
+      </div>
+      <div class="insideframe"> <!-----------cadre interieur--------------->
+        <div class="d-flex fenestra iconas iconasmag">
+          
+          <a href="./assets/Images/pantaisclus.pdf" target="_blank">
+            <img class="img-fluid" src="./assets/Images/icones/lyrics_art.png" alt="lyrics"> 
+          </a>
+          <a href="./assets/Images/pantaisclus_eng.pdf" target="_blank">
+            <img class="img-fluid" src="./assets/Images/icones/lyrics_eng.png" alt="english">
+          </a>
+          <a href="./assets/Images/pantaisclus_fr.pdf" target="_blank">
+            <img class="img-fluid" src="./assets/Images/icones/lyrics_fr.png" alt="francais">
+          </a>
+
+        </div>
+      </div>    
+    </div>
+
+    <!-----------SHOP--------------->
+    <div #draggableshop  id="draggableshop" class="draggable todrag shop hide" (click)="addzindex(draggableshop)"  cdkDragBoundary="#draggingzone" cdkDrag>
+      <div #draggableshopheader class="drag-header todrag" cdkDragHandle>
+        <span><img id="crotzshop" src="./assets/Images/crotzponchs/godas_crotz.png" #iconcloseshop (click)="closewindow(draggableshop)" class="draggableheadericon"alt="icon_crotz"></span> PANTAIS CLUS shop
+      </div>
+      <div class="insideframe"> <!-----------cadre interieur--------------->
+        <div class="d-flex fenestra iconas iconasshop">
+
+          <a href="./assets/Images/pantaisclus.pdf" target="_blank">
+            <img class="img-fluid" src="./assets/Images/icones/lyrics_art.png" alt="lyrics"> 
+          </a>
+          <a href="./assets/Images/pantaisclus_eng.pdf" target="_blank">
+            <img class="img-fluid" src="./assets/Images/icones/lyrics_eng.png" alt="english">
+          </a>
+          <a href="./assets/Images/pantaisclus_fr.pdf" target="_blank">
+            <img class="img-fluid" src="./assets/Images/icones/lyrics_fr.png" alt="francais">
+          </a>
+          
+        </div>
+      </div>    
+    </div>
+
+    <!-----------PRO--------------->
+    <div #draggablepro  id="draggablepro" class="draggable todrag pro hide" (click)="addzindex(draggablepro)"  cdkDragBoundary="#draggingzone" cdkDrag>
+      <div #draggableproheader class="drag-header todrag" cdkDragHandle>
+        <span><img id="crotzpro" src="./assets/Images/crotzponchs/godas_crotz.png" #iconclosepro (click)="closewindow(draggablepro)" class="draggableheadericon"alt="icon_crotz"></span> PANTAIS CLUS pro
+      </div>
+      <div class="insideframe"> <!-----------cadre interieur--------------->
+        <div class="d-flex fenestra iconas iconaspro">
+          <p>en espera de docs</p>
+          <a href="./assets/Images/pantaisclus.pdf" target="_blank">
+            <img class="img-fluid" src="./assets/Images/icones/lyrics_art.png" alt="revue de presse"> 
+          </a>
+          <a href="./assets/Images/pantaisclus_eng.pdf" target="_blank">
+            <img class="img-fluid" src="./assets/Images/icones/lyrics_eng.png" alt="epk">
+          </a>
+          <a href="./assets/Images/pantaisclus_fr.pdf" target="_blank">
+            <img class="img-fluid" src="./assets/Images/icones/lyrics_fr.png" alt="francais">
+          </a>
+        </div>
+      </div>    
+    </div>
+
     <app-not-found *ngIf="errorView === 404"></app-not-found>
   
     <div class="cosdepagina">
@@ -177,16 +242,25 @@
             <img class="img-fluid" src="./../../../assets/Images/icones/lyrics.png" alt="lyrics">
           </a>
           <a #iconlinkssociau (click)="displaywindow(draggablesociau)" >
-            <img class="img-fluid" src="./assets/Images/icones/links.png" alt="links">
+            <img class="img-fluid" src="./assets/Images/icones/links.png" alt="sociau">
           </a>
           <a #iconyoutube (click)="displaywindow(draggabletv)" >
-            <img class="img-fluid" src="./assets/Images/icones/tv.png" alt="links">
+            <img class="img-fluid" src="./assets/Images/icones/tv.png" alt="youtube">
           </a>
           <a #iconradio (click)="displaywindow(draggableradio)" >
-            <img class="img-fluid" src="./assets/Images/icones/radio.png" alt="links">
+            <img class="img-fluid" src="./assets/Images/icones/radio.png" alt="radio">
           </a>
           <a #iconvideos href="http://pantaisclus.tv/" target="_blank">
             <img class="img-fluid" src="./assets/Images/icones/videos.png" alt="videos">
+          </a>
+          <a #iconmag (click)="displaywindow(draggablemag)" >
+            <img class="img-fluid" src="./../../../assets/Images/icones/mag.png" alt="mag">
+          </a>
+          <a #iconshop (click)="displaywindow(draggableshop)" >
+            <img class="img-fluid" src="./../../../assets/Images/icones/shop.png" alt="shop">
+          </a>
+          <a #iconpro (click)="displaywindow(draggablepro)" >
+            <img class="img-fluid" src="./assets/Images/icones/pro.png" alt="pro">
           </a>
         </div>
       </div>

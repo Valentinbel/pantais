@@ -153,6 +153,18 @@ body, .ng-isolate-scope, home, index2, index, headerview{
     top:30%;
     left: 12%;
 }
+.mag{
+    top:5%;
+    left: 5%;
+}
+.shop{
+    top:10%;
+    left: 15%;
+}
+.pro{
+    top:20%;
+    left: 5%;
+}
 
 
 
@@ -233,10 +245,13 @@ a, a:hover {
     background-position: 0px 0px, 10px 10px;
 }
 
-.iconaslyrics a img{
+.iconaslyrics a img, 
+.iconaspro a img
+{
     height: 60px;
     width: 55px;
 }
+
 .gifK7{
     max-width: 50vw;;
     height: auto;
