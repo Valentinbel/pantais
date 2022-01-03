@@ -109,7 +109,8 @@ body, .ng-isolate-scope, home, index2, index, headerview{
     position: relative;
     width: 100%;
     height: 100vh;
-    background-position: 0 1rem;
+    top: 1.5em;
+    /*background-position: 0 1rem;*/
     background-repeat: repeat;
     background-size: contain;
 }
@@ -144,6 +145,10 @@ body, .ng-isolate-scope, home, index2, index, headerview{
 .tv{
     top:15%;
     left: 5%;
+}
+.films{
+    top:15%;
+    left: 25%;
 }
 .radio{
     top:5%;

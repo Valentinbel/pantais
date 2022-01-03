@@ -7,6 +7,7 @@ import {CDK_DRAG_CONFIG, DragDropModule} from '@angular/cdk/drag-drop';
 //import { CommonModule } from '@angular/common';
 
 import { YouTubePlayerModule } from "@angular/youtube-player";
+//import reframe from './../reframe.js';
 // import { NgxAudioPlayerModule } from 'ngx-audio-player';
 
 import { AppRoutingModule } from './app-routing.module';

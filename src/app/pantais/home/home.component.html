@@ -73,17 +73,28 @@
       </div>    
     </div>
 
-    <!-----------TV--------------->
+    <!-----------TV-------------
     <div #draggabletv id="draggabletv" class="draggable todrag tv hide" (click)="addzindex(draggabletv)"  cdkDragBoundary="#draggingzone" cdkDrag>
       <div #draggabletvheader class="drag-header todrag" cdkDragHandle>
         <span><img id="crotztv" src="./assets/Images/crotzponchs/godas_crotz.png" #iconclosetv (click)="closewindow(draggabletv)" class="draggableheadericon"alt="icon_crotz"></span> PANTAIS CLUS television
+      </div>
+      <div class="insideframe">
+        <div id="player" class=" d-flex">
+        </div>
+      </div>
+    </div>-->
+
+    <!-----------FILMS--------------->
+    <div #draggablefilms id="draggablefilms" class="draggable todrag films hide" (click)="addzindex(draggablefilms)"  cdkDragBoundary="#draggingzone" cdkDrag>
+      <div #draggablefilmsheader class="drag-header todrag" cdkDragHandle>
+        <span><img id="crotzfilms" src="./assets/Images/crotzponchs/godas_crotz.png" #iconclosefilms (click)="closewindow(draggablefilms)" class="draggableheadericon"alt="icon_crotz"></span> PANTAIS CLUS films
       </div>
       <div class="insideframe"> <!-----------cadre interieur--------------->
         <div id="player" class=" d-flex">
         </div>
       </div>
     </div>
-    
+
     <!-----------Radio--------------->
     <div #draggableradio id="draggableradio" class="draggable todrag radio hide" (click)="addzindex(draggableradio)"  cdkDragBoundary="#draggingzone" cdkDrag>
       <div #draggableradioheader class="drag-header todrag" cdkDragHandle>
@@ -244,14 +255,17 @@
           <a #iconlinkssociau (click)="displaywindow(draggablesociau)" >
             <img class="img-fluid" src="./assets/Images/icones/links.png" alt="sociau">
           </a>
-          <a #iconyoutube (click)="displaywindow(draggabletv)" >
-            <img class="img-fluid" src="./assets/Images/icones/tv.png" alt="youtube">
+         <!-- <a #iconyoutube (click)="displaywindow(draggabletv)" >
+            <img class="img-fluid" src="./assets/Images/icones/tv.png" alt="snippets">
+          </a>-->
+          <a #iconvideos href="http://pantaisclus.tv/" target="_blank">
+            <img class="img-fluid" src="./assets/Images/icones/videos.png" alt="videos">
+          </a>
+          <a #iconfilms (click)="displaywindow(draggablefilms)" >
+            <img class="img-fluid" src="./assets/Images/icones/films.png" alt="films">
           </a>
           <a #iconradio (click)="displaywindow(draggableradio)" >
             <img class="img-fluid" src="./assets/Images/icones/radio.png" alt="radio">
-          </a>
-          <a #iconvideos href="http://pantaisclus.tv/" target="_blank">
-            <img class="img-fluid" src="./assets/Images/icones/videos.png" alt="videos">
           </a>
           <a #iconmag (click)="displaywindow(draggablemag)" >
             <img class="img-fluid" src="./../../../assets/Images/icones/mag.png" alt="mag">

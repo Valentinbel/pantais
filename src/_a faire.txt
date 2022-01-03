@@ -83,3 +83,14 @@ RETOUR MAIL Rodin
 ------
 ng serve --open
 
+https://developers.google.com/youtube/iframe_api_reference
+
+videostopper
+init
+
+
+'onError': this.onPlayerError.bind(this),
+          'onReady': (e) => {
+            if (!this.reframed) {
+              this.reframed = true;
+              reframe(e.target.a);

@@ -1,6 +1,9 @@
+import { QueryBindingType } from '@angular/compiler/src/core';
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MusicService } from './../../music/shared/music.service';
+// import reframe from 'refame.js';
+import { YouTubePlayerModule } from "@angular/youtube-player";
 //import { Track } from 'ngx-audio-player'; 
 //import * as SC from './../../../assets/apisoundcloud.js';
 
@@ -16,11 +19,17 @@ export class HomeComponent implements OnInit, ElementRef {
   public uppedzindexreference: number =1;
   errorView: number | undefined;
 
+  /** YOUTUBE **/
   // public video: any;
   public YT: any;
+  public playersnippets: any;
+  public playerfilms: any;
   public player: any;
+  public reframedsnippets: Boolean = false;
+  public reframedfilms: Boolean = false;
   public reframed: Boolean = false;
   
+  /** SOUNDCLOUD **/
   declare apisoundcloud: any ;
   declare SC: any;
 
@@ -28,7 +37,7 @@ export class HomeComponent implements OnInit, ElementRef {
   position: any;
   elapsed: any;
   duration: any;
-  tracks: any[] = ['9bf3978a80a14f1284cda6b659eb2bde'];
+  tracks: any[] = [];
   backgroundStyle: any;
 
   paused = true;
@@ -48,7 +57,7 @@ export class HomeComponent implements OnInit, ElementRef {
 
 
   constructor(private  musicService: MusicService, private activatedroute: ActivatedRoute,) {
-    this.soundcloudClient = 264588954;
+    this.soundcloudClient = 264588954; // essayer avec client depuis chqanson de SEC?
     
   }
   
@@ -184,54 +193,115 @@ export class HomeComponent implements OnInit, ElementRef {
   },
 ];*/
 
-  init() {
+  init() { // init(dragorigin:any)
     var tag = document.createElement('script');
     tag.src='http://www.youtube.com/iframe_api';
     var firstScriptTag = document.getElementsByTagName('script')[0];
     firstScriptTag.parentNode!.insertBefore(tag, firstScriptTag);
-     window['onYouTubeIframeAPIReady'] = () => this.startVideo();
+    /*if (dragorigin==="snippets"){
+      var tagsnippet = document.createElement('script');
+      tagsnippet.src='http://www.youtube.com/iframe_api';
+      var snippetScriptTag = document.getElementsByTagName('script')[0];
+      console.log("snippetScriptTag : ",snippetScriptTag);
+      snippetScriptTag.parentNode!.insertBefore(tagsnippet, snippetScriptTag);
+      window['onYouTubeIframeAPIReady'] = () => this.startVideo("snippets");
+      console.log("init snippets works");
+    }*/
+    /*if (dragorigin==="films"){
+      var tagfilms = document.createElement('script');
+      tagfilms.src='http://www.youtube.com/iframe_api';
+      var filmScriptTag = document.getElementsByTagName('script')[0];*/
+      console.log("firstScriptTag : ", firstScriptTag);
+      window['onYouTubeIframeAPIReady'] = () => this.startVideo();
+      //firstScriptTag.parentNode!.insertBefore(tagfilms, filmScriptTag);
+      //window['onYouTubeIframeAPIReady'] = () => this.startVideo("films");
+      console.log("init films works");
+    //}
+     
   }
 
-  startVideo() {
-    this.reframed = false;
-    this.player = new window['YT'].Player('player', {
-      playerVars: {
-        autoplay: 1,
-        modestbranding: 1,
-        controls: 0,
-        disablekb: 1,
-        rel: 0,
-        showinfo: 0,
-        fs: 0,
-        playsinline: 1, list:'PL81csO796eDB_jrvC1As4g4LHHxd7RYry',
-        listType: 'player'
-      },
-      events: {
-        'onStateChange': this.onPlayerStateChange.bind(this),
-        'onError': this.onPlayerError.bind(this),
-        'onReady': this.onPlayerReady.bind(this),
-      }
-    });
+  startVideo() { // startVideo(dragorigin:any) {
+    //this.reframed = false;
+    /*if (dragorigin==="snippets"){
+      this.reframedsnippets = false;
+      this.playersnippets = new window['YT'].Player('player', {
+        playerVars: {
+          autoplay: 1,
+          modestbranding: 1,
+          controls: 0,
+          disablekb: 1,
+          rel: 0,
+          showinfo: 0,
+          fs: 0,
+          playsinline: 1, list:'PL81csO796eDB_jrvC1As4g4LHHxd7RYry',
+          listType: 'player'
+        },
+        events: {
+          'onStateChange': this.onPlayerStateChange.bind(this.playersnippets),
+          'onError': this.onPlayerError.bind(this.playersnippets),
+          'onReady': this.onPlayerReady.bind(this.playersnippets),
+        }
+      });
+      console.log("this is snippets : ", this.playersnippets);
+    }*/
+    //if(dragorigin==="films"){ //else if
+      this.reframed = false;
+      this.player = new window['YT'].Player('player', {
+        playerVars: {
+          autoplay: 1,
+          modestbranding: 1,
+          controls: 0,
+          disablekb: 1,
+          rel: 0,
+          showinfo: 0,
+          fs: 0,
+          playsinline: 1, list:'PL81csO796eDDUIqRMau1niRxqHLrXAVJz',
+          listType: 'player'
+        },
+        events: {
+          'onStateChange': this.onPlayerStateChange.bind(this), // .bind(this.playerfilms),
+          'onError': this.onPlayerError.bind(this),
+          'onReady': this.onPlayerReady.bind(this),
+        }
+      });
+      console.log("this is films : ", this);
+    //}
+    /*else {
+      console.log("error in startvideo")
+    }*/
+    
+
   }
 
   onPlayerReady(event:any) {
     event.target.playVideo();
   }
 
+  videoStopper(event:any):void {
+    event.player.pauseVideo();
+  }
+
   onPlayerStateChange(event:any) {
     console.log(event)
     switch (event.data) {
       case window['YT'].PlayerState.PLAYING:
-        if (this.cleanTime() == 0) {
-          console.log('started ' + this.cleanTime());
+        if (this.cleanTime() == 0) { // if (this.cleanTime(event) == 0) {
+          console.log('started ' + this.cleanTime()); //console.log('started ' + this.cleanTime(event));
         } else {
-          console.log('playing ' + this.cleanTime())
+          console.log('playing ' + this.cleanTime()) //console.log('playing ' + this.cleanTime(event))
         };
         break;
       case window['YT'].PlayerState.PAUSED:
-        if (this.player.getDuration() - this.player.getCurrentTime() != 0) {
-          console.log('paused' + ' @ ' + this.cleanTime());
-        };
+       /* if(event=== this.playersnippets){
+          if (this.playersnippets.getDuration() - this.playersnippets.getCurrentTime() != 0) {
+            console.log('paused' + ' @ ' + this.cleanTime()); //console.log('paused' + ' @ ' + this.cleanTime(event));
+          };
+        }*/
+        //if (event===this.playerfilms){
+          if (this.player.getDuration() - this.player.getCurrentTime() != 0) {
+            console.log('paused' + ' @ ' + this.cleanTime()); // console.log('paused' + ' @ ' + this.cleanTime(event));
+          };
+        //}
         break;
       case window['YT'].PlayerState.ENDED:
         console.log('ended ');
@@ -239,8 +309,16 @@ export class HomeComponent implements OnInit, ElementRef {
     }
   }
       
-  cleanTime() {
-    return Math.round(this.player.getCurrentTime())
+  cleanTime() { // cleanTime(player:any) {
+    return Math.round(this.player.getCurrentTime()) //return Math.round(this.playerfilms.getCurrentTime())
+    
+   /* if (player=== this.playerfilms){
+      return Math.round(this.playersnippets.getCurrentTime())
+    }
+     else if(player=== this.playersnippets){
+      return Math.round(this.playerfilms.getCurrentTime())
+    }
+    else{return console.log("error in CleanTime")}*/
   }
 
   onPlayerError(event:any) {
@@ -267,6 +345,7 @@ export class HomeComponent implements OnInit, ElementRef {
       document.getElementById("crotzsociau")?.setAttribute('src', './assets/Images/crotzponchs/lura_crotz.png')
       document.getElementById("crotzcredits")?.setAttribute('src', './assets/Images/crotzponchs/lura_crotz.png')
       document.getElementById("crotztv")?.setAttribute('src', './assets/Images/crotzponchs/lura_crotz.png')
+      document.getElementById("crotzfilms")?.setAttribute('src', './assets/Images/crotzponchs/lura_crotz.png')
       document.getElementById("crotzradio")?.setAttribute('src', './assets/Images/crotzponchs/lura_crotz.png')
       document.getElementById("crotzlyrics")?.setAttribute('src', './assets/Images/crotzponchs/lura_crotz.png')
       document.getElementById("crotzmag")?.setAttribute('src', './assets/Images/crotzponchs/lura_crotz.png')
@@ -283,6 +362,7 @@ export class HomeComponent implements OnInit, ElementRef {
       document.getElementById("crotzsociau")?.setAttribute('src', './assets/Images/crotzponchs/marselha_crotz.png')
       document.getElementById("crotzcredits")?.setAttribute('src', './assets/Images/crotzponchs/marselha_crotz.png')
       document.getElementById("crotztv")?.setAttribute('src', './assets/Images/crotzponchs/marselha_crotz.png')
+      document.getElementById("crotzfilms")?.setAttribute('src', './assets/Images/crotzponchs/marselha_crotz.png')
       document.getElementById("crotzradio")?.setAttribute('src', './assets/Images/crotzponchs/marselha_crotz.png')
       document.getElementById("crotzlyrics")?.setAttribute('src', './assets/Images/crotzponchs/marselha_crotz.png')
       document.getElementById("crotzmag")?.setAttribute('src', './assets/Images/crotzponchs/marselha_crotz.png')
@@ -299,6 +379,7 @@ export class HomeComponent implements OnInit, ElementRef {
       document.getElementById("crotzsociau")?.setAttribute('src', './assets/Images/crotzponchs/godas_crotz.png')
       document.getElementById("crotzcredits")?.setAttribute('src', './assets/Images/crotzponchs/godas_crotz.png')
       document.getElementById("crotztv")?.setAttribute('src', './assets/Images/crotzponchs/godas_crotz.png')
+      document.getElementById("crotzfilms")?.setAttribute('src', './assets/Images/crotzponchs/godas_crotz.png')
       document.getElementById("crotzradio")?.setAttribute('src', './assets/Images/crotzponchs/godas_crotz.png')
       document.getElementById("crotzlyrics")?.setAttribute('src', './assets/Images/crotzponchs/godas_crotz.png')
       document.getElementById("crotzmag")?.setAttribute('src', './assets/Images/crotzponchs/godas_crotz.png')
@@ -315,6 +396,7 @@ export class HomeComponent implements OnInit, ElementRef {
       document.getElementById("crotzsociau")?.setAttribute('src', './assets/Images/crotzponchs/vitrolas_crotz.png')
       document.getElementById("crotzcredits")?.setAttribute('src', './assets/Images/crotzponchs/vitrolas_crotz.png')
       document.getElementById("crotztv")?.setAttribute('src', './assets/Images/crotzponchs/vitrolas_crotz.png')
+      document.getElementById("crotzfilms")?.setAttribute('src', './assets/Images/crotzponchs/vitrolas_crotz.png')
       document.getElementById("crotzradio")?.setAttribute('src', './assets/Images/crotzponchs/vitrolas_crotz.png')
       document.getElementById("crotzlyrics")?.setAttribute('src', './assets/Images/crotzponchs/vitrolas_crotz.png')
       document.getElementById("crotzmag")?.setAttribute('src', './assets/Images/crotzponchs/vitrolas_crotz.png')
@@ -331,6 +413,7 @@ export class HomeComponent implements OnInit, ElementRef {
       document.getElementById("crotzsociau")?.setAttribute('src', './assets/Images/crotzponchs/salagon_crotz.png')
       document.getElementById("crotzcredits")?.setAttribute('src', './assets/Images/crotzponchs/salagon_crotz.png')
       document.getElementById("crotztv")?.setAttribute('src', './assets/Images/crotzponchs/salagon_crotz.png')
+      document.getElementById("crotzfilms")?.setAttribute('src', './assets/Images/crotzponchs/salagon_crotz.png')
       document.getElementById("crotzradio")?.setAttribute('src', './assets/Images/crotzponchs/salagon_crotz.png')
       document.getElementById("crotzlyrics")?.setAttribute('src', './assets/Images/crotzponchs/salagon_crotz.png')
       document.getElementById("crotzmag")?.setAttribute('src', './assets/Images/crotzponchs/salagon_crotz.png')
@@ -347,6 +430,7 @@ export class HomeComponent implements OnInit, ElementRef {
       document.getElementById("crotzsociau")?.setAttribute('src', './assets/Images/crotzponchs/venturi_crotz.png')
       document.getElementById("crotzcredits")?.setAttribute('src', './assets/Images/crotzponchs/venturi_crotz.png')
       document.getElementById("crotztv")?.setAttribute('src', './assets/Images/crotzponchs/venturi_crotz.png')
+      document.getElementById("crotzfilms")?.setAttribute('src', './assets/Images/crotzponchs/venturi_crotz.png')
       document.getElementById("crotzradio")?.setAttribute('src', './assets/Images/crotzponchs/venturi_crotz.png')
       document.getElementById("crotzlyrics")?.setAttribute('src', './assets/Images/crotzponchs/venturi_crotz.png')
       document.getElementById("crotzmag")?.setAttribute('src', './assets/Images/crotzponchs/venturi_crotz.png')
@@ -366,7 +450,8 @@ export class HomeComponent implements OnInit, ElementRef {
     this.addzindex(windowid);
 
     if ( windowid.classList.contains('hide') ) { windowid.classList.remove('hide'); }
-    if ( windowid.id === "draggabletv" ) { this.init(); }
+    //if ( windowid.id === "draggabletv" ) { this.init("snippets"); }
+    if ( windowid.id === "draggablefilms" ) { this.init(); } // { this.init("films"); }
     if ( windowid.id === "draggableradio" ) { 
       var iframesoundcloud = document.getElementById('iframesoundcloud');
       var widget1         = this.SC.Widget(iframesoundcloud);
@@ -375,7 +460,7 @@ export class HomeComponent implements OnInit, ElementRef {
      }
   }
 
-  soundcloudAuthentication(){
+  soundcloudAuthentication(){ // NE MARCHE PAS
     this.SC = document.createElement('script');
     this.SC.src="https://connect.soundcloud.com/sdk/sdk-3.3.2.js";
     //this.SC.src="https://w.soundcloud.com/player/api.js";
@@ -390,14 +475,13 @@ export class HomeComponent implements OnInit, ElementRef {
     iframesoundcloud.play();
   }
 
-  videoStopper(event:any):void {
-    event.player.pauseVideo();
-  }
-
   closewindow(windowid: any): void{
     windowid.classList.add('hide');
-    if(windowid.id==="draggabletv"){
-      this.videoStopper(this); 
+    /*if(windowid.id==="draggabletv"){
+      this.videoStopper(this.playersnippets); 
+    }*/
+    if(windowid.id==="draggablefilms"){
+      this.videoStopper(this); // this.videoStopper(this.playerfilms); 
     }
   }
 }
