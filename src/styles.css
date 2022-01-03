@@ -317,6 +317,11 @@ a, a:hover {
     text-decoration:underline;
 }
 
+/*------SHOP-------*/
+.imgshop{
+    max-height: fit-content;
+    overflow-y: scroll;
+}
 /*------SOCIAU-------*/
 .facebook{
 	background: url('./assets/Images/sociau/fb_link.png') no-repeat;

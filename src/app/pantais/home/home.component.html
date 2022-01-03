@@ -201,21 +201,59 @@
     <!-----------SHOP--------------->
     <div #draggableshop  id="draggableshop" class="draggable todrag shop hide" (click)="addzindex(draggableshop)"  cdkDragBoundary="#draggingzone" cdkDrag>
       <div #draggableshopheader class="drag-header todrag" cdkDragHandle>
-        <span><img id="crotzshop" src="./assets/Images/crotzponchs/godas_crotz.png" #iconcloseshop (click)="closewindow(draggableshop)" class="draggableheadericon"alt="icon_crotz"></span> PANTAIS CLUS shop
+        <span><img id="crotzshop" src="./assets/Images/crotzponchs/godas_crotz.png" #iconcloseshop (click)="closewindow(draggableshop)" 
+          class="draggableheadericon"alt="icon_crotz"></span> PANTAIS CLUS shop
       </div>
       <div class="insideframe"> <!-----------cadre interieur--------------->
-        <div class="d-flex fenestra iconas iconasshop">
-
-          <a href="./assets/Images/pantaisclus.pdf" target="_blank">
-            <img class="img-fluid" src="./assets/Images/icones/lyrics_art.png" alt="lyrics"> 
-          </a>
-          <a href="./assets/Images/pantaisclus_eng.pdf" target="_blank">
-            <img class="img-fluid" src="./assets/Images/icones/lyrics_eng.png" alt="english">
-          </a>
-          <a href="./assets/Images/pantaisclus_fr.pdf" target="_blank">
-            <img class="img-fluid" src="./assets/Images/icones/lyrics_fr.png" alt="francais">
-          </a>
-          
+        <div class="d-flex fenestra iconas imgshop container">
+          <div class="row">
+            <div class="col">
+              <a href="https://botiga.pantaisrecords.com/product/pantaisclus" target="_blank">
+                <img class="img-fluid" src='./assets/Images/shop/pantaiclus.png' 
+                  onmouseover="this.src='./assets/Images/shop/pantaiclus_hover.png';" 
+                  onmouseout="this.src='./assets/Images/shop/pantaiclus.png';" alt="CD"/>
+              </a>
+            </div>
+            <div class="col">
+              <a href="https://botiga.pantaisrecords.com/product/pantaiscd" target="_blank">
+                <img class="img-fluid" src='./assets/Images/shop/pantaicluscd.png' 
+                  onmouseover="this.src='./assets/Images/shop/pantaiscluscd_hover.png';" 
+                  onmouseout="this.src='./assets/Images/shop/pantaicluscd.png';" alt="CD"/>
+              </a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <a href="https://botiga.pantaisrecords.com/product/pantaisusina" target="_blank">
+                <img class="img-fluid" src='./assets/Images/shop/pantaisusina.png' 
+                  onmouseover="this.src='./assets/Images/shop/pantaisusina_hover.png';" 
+                  onmouseout="this.src='./assets/Images/shop/pantaisusina.png';" alt="CD_Usina"/>
+              </a>
+            </div>
+            <div class="col">
+              <a href="https://botiga.pantaisrecords.com/product/pantais-clus-stickers-lot-rodin" target="_blank">
+                <img class="img-fluid" src='./assets/Images/shop/stickers.png' 
+                  onmouseover="this.src='./assets/Images/shop/stickers_hover.png';" 
+                  onmouseout="this.src='./assets/Images/shop/stickers.png';" alt="Stickers"/>
+              </a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <a href="https://botiga.pantaisrecords.com/product/pantaisclusk7" target="_blank">
+                <img class="img-fluid" src='./assets/Images/shop/k7.png' 
+                  onmouseover="this.src='./assets/Images/shop/k7_hover.png';" 
+                  onmouseout="this.src='./assets/Images/shop/k7.png';" alt="k7"/>
+              </a>
+            </div>
+            <div class="col">
+              <a href="https://botiga.pantaisrecords.com/product/flor-sabon" target="_blank">
+                <img class="img-fluid" src='./assets/Images/shop/sabon.png' 
+                  onmouseover="this.src='./assets/Images/shop/sabon_hover.png';" 
+                  onmouseout="this.src='./assets/Images/shop/sabon.png';" alt="sabon"/>
+              </a>
+            </div>
+          </div>
         </div>
       </div>    
     </div>

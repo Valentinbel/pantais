@@ -1,3 +1,8 @@
+* shop --> ouvrira une fenêtre avec des png et un scroll, 
+    Ajouter texte. 
+    Mettre en colonnes
+
+
 apisoundcloud.js copié dans SRC /Users/valentin/Documents/IT/Pantaisclus/PantaisclusART/Pantaisclus/pantais/node_modules/@angular-devkit/build-angular/src
 Soundcloud
     Boutons play/pause/next...
@@ -12,18 +17,7 @@ Overlay tv bgTv (z-index+1) https://www.w3schools.com/howto/howto_css_overlay.as
 * Oninit random theme
 
 * Icones en bas sur 2 lignes
-* shop --> ouvrira une fenêtre avec des png et un scroll, 
-    chaque png correspondant à un article, 
-    et si tu cliques sur le png ça ouvre la page de l'article sur big cartel (jouable?) 
-        https://stackoverflow.com/questions/24561322/how-to-open-another-website-within-the-body-of-my-website
-    [ou alors en jpg sur fond papier, version catalogue imprimé, un peu pixel comme les catalogues 90's ça pourrait être cool ça] 
-    Pour les liens: 
-        LP: https://botiga.pantaisrecords.com/product/pantaisclus
-        CD: https://botiga.pantaisrecords.com/product/pantaiscd
-        CD usina: https://botiga.pantaisrecords.com/product/pantaisusina
-        STICKERS: https://botiga.pantaisrecords.com/product/pantais-clus-stickers-lot-rodin
-        K7: https://botiga.pantaisrecords.com/product/pantaisclusk7
-        SAVON: https://botiga.pantaisrecords.com/product/flor-sabon
+
 * mag: des photos, faudra voir comment on peut présenter ça de façon 90's. 
 Je me disais que ça pourrait s'ouvrir en pleine page, comme le 404, et avoir une anim pour tourner les pages comme un magazine. 
 Pour le "mag" photo, est-ce que tu sais comment faire ce genre d'animation: 
