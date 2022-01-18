@@ -5,7 +5,9 @@ import { MusicService } from './../../music/shared/music.service';
 import { MagComponent } from '../mag/mag.component';
 // import reframe from 'refame.js';
 import { YouTubePlayerModule } from "@angular/youtube-player";
-//import { Track } from 'ngx-audio-player'; 
+import { Track } from 'ngx-audio-player'; 
+import { map , debounceTime, distinctUntilChanged } from 'rxjs/operators';
+import { Observable, Subject, of } from 'rxjs';
 //import * as SC from './../../../assets/apisoundcloud.js';
 
 
@@ -48,19 +50,20 @@ export class HomeComponent implements OnInit, ElementRef {
    //public SC: any;
    public soundcloudClient: any;
 
+   // ngx-audio-player
   msaapDisplayTitle = true;
   msaapDisplayPlayList = true;
   msaapPageSizeOptions = [2,4,6];
   msaapDisplayVolumeControls = true;
-  msaapDisplayRepeatControls = true;
-  msaapDisplayArtist = false;
-  msaapDisplayDuration = false;
-  msaapDisablePositionSlider = true;
+  msaapDisplayRepeatControls = false;
+  msaapDisplayArtist = true;
+  msaapDisplayDuration = true;
+  msaapDisablePositionSlider = false;
   
 
 
   constructor(private  musicService: MusicService, private activatedroute: ActivatedRoute,) {
-    this.soundcloudClient = 264588954; // essayer avec client depuis chqanson de SEC?
+    //this.soundcloudClient = 264588954; // essayer avec client depuis chqanson de SEC?
     
   }
   
@@ -82,6 +85,53 @@ export class HomeComponent implements OnInit, ElementRef {
     
     //this.soundcloudAuthentication()
   }
+
+  // Material Style Advance Audio Player Playlist
+msaapPlaylist: Track[] = [
+  {
+    title: 'pichòta flor',
+    link: './assets/audio/1_pichota_flor.mp3',
+    artist: 'Rodín',
+    duration: 248
+  },
+  {
+    title: 'rei de la luna',
+    link: './assets/audio/2_rei_de_la_luna.mp3',
+    artist: 'Rodín',
+    duration: 259
+  },
+  {
+    title: 'leis alas dau temps',
+    link: './assets/audio/3_leis_alas_dau_temps.mp3',
+    artist: 'Rodín',
+    duration: 230
+  },
+  {
+    title: 'pensarai en tu',
+    link: './assets/audio/4_pensarai_en_tu.mp3',
+    artist: 'Rodín',
+    duration: 228
+  },
+  {
+    title: 'ma cançon',
+    link: './assets/audio/5_ma_cançon.mp3',
+    artist: 'Rodín',
+    duration: 283
+  },
+  {
+    title: 'temps dei sòmis',
+    link: './assets/audio/6_temps_dei_somis.mp3',
+    artist: 'Rodín',
+    duration: 324
+  },
+  {
+    title: 'me\'n vau',
+    link: './assets/audio/7_me_n_vau.mp3',
+    artist: 'Rodín',
+    duration: 415
+  },
+
+];
 
   handleEnded(e:any) {
     this.handleRandom();

@@ -419,4 +419,10 @@ a, a:hover {
 .youtube:hover{
     background-image: url('./assets/Images/sociau/ytb_hover.png');}
 
-
+/*------RADIO (ngx-audio-player)-------*/
+.mat-paginator, .mat-content, .mat-expansion-indicator::after {
+    display: none!important;
+}
+.mat-card {
+    font-family: var(--bs-font-sans-serif)!important;
+}

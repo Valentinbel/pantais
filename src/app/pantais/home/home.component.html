@@ -100,60 +100,15 @@
         <span><img id="crotzradio" src="./assets/Images/crotzponchs/godas_crotz.png" #iconcloseradio (click)="closewindow(draggableradio)" class="draggableheadericon"alt="icon_crotz"></span> PANTAIS CLUS radio
       </div>
       <div class="insideframe"> 
-        <div > <!-- [ngStyle]="backgroundStyle" -->
-          <img class="gifK7" src="./assets/Images/GIFk7.gif" alt="gifK7">
-          
-          <iframe id="iframesoundcloud" class="hide"
-            width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay" 
-            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1019226721&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">
-          </iframe>
-          <div 
-            style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;
-            overflow: hidden;white-space: nowrap;text-overflow: ellipsis; 
-            font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;
-            font-weight: 100;">
-            <a href="https://soundcloud.com/rodiin" title="rodín" target="_blank" 
-              style="color: #cccccc; text-decoration: none;">rodín
-            </a> · 
-            <a href="https://soundcloud.com/rodiin/sets/pantaisclus" 
-              title="Pantais Clus" target="_blank" style="color: #cccccc; text-decoration: none;">
-              Pantais Clus
-            </a>
-          </div>
-
-          <!-- ---- On le met pas ---- <music-search (query)="handleQuery($event)" (update)="handleUpdate($event)" [tracks]="filteredTracks"></music-search>-->
-        
-          <!-- ---- Ca oui---- <music-details
-            [title]="title"
-          ></music-details>
-        
-          <music-player
-            (random)="handleRandom()" 
-            (backward)="handleBackward()"
-            (forward)="handleForward()"
-            (pauseplay)="handlePausePlay()"
-            (stop)="handleStop()"
-            [paused]="paused"
-          ></music-player>--> <!-- ---- non ---- (random)="handleRandom($event)"-->
-        
-          <!-- --- oui--- <music-progress
-            [current]="position"
-            [elapsed]="elapsed"
-            [total]="duration"
-          ></music-progress>-->
-        
-          <!-- ---- non --- <music-footer></music-footer>-->
-        
-        </div>
-        <!-- <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/293&amp;"></iframe> -->
-       <!-- <ngx-audio-player [playlist]="msaapPlaylist" [displayTitle]="msaapDisplayTitle" [autoPlay]="true" 
-        muted="muted" [displayPlaylist]="msaapDisplayPlayList" 
-        [displayVolumeControls]="msaapDisplayVolumeControls" [displayRepeatControls]="msaapDisplayRepeatControls"
-        [disablePositionSlider]="msaapDisablePositionSlider" [displayArtist]="msaapDisplayArtist" 
-        [displayDuration]="msaapDisplayDuration" [expanded]="true"></ngx-audio-player> -->
+        <ngx-audio-player [playlist]="msaapPlaylist" [displayTitle]="msaapDisplayTitle" [autoPlay]="false" 
+          muted="muted" [displayPlaylist]="msaapDisplayPlayList" 
+          [displayVolumeControls]="msaapDisplayVolumeControls" [displayRepeatControls]="msaapDisplayRepeatControls"
+          [disablePositionSlider]="msaapDisablePositionSlider" [displayArtist]="msaapDisplayArtist" 
+          [displayDuration]="msaapDisplayDuration" [expanded]="true">
+        </ngx-audio-player> 
       </div>
     </div> 
-    <!--[pageSizeOptions]="pageSizeOptions" trackEnded)="onEnded($event)" -->
+    <!-- [pageSizeOptions]="pageSizeOptions" (trackEnded)="onEnded($event)" -->
 
     <!-----------LYRICS--------------->
     <div #draggablelyrics  id="draggablelyrics" class="draggable todrag lyrics hide" (click)="addzindex(draggablelyrics)"  cdkDragBoundary="#draggingzone" cdkDrag>

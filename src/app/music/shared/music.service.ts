@@ -1,11 +1,8 @@
 import { Injectable } from '@angular/core';
 import { ApiService } from './api.service';
 //import { HttpClient } from '@angular/common/http';
-//import { Observable, Subject, of } from 'rxjs'
-import { map, debounceTime, distinctUntilChanged } from 'rxjs/operators';
-//import 'rxjs/add/operator/map';
-//import 'rxjs/add/operator/debounceTime';
-//import 'rxjs/add/operator/distinctUntilChanged';
+//import { Observable, Subject, of } from 'rxjs';
+import { map , debounceTime, distinctUntilChanged } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
