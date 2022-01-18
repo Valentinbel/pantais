@@ -2,6 +2,7 @@ import { QueryBindingType } from '@angular/compiler/src/core';
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MusicService } from './../../music/shared/music.service';
+import { MagComponent } from '../mag/mag.component';
 // import reframe from 'refame.js';
 import { YouTubePlayerModule } from "@angular/youtube-player";
 //import { Track } from 'ngx-audio-player'; 
@@ -18,6 +19,8 @@ export class HomeComponent implements OnInit, ElementRef {
   nativeElement: any;
   public uppedzindexreference: number =1;
   errorView: number | undefined;
+  public magView: Boolean = false;
+  public snippetView: Boolean = false;
 
   /** YOUTUBE **/
   // public video: any;
@@ -77,7 +80,7 @@ export class HomeComponent implements OnInit, ElementRef {
       this.errorView = data.error;
     };
     
-    this.soundcloudAuthentication()
+    //this.soundcloudAuthentication()
   }
 
   handleEnded(e:any) {
@@ -344,7 +347,7 @@ export class HomeComponent implements OnInit, ElementRef {
       
       document.getElementById("crotzsociau")?.setAttribute('src', './assets/Images/crotzponchs/lura_crotz.png')
       document.getElementById("crotzcredits")?.setAttribute('src', './assets/Images/crotzponchs/lura_crotz.png')
-      document.getElementById("crotztv")?.setAttribute('src', './assets/Images/crotzponchs/lura_crotz.png')
+      document.getElementById("crotzsnippet")?.setAttribute('src', './assets/Images/crotzponchs/lura_crotz.png')
       document.getElementById("crotzfilms")?.setAttribute('src', './assets/Images/crotzponchs/lura_crotz.png')
       document.getElementById("crotzradio")?.setAttribute('src', './assets/Images/crotzponchs/lura_crotz.png')
       document.getElementById("crotzlyrics")?.setAttribute('src', './assets/Images/crotzponchs/lura_crotz.png')
@@ -361,7 +364,7 @@ export class HomeComponent implements OnInit, ElementRef {
 
       document.getElementById("crotzsociau")?.setAttribute('src', './assets/Images/crotzponchs/marselha_crotz.png')
       document.getElementById("crotzcredits")?.setAttribute('src', './assets/Images/crotzponchs/marselha_crotz.png')
-      document.getElementById("crotztv")?.setAttribute('src', './assets/Images/crotzponchs/marselha_crotz.png')
+      document.getElementById("crotzsnippet")?.setAttribute('src', './assets/Images/crotzponchs/marselha_crotz.png')
       document.getElementById("crotzfilms")?.setAttribute('src', './assets/Images/crotzponchs/marselha_crotz.png')
       document.getElementById("crotzradio")?.setAttribute('src', './assets/Images/crotzponchs/marselha_crotz.png')
       document.getElementById("crotzlyrics")?.setAttribute('src', './assets/Images/crotzponchs/marselha_crotz.png')
@@ -378,7 +381,7 @@ export class HomeComponent implements OnInit, ElementRef {
 
       document.getElementById("crotzsociau")?.setAttribute('src', './assets/Images/crotzponchs/godas_crotz.png')
       document.getElementById("crotzcredits")?.setAttribute('src', './assets/Images/crotzponchs/godas_crotz.png')
-      document.getElementById("crotztv")?.setAttribute('src', './assets/Images/crotzponchs/godas_crotz.png')
+      document.getElementById("crotzsnippet")?.setAttribute('src', './assets/Images/crotzponchs/godas_crotz.png')
       document.getElementById("crotzfilms")?.setAttribute('src', './assets/Images/crotzponchs/godas_crotz.png')
       document.getElementById("crotzradio")?.setAttribute('src', './assets/Images/crotzponchs/godas_crotz.png')
       document.getElementById("crotzlyrics")?.setAttribute('src', './assets/Images/crotzponchs/godas_crotz.png')
@@ -395,7 +398,7 @@ export class HomeComponent implements OnInit, ElementRef {
 
       document.getElementById("crotzsociau")?.setAttribute('src', './assets/Images/crotzponchs/vitrolas_crotz.png')
       document.getElementById("crotzcredits")?.setAttribute('src', './assets/Images/crotzponchs/vitrolas_crotz.png')
-      document.getElementById("crotztv")?.setAttribute('src', './assets/Images/crotzponchs/vitrolas_crotz.png')
+      document.getElementById("crotzsnippet")?.setAttribute('src', './assets/Images/crotzponchs/vitrolas_crotz.png')
       document.getElementById("crotzfilms")?.setAttribute('src', './assets/Images/crotzponchs/vitrolas_crotz.png')
       document.getElementById("crotzradio")?.setAttribute('src', './assets/Images/crotzponchs/vitrolas_crotz.png')
       document.getElementById("crotzlyrics")?.setAttribute('src', './assets/Images/crotzponchs/vitrolas_crotz.png')
@@ -412,7 +415,7 @@ export class HomeComponent implements OnInit, ElementRef {
 
       document.getElementById("crotzsociau")?.setAttribute('src', './assets/Images/crotzponchs/salagon_crotz.png')
       document.getElementById("crotzcredits")?.setAttribute('src', './assets/Images/crotzponchs/salagon_crotz.png')
-      document.getElementById("crotztv")?.setAttribute('src', './assets/Images/crotzponchs/salagon_crotz.png')
+      document.getElementById("crotzsnippet")?.setAttribute('src', './assets/Images/crotzponchs/salagon_crotz.png')
       document.getElementById("crotzfilms")?.setAttribute('src', './assets/Images/crotzponchs/salagon_crotz.png')
       document.getElementById("crotzradio")?.setAttribute('src', './assets/Images/crotzponchs/salagon_crotz.png')
       document.getElementById("crotzlyrics")?.setAttribute('src', './assets/Images/crotzponchs/salagon_crotz.png')
@@ -429,7 +432,7 @@ export class HomeComponent implements OnInit, ElementRef {
 
       document.getElementById("crotzsociau")?.setAttribute('src', './assets/Images/crotzponchs/venturi_crotz.png')
       document.getElementById("crotzcredits")?.setAttribute('src', './assets/Images/crotzponchs/venturi_crotz.png')
-      document.getElementById("crotztv")?.setAttribute('src', './assets/Images/crotzponchs/venturi_crotz.png')
+      document.getElementById("crotzsnippet")?.setAttribute('src', './assets/Images/crotzponchs/venturi_crotz.png')
       document.getElementById("crotzfilms")?.setAttribute('src', './assets/Images/crotzponchs/venturi_crotz.png')
       document.getElementById("crotzradio")?.setAttribute('src', './assets/Images/crotzponchs/venturi_crotz.png')
       document.getElementById("crotzlyrics")?.setAttribute('src', './assets/Images/crotzponchs/venturi_crotz.png')
@@ -449,35 +452,50 @@ export class HomeComponent implements OnInit, ElementRef {
   displaywindow(windowid: any): void  {
     this.addzindex(windowid);
 
-    if ( windowid.classList.contains('hide') ) { windowid.classList.remove('hide'); }
-    //if ( windowid.id === "draggabletv" ) { this.init("snippets"); }
-    if ( windowid.id === "draggablefilms" ) { this.init(); } // { this.init("films"); }
-    if ( windowid.id === "draggableradio" ) { 
-      var iframesoundcloud = document.getElementById('iframesoundcloud');
-      var widget1         = this.SC.Widget(iframesoundcloud);
-      //var widget2         = SC.Widget(iframeElementID);
-      widget1.play();
+    if ( windowid.classList.contains('hide') ) 
+      { 
+        windowid.classList.remove('hide'); 
+      }
+    if ( windowid.id === "draggablefilms" ) 
+      { 
+        this.init(); // this.init("films")
+      } 
+    if ( windowid.id === "draggablemag" ) 
+      { 
+        this.magView = true; 
+      }
+      //if ( windowid.id === "draggablesnippet" ) { this.init("snippets"); } 
+      // if ( windowid.id === "draggablesnippet" ) 
+      // { 
+      //   this.snippetView = true; 
+      // } 
+    if ( windowid.id === "draggableradio" ) 
+      { 
+      // var iframesoundcloud = document.getElementById('iframesoundcloud');
+      // var widget1         = this.SC.Widget(iframesoundcloud);
+      // //var widget2         = SC.Widget(iframeElementID);
+      // widget1.play();
      }
   }
 
-  soundcloudAuthentication(){ // NE MARCHE PAS
-    this.SC = document.createElement('script');
-    this.SC.src="https://connect.soundcloud.com/sdk/sdk-3.3.2.js";
-    //this.SC.src="https://w.soundcloud.com/player/api.js";
-    this.SC.initialize({
-      client_id: this.soundcloudClient
-    });
-    var iframesoundcloud:any = document.getElementById('iframesoundcloud');
-    var myiframe = document.querySelector('iframe');
-    var widget1         = this.SC.Widget(iframesoundcloud);
-    var widget2         = this.SC.Widget(myiframe);
-    //widget1.play();
-    iframesoundcloud.play();
-  }
+  // soundcloudAuthentication(){ // NE MARCHE PAS
+  //   this.SC = document.createElement('script');
+  //   this.SC.src="https://connect.soundcloud.com/sdk/sdk-3.3.2.js";
+  //   //this.SC.src="https://w.soundcloud.com/player/api.js";
+  //   this.SC.initialize({
+  //     client_id: this.soundcloudClient
+  //   });
+  //   var iframesoundcloud:any = document.getElementById('iframesoundcloud');
+  //   var myiframe = document.querySelector('iframe');
+  //   var widget1         = this.SC.Widget(iframesoundcloud);
+  //   var widget2         = this.SC.Widget(myiframe);
+  //   //widget1.play();
+  //   iframesoundcloud.play();
+  // }
 
   closewindow(windowid: any): void{
     windowid.classList.add('hide');
-    /*if(windowid.id==="draggabletv"){
+    /*if(windowid.id==="draggablesnippet"){
       this.videoStopper(this.playersnippets); 
     }*/
     if(windowid.id==="draggablefilms"){

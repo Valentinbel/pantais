@@ -14,6 +14,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pantais/home/home.component';
 import { NotFoundComponent } from './pantais/not-found/not-found.component';
+import { MagComponent } from './pantais/mag/mag.component';
+import { SnippetComponent } from './pantais/snippet/snippet.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MusicModule } from './music/music.module'
 
@@ -22,6 +24,8 @@ import { MusicModule } from './music/music.module'
     AppComponent, 
     HomeComponent,
     NotFoundComponent, 
+    MagComponent,
+    SnippetComponent
   ],
   imports: [
     BrowserModule,

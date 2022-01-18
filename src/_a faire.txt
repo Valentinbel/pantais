@@ -1,5 +1,20 @@
-* shop  Ajouter texte. 
+* audioSousComponent de Home
+* https://npm.io/package/ngx-audio-player ==> Ok; Sons internes
 
+* SNIPPET: 
+Deplacer mag en enfant de Home et voir si ca marche
+(creer et supprimer l'ancien?)
+OU BIEN essayer un trick via css (changemen de classe...?)
+Et faire ça: https://stackoverflow.com/questions/37587732/how-to-call-another-components-function-in-angular2
+pour lancer le init depuis component Snippet. 
+
+
+* mag: 
+>> rajouter le hover
+>> html du component mag, voir le javascriupt auoi rajouter + les classes du html. De choses en css? 
+https://classic.esquire.com/article/1991/1/1/columbia-house
+https://codepen.io/diemoritat/pen/LKROYZ
+https://codepen.io/jayhansim/pen/Hytmg
 
 
 apisoundcloud.js copié dans SRC /Users/valentin/Documents/IT/Pantaisclus/PantaisclusART/Pantaisclus/pantais/node_modules/@angular-devkit/build-angular/src
@@ -17,16 +32,7 @@ Overlay tv bgTv (z-index+1) https://www.w3schools.com/howto/howto_css_overlay.as
 
 * Icones en bas sur 2 lignes
 
-* mag: des photos, faudra voir comment on peut présenter ça de façon 90's. 
-Je me disais que ça pourrait s'ouvrir en pleine page, comme le 404, et avoir une anim pour tourner les pages comme un magazine. 
-Pour le "mag" photo, est-ce que tu sais comment faire ce genre d'animation: 
-https://classic.esquire.com/article/1991/1/1/columbia-house
-    https://codepen.io/deineko/pen/oXgwMQ : changement qui tourne
-    https://codepen.io/jayhansim/pen/Hytmg : pageflip hover effect
-    https://codepen.io/JensSchnitzler/pen/XyyZKY book
-    https://codepen.io/mblmarlon/pen/poJoVzx book
-    https://codepen.io/mblmarlon/pen/poJoVzx / https://blogs.infinitesquare.com/posts/web/javascript-babel 
-        (=>can i use babel in angular?)
+
 * solet --> si on se chauffe de faire le solitaire custom 
 
 * Films --> pareil mais avec les clips en 16:9 
@@ -61,16 +67,23 @@ Create module (with routing)
 ng g module admin --routing
 
 create component
-ng g component music/music-progress
+
+
+
 ng g service music/shared/music
 
+Ajouter meta Reseaux Sociaux
 
 =========================================================
-RETOUR MAIL Rodin
 
-=========================================================
-------
 ng serve --open
+
+-------
+SASS
+npm install -g sass
+// The watch flag tells Sass to watch your source files for changes, and re-compile CSS each time you save your Sass
+sass --watch src/mag_style.scss:src/app/pantais/mag/mag.component.css
+// version manuelle: (sass src/mag_style.scss:src/app/pantais/mag/mag.component.css)
 
 https://developers.google.com/youtube/iframe_api_reference
 
