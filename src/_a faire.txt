@@ -1,8 +1,15 @@
+* mag: 
+>> css pages comme la premiere (photo)
+>> rajouter le hover
+>> html du component mag, voir le javascriupt auoi rajouter + les classes du html. De choses en css? 
+https://www.npmjs.com/package/page-flip
+pure CSS (NON): https://codepen.io/diemoritat/pen/LKROYZ / https://codepen.io/jayhansim/pen/Hytmg
+
+
 * RADIO
-Pointers
-repeat all off
+repeat all off/ do not exists. 
 equalizer: https://codepen.io/munkholm/pen/mdbOpBp (?)
-https://npm.io/package/ngx-audio-player ==> Ok; Sons internes
+plugin from: https://npm.io/package/ngx-audio-player ==> Ok; Sons internes
 
 * SNIPPET: 
 Deplacer mag en enfant de Home et voir si ca marche
@@ -10,15 +17,6 @@ Deplacer mag en enfant de Home et voir si ca marche
 OU BIEN essayer un trick via css (changemen de classe...?)
 Et faire ça: https://stackoverflow.com/questions/37587732/how-to-call-another-components-function-in-angular2
 pour lancer le init depuis component Snippet. 
-
-
-* mag: 
->> css pages comme la premiere (photo)
->> rajouter le hover
->> html du component mag, voir le javascriupt auoi rajouter + les classes du html. De choses en css? 
-https://classic.esquire.com/article/1991/1/1/columbia-house
-https://codepen.io/diemoritat/pen/LKROYZ
-https://codepen.io/jayhansim/pen/Hytmg
 
 
 apisoundcloud.js copié dans SRC /Users/valentin/Documents/IT/Pantaisclus/PantaisclusART/Pantaisclus/pantais/node_modules/@angular-devkit/build-angular/src
