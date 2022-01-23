@@ -25,13 +25,14 @@
     padding-left: 0px;
 }
 
-a:-webkit-any-link, a img, .underline, .dropdown-item, .draggableheadericon, .drag-header span img {
+a:-webkit-any-link, a img, .underline, .dropdown-item, .draggableheadericon, .drag-header span img, 
+mat-icon svg, mat-icon svg path, button {
     cursor: url('./assets/Images/cursor/cursor_det.svg'), url('./assets/Images/cursorlite/cursordet.png') 3 0, auto!important;
 }
 
 .draggable a, .cosdepagina a, .iconas a, .iconas a img, 
 #iconclosesociau, #iconclosecredits, .draggableheadericon, .drag-header span img,
-.underline, .dropdown-item{
+.underline, .dropdown-item, mat-icon svg, mat-icon svg path, button {
     cursor: url('./assets/Images/cursor/cursor_det.svg'), url('./assets/Images/cursorlite/cursordet.png') 3 0, auto!important;
 }
 
