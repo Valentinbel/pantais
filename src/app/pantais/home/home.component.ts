@@ -1,14 +1,12 @@
 import { QueryBindingType } from '@angular/compiler/src/core';
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { MusicService } from './../../music/shared/music.service';
 import { MagComponent } from '../mag/mag.component';
 // import reframe from 'refame.js';
 import { YouTubePlayerModule } from "@angular/youtube-player";
-import { Track } from 'ngx-audio-player'; 
+import { Track , AudioPlayerComponent} from 'ngx-audio-player'; 
 import { map , debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { Observable, Subject, of } from 'rxjs';
-//import * as SC from './../../../assets/apisoundcloud.js';
 
 
 @Component({
@@ -33,10 +31,7 @@ export class HomeComponent implements OnInit, ElementRef {
   public reframedsnippets: Boolean = false;
   public reframedfilms: Boolean = false;
   public reframed: Boolean = false;
-  
-  /** SOUNDCLOUD **/
-  declare apisoundcloud: any ;
-  declare SC: any;
+
 
   title: any;
   position: any;
@@ -47,205 +42,72 @@ export class HomeComponent implements OnInit, ElementRef {
 
   paused = true;
 
-   //public SC: any;
-   public soundcloudClient: any;
-
    // ngx-audio-player
   msaapDisplayTitle = true;
   msaapDisplayPlayList = true;
   msaapPageSizeOptions = [2,4,6];
   msaapDisplayVolumeControls = true;
   msaapDisplayRepeatControls = false;
-  msaapDisplayArtist = true;
+  msaapDisplayArtist = false;
   msaapDisplayDuration = true;
-  msaapDisablePositionSlider = false;
+  msaapDisablePositionSlider = false;  
+  autoPlay : boolean = false;
+  //autoPlay: false;
+  // voir: AudioPlayerComponent
+
+
+
+  constructor(private activatedroute: ActivatedRoute,) {}
   
-
-
-  constructor(private  musicService: MusicService, private activatedroute: ActivatedRoute,) {
-    //this.soundcloudClient = 264588954; // essayer avec client depuis chqanson de SEC?
-    
-  }
+  ngOnInit() { }
+   //autoPlay =true;
+    // Material Style Advance Audio Player Playlist
+  msaapPlaylist: Track[] = 
+  [
+    {
+      title: 'pichòta flor',
+      link: './assets/audio/1_pichota_flor.mp3',
+      artist: 'Rodín',
+      duration: 248
+    },
+    {
+      title: 'rei de la luna',
+      link: './assets/audio/2_rei_de_la_luna.mp3',
+      artist: 'Rodín',
+      duration: 259
+    },
+    {
+      title: 'leis alas dau temps',
+      link: './assets/audio/3_leis_alas_dau_temps.mp3',
+      artist: 'Rodín',
+      duration: 230
+    },
+    {
+      title: 'pensarai en tu',
+      link: './assets/audio/4_pensarai_en_tu.mp3',
+      artist: 'Rodín',
+      duration: 228
+    },
+    {
+      title: 'ma cançon',
+      link: './assets/audio/5_ma_cançon.mp3',
+      artist: 'Rodín',
+      duration: 283
+    },
+    {
+      title: 'temps dei sòmis',
+      link: './assets/audio/6_temps_dei_somis.mp3',
+      artist: 'Rodín',
+      duration: 324
+    },
+    {
+      title: 'me\'n vau',
+      link: './assets/audio/7_me_n_vau.mp3',
+      artist: 'Rodín',
+      duration: 415
+    },
+  ];
   
-
-  ngOnInit() {
-    this.musicService.getPlaylistTracks().subscribe(tracks => {
-      this.tracks = tracks;
-      this.handleRandom();
-    });
-    // On song end
-    this.musicService.audio.onended = this.handleEnded.bind(this);
-    // On play time update
-    this.musicService.audio.ontimeupdate = this.handleTimeUpdate.bind(this);
-    
-    const data = this.activatedroute.snapshot.data;
-    if(data.hasOwnProperty('error')) {
-      this.errorView = data.error;
-    };
-    
-    //this.soundcloudAuthentication()
-  }
-
-  // Material Style Advance Audio Player Playlist
-msaapPlaylist: Track[] = [
-  {
-    title: 'pichòta flor',
-    link: './assets/audio/1_pichota_flor.mp3',
-    artist: 'Rodín',
-    duration: 248
-  },
-  {
-    title: 'rei de la luna',
-    link: './assets/audio/2_rei_de_la_luna.mp3',
-    artist: 'Rodín',
-    duration: 259
-  },
-  {
-    title: 'leis alas dau temps',
-    link: './assets/audio/3_leis_alas_dau_temps.mp3',
-    artist: 'Rodín',
-    duration: 230
-  },
-  {
-    title: 'pensarai en tu',
-    link: './assets/audio/4_pensarai_en_tu.mp3',
-    artist: 'Rodín',
-    duration: 228
-  },
-  {
-    title: 'ma cançon',
-    link: './assets/audio/5_ma_cançon.mp3',
-    artist: 'Rodín',
-    duration: 283
-  },
-  {
-    title: 'temps dei sòmis',
-    link: './assets/audio/6_temps_dei_somis.mp3',
-    artist: 'Rodín',
-    duration: 324
-  },
-  {
-    title: 'me\'n vau',
-    link: './assets/audio/7_me_n_vau.mp3',
-    artist: 'Rodín',
-    duration: 415
-  },
-
-];
-
-  handleEnded(e:any) {
-    this.handleRandom();
-  }
-  
-  handleTimeUpdate(e:any) {
-    const elapsed =  this.musicService.audio.currentTime;
-    const duration =  this.musicService.audio.duration;
-    this.position = elapsed / duration;
-    this.elapsed = this.musicService.formatTime(elapsed);
-    this.duration = this.musicService.formatTime(duration);
-  }
-
-   handleRandom() {
-    // Pluck a song
-    const randomTrack = this.musicService.randomTrack(this.tracks);
-    // Play the plucked song
-    this.musicService.play(randomTrack.stream_url)
-    // Set the title property
-    this.title = randomTrack.title;
-    // Create a background based on the playing song
-    this.backgroundStyle = this.composeBackgroundStyle(randomTrack.artwork_url)
-  }
-
-  composeBackgroundStyle(url:any) {
-    return {
-      width: '100%',
-      height: '600px',
-      backgroundSize:'cover',
-      backgroundImage: `linear-gradient(
-      rgba(0, 0, 0, 0.7),
-      rgba(0, 0, 0, 0.7)
-      ),   
-      url(${this.musicService.xlArtwork(url)})`
-    }
-  }
-
-  handlePausePlay() {
-    if(this.musicService.audio.paused) {
-      this.paused = true;
-      this.musicService.audio.play()
-    } else {
-      this.paused = false;
-      this.musicService.audio.pause()
-    }
-  }
-
-  handleStop() {
-    this.musicService.audio.pause();
-    this.musicService.audio.currentTime = 0;
-    this.paused = false;
-  }
-
-  handleBackward() {
-    let elapsed =  this.musicService.audio.currentTime;
-    console.log(elapsed);
-    if(elapsed >= 5) {
-      this.musicService.audio.currentTime = elapsed - 5;
-    }
-  }
-
-  handleForward() {
-    let elapsed =  this.musicService.audio.currentTime;
-    const duration =  this.musicService.audio.duration;
-    if(duration - elapsed >= 5) {
-      this.musicService.audio.currentTime = elapsed + 5;
-    }
-  }
-  
-  /*soundcloudAuthentication(){
-    this.SC = document.createElement('script');
-    this.SC.src="https://connect.soundcloud.com/sdk/sdk-3.3.2.js";
-    this.SC.initialize({
-      client_id: this.soundcloudClient
-    });
-  }*/
-
-  /* soundcloudAuthentication(){
-    // this.SC = require('soundcloud');
-
-    this.SC.initialize({
-      client_id: this.soundcloudClient //'YOUR_CLIENT_ID',
-    });
-  } */
-
-  // Material Style Advance Audio Player Playlist
-  /* 
-  msaapPlaylist: Track[] = [
-  {
-    title: 'Miha',
-    link: 'https://api.soundcloud.com/playlists/10657750?access=playable&show_tracks=true',
-    artist: 'SEC',
-    duration: 247
-  } ,
-
-  <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" 
-  src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/637853880&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/rodiin" title="rodín" target="_blank" style="color: #cccccc; text-decoration: none;">rodín</a> · 
-  <a href="https://soundcloud.com/rodiin/pichotaflor" title="pichòta flor" target="_blank" style="color: #cccccc; text-decoration: none;">pichòta flor</a></div>
-
-  pensarai
-  {
-    title: 'Audio Two Title',
-    link: 'Link to Audio Two URL',
-    artist: 'Audio Two Artist',
-    duration: 100
-  },
-  {
-    title: 'Audio Three Title',
-    link: 'Link to Audio Three URL',
-    artist: 'Audio Three Artist',
-    duration: 110
-  },
-];*/
-
   init() { // init(dragorigin:any)
     var tag = document.createElement('script');
     tag.src='http://www.youtube.com/iframe_api';
@@ -319,9 +181,7 @@ msaapPlaylist: Track[] = [
       });
       console.log("this is films : ", this);
     //}
-    /*else {
-      console.log("error in startvideo")
-    }*/
+  
     
 
   }
@@ -493,63 +353,62 @@ msaapPlaylist: Track[] = [
     }
   }
 
-  addzindex(windowid: any){
+  addzindex(windowid: any)
+  {
     this.uppedzindexreference ++;
     windowid.style.zIndex=this.uppedzindexreference;
     return this.uppedzindexreference;
   }
 
-  displaywindow(windowid: any): void  {
+  displaywindow(windowid: any): void  
+  {
     this.addzindex(windowid);
 
     if ( windowid.classList.contains('hide') ) 
-      { 
-        windowid.classList.remove('hide'); 
-      }
+    { 
+      windowid.classList.remove('hide'); 
+    }
     if ( windowid.id === "draggablefilms" ) 
-      { 
-        this.init(); // this.init("films")
-      } 
+    { 
+      this.init(); // this.init("films")
+    } 
     if ( windowid.id === "draggablemag" ) 
-      { 
-        this.magView = true; 
-      }
+    { 
+      this.magView = true; 
+    }
       //if ( windowid.id === "draggablesnippet" ) { this.init("snippets"); } 
       // if ( windowid.id === "draggablesnippet" ) 
       // { 
       //   this.snippetView = true; 
       // } 
     if ( windowid.id === "draggableradio" ) 
-      { 
-      // var iframesoundcloud = document.getElementById('iframesoundcloud');
-      // var widget1         = this.SC.Widget(iframesoundcloud);
-      // //var widget2         = SC.Widget(iframeElementID);
-      // widget1.play();
-     }
-  }
-
-  // soundcloudAuthentication(){ // NE MARCHE PAS
-  //   this.SC = document.createElement('script');
-  //   this.SC.src="https://connect.soundcloud.com/sdk/sdk-3.3.2.js";
-  //   //this.SC.src="https://w.soundcloud.com/player/api.js";
-  //   this.SC.initialize({
-  //     client_id: this.soundcloudClient
-  //   });
-  //   var iframesoundcloud:any = document.getElementById('iframesoundcloud');
-  //   var myiframe = document.querySelector('iframe');
-  //   var widget1         = this.SC.Widget(iframesoundcloud);
-  //   var widget2         = this.SC.Widget(myiframe);
-  //   //widget1.play();
-  //   iframesoundcloud.play();
-  // }
+    { 
+      const self = this
+      const players = document.querySelectorAll('audio');
+      players.forEach(element => 
+      {
+          element.play();
+      });
+    }
+  }   
 
   closewindow(windowid: any): void{
     windowid.classList.add('hide');
     /*if(windowid.id==="draggablesnippet"){
       this.videoStopper(this.playersnippets); 
     }*/
-    if(windowid.id==="draggablefilms"){
+    if(windowid.id==="draggablefilms")
+    {
       this.videoStopper(this); // this.videoStopper(this.playerfilms); 
+    }
+    if(windowid.id==="draggableradio")
+    {
+      const self = this
+      const players = document.querySelectorAll('audio');
+      players.forEach(element => 
+      {
+          element.pause();
+      });
     }
   }
 }

@@ -259,11 +259,6 @@ a, a:hover {
     width: 55px;
 }
 
-.gifK7{
-    max-width: 50vw;;
-    height: auto;
-}
-  
 /*******NavbarMenu*******/
 
 /*.quatreponchs{
@@ -425,4 +420,26 @@ a, a:hover {
 }
 .mat-card {
     font-family: var(--bs-font-sans-serif)!important;
+}
+tr.mat-header-row.cdk-header-row.ng-star-inserted,
+mat-card.mat-card.mat-focus-indicator.mat-elevation-z1.ngx-audio-player.ng-star-inserted,
+.mat-expansion-panel-header {
+    display: none!important;
+}
+.mat-table,
+.mat-focus-indicator.ngx-d-flex.ngx-justify-content-center.ngx-audio-player.z-depth-1.mat-elevation-z2 {
+    background: transparent;
+}
+.mat-expansion-panel{
+    background-size: 100% auto;
+    background-image: url('./assets/Images/GIFk7.gif');
+}
+.mat-cell, .mat-footer-cell{
+    color:white
+}
+.ngx-pr-1, .ngx-px-1{
+    min-width: 50px!important
+}
+mat-icon.mat-icon.notranslate.currently-playing.material-icons.mat-icon-no-color.ng-star-inserted {
+    fill: var(--typoPonchs);
 }

@@ -100,7 +100,7 @@
         <span><img id="crotzradio" src="./assets/Images/crotzponchs/godas_crotz.png" #iconcloseradio (click)="closewindow(draggableradio)" class="draggableheadericon"alt="icon_crotz"></span> PANTAIS CLUS radio
       </div>
       <div class="insideframe"> 
-        <ngx-audio-player [playlist]="msaapPlaylist" [displayTitle]="msaapDisplayTitle" [autoPlay]="false" 
+        <ngx-audio-player class="gifK7" [playlist]="msaapPlaylist" [displayTitle]="msaapDisplayTitle" [autoPlay]="false" 
           muted="muted" [displayPlaylist]="msaapDisplayPlayList" 
           [displayVolumeControls]="msaapDisplayVolumeControls" [displayRepeatControls]="msaapDisplayRepeatControls"
           [disablePositionSlider]="msaapDisablePositionSlider" [displayArtist]="msaapDisplayArtist" 
@@ -108,7 +108,7 @@
         </ngx-audio-player> 
       </div>
     </div> 
-    <!-- [pageSizeOptions]="pageSizeOptions" (trackEnded)="onEnded($event)" -->
+    <!-- [pageSizeOptions]="pageSizeOptions" (trackEnded)="onEnded($event)" [autoPlay]="false"   -->
 
     <!-----------LYRICS--------------->
     <div #draggablelyrics  id="draggablelyrics" class="draggable todrag lyrics hide" (click)="addzindex(draggablelyrics)"  cdkDragBoundary="#draggingzone" cdkDrag>
