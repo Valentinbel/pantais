@@ -110,12 +110,12 @@ export class HomeComponent implements OnInit, ElementRef {
   
   init() { // init(dragorigin:any)
     var tag = document.createElement('script');
-    tag.src='http://www.youtube.com/iframe_api';
+    tag.src='https://www.youtube.com/iframe_api';
     var firstScriptTag = document.getElementsByTagName('script')[0];
     firstScriptTag.parentNode!.insertBefore(tag, firstScriptTag);
     /*if (dragorigin==="snippets"){
       var tagsnippet = document.createElement('script');
-      tagsnippet.src='http://www.youtube.com/iframe_api';
+      tagsnippet.src='https://www.youtube.com/iframe_api';
       var snippetScriptTag = document.getElementsByTagName('script')[0];
       console.log("snippetScriptTag : ",snippetScriptTag);
       snippetScriptTag.parentNode!.insertBefore(tagsnippet, snippetScriptTag);
@@ -124,7 +124,7 @@ export class HomeComponent implements OnInit, ElementRef {
     }*/
     /*if (dragorigin==="films"){
       var tagfilms = document.createElement('script');
-      tagfilms.src='http://www.youtube.com/iframe_api';
+      tagfilms.src='https://www.youtube.com/iframe_api';
       var filmScriptTag = document.getElementsByTagName('script')[0];*/
       console.log("firstScriptTag : ", firstScriptTag);
       window['onYouTubeIframeAPIReady'] = () => this.startVideo();

@@ -1,3 +1,5 @@
+
+
 * mag: 
 >> css pages comme la premiere (photo)
 >> rajouter le hover
@@ -89,6 +91,7 @@ videostopper
 init
 
 =========================================================
-
+ng build
+--ng deploy
 ng serve --open
 
