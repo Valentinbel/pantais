@@ -101,18 +101,20 @@ ng build
 ng serve --open
 
 ------------
-* position pour mobile
-* size fenetre video mobile
-* Police blanc sauf Salagon
-* Radio: 
-behavior:scroll > trouver un autre qui soit fixe    
-    enlever playlist: mettre un height de la taille de la cassette. 
-    https://stackoverflow.com/questions/600743/how-to-get-div-height-to-auto-adjust-to-background-size
-    mettre le titre centré statique
-    (j'ai remplacé le marquee par p)
-    <p *ngIf=\"isPlaying\" behavior=\"scroll\" direction=\"left\">{{ tracks[currentIndex]?.title\n                }}{{ displayArtist && tracks[currentIndex]?.artist ? ' | ' + tracks[currentIndex]?.artist : ''}}\n            </p>
+* vh on mobile
+    > https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
+    > https://juristr.com/blog/2016/09/ng2-event-registration-document/
+
+* shop: enlever insideframe qui fait apparaitre le fond 
 * fond de fenetre (insideframe > background-image)
     fonsfenestra
+* Police blanc sauf Salagon
+* Radio: 
+    > behavior:scroll > trouver un autre qui soit fixe    
+    > enlever playlist: mettre un height de la taille de la cassette. 
+    > https://stackoverflow.com/questions/600743/how-to-get-div-height-to-auto-adjust-to-background-size
+    > mettre le titre centré statique
+    > https://stackoverflow.com/questions/32693061/how-can-i-select-an-element-in-a-component-template
 
 * videos : inserer avec un npm
 * https://angular.io/guide/router
