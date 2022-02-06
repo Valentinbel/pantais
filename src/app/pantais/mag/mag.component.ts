@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+// import {PageFlip} from 'page-flip';
+
 
 @Component({
   selector: 'app-mag',
@@ -12,6 +14,11 @@ export class MagComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  //const pageFlip = new PageFlip(htmlParentElement, settings);
+
+// or if you're using a script tag and page-flip.browser.js:
+ //const pageFlip = new St.PageFlip(htmlParentElement, settings);
   
   // closewindow(windowid: any): void
   // {

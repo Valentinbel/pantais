@@ -59,9 +59,14 @@ export class HomeComponent implements OnInit, ElementRef {
 
   constructor(private activatedroute: ActivatedRoute,) {}
   
-  ngOnInit() { }
-   //autoPlay =true;
-    // Material Style Advance Audio Player Playlist
+  ngOnInit() 
+  { 
+    const theme = ["lura", "marselha", "godas", "vitrolas", "salagon", "venturi",];
+    const random = Math.floor(Math.random() * theme.length);
+    this.changetheme(theme[random]);
+    console.log("theme on init:", theme[random]);
+  }
+
   msaapPlaylist: Track[] = 
   [
     {
@@ -181,9 +186,6 @@ export class HomeComponent implements OnInit, ElementRef {
       });
       console.log("this is films : ", this);
     //}
-  
-    
-
   }
 
   onPlayerReady(event:any) {
@@ -254,7 +256,6 @@ export class HomeComponent implements OnInit, ElementRef {
       root.style.setProperty('--bordFenetre', '#39378e');
       root.style.setProperty('--typoPonchs', '#ec7744');
       document.getElementById("quatreponchs")?.setAttribute('src', './assets/Images/crotzponchs/lura_ponchs.png');
-      
       document.getElementById("crotzsociau")?.setAttribute('src', './assets/Images/crotzponchs/lura_crotz.png')
       document.getElementById("crotzcredits")?.setAttribute('src', './assets/Images/crotzponchs/lura_crotz.png')
       document.getElementById("crotzsnippet")?.setAttribute('src', './assets/Images/crotzponchs/lura_crotz.png')
@@ -271,7 +272,6 @@ export class HomeComponent implements OnInit, ElementRef {
       root.style.setProperty('--bordFenetre', '#b7e1ff');
       root.style.setProperty('--typoPonchs', '#11584d');
       document.getElementById("quatreponchs")?.setAttribute('src', './assets/Images/crotzponchs/marselha_ponchs.png');
-
       document.getElementById("crotzsociau")?.setAttribute('src', './assets/Images/crotzponchs/marselha_crotz.png')
       document.getElementById("crotzcredits")?.setAttribute('src', './assets/Images/crotzponchs/marselha_crotz.png')
       document.getElementById("crotzsnippet")?.setAttribute('src', './assets/Images/crotzponchs/marselha_crotz.png')
@@ -288,7 +288,6 @@ export class HomeComponent implements OnInit, ElementRef {
       root.style.setProperty('--bordFenetre', '#b55c5c');
       root.style.setProperty('--typoPonchs', '#ffba00');
       document.getElementById("quatreponchs")?.setAttribute('src', './assets/Images/crotzponchs/godas_ponchs.png');
-
       document.getElementById("crotzsociau")?.setAttribute('src', './assets/Images/crotzponchs/godas_crotz.png')
       document.getElementById("crotzcredits")?.setAttribute('src', './assets/Images/crotzponchs/godas_crotz.png')
       document.getElementById("crotzsnippet")?.setAttribute('src', './assets/Images/crotzponchs/godas_crotz.png')
@@ -305,7 +304,6 @@ export class HomeComponent implements OnInit, ElementRef {
       root.style.setProperty('--bordFenetre', '#ffe400');
       root.style.setProperty('--typoPonchs', '#476d55');
       document.getElementById("quatreponchs")?.setAttribute('src', './assets/Images/crotzponchs/vitrolas_ponchs.png');
-
       document.getElementById("crotzsociau")?.setAttribute('src', './assets/Images/crotzponchs/vitrolas_crotz.png')
       document.getElementById("crotzcredits")?.setAttribute('src', './assets/Images/crotzponchs/vitrolas_crotz.png')
       document.getElementById("crotzsnippet")?.setAttribute('src', './assets/Images/crotzponchs/vitrolas_crotz.png')
@@ -322,7 +320,6 @@ export class HomeComponent implements OnInit, ElementRef {
       root.style.setProperty('--bordFenetre', '#3b8b7f');
       root.style.setProperty('--typoPonchs', '#ffffff');
       document.getElementById("quatreponchs")?.setAttribute('src', './assets/Images/crotzponchs/salagon_ponchs.png');
-
       document.getElementById("crotzsociau")?.setAttribute('src', './assets/Images/crotzponchs/salagon_crotz.png')
       document.getElementById("crotzcredits")?.setAttribute('src', './assets/Images/crotzponchs/salagon_crotz.png')
       document.getElementById("crotzsnippet")?.setAttribute('src', './assets/Images/crotzponchs/salagon_crotz.png')
@@ -339,7 +336,6 @@ export class HomeComponent implements OnInit, ElementRef {
       root.style.setProperty('--bordFenetre', '#b085cc');
       root.style.setProperty('--typoPonchs', '#3e4abb');
       document.getElementById("quatreponchs")?.setAttribute('src', './assets/Images/crotzponchs/venturi_ponchs.png');
-
       document.getElementById("crotzsociau")?.setAttribute('src', './assets/Images/crotzponchs/venturi_crotz.png')
       document.getElementById("crotzcredits")?.setAttribute('src', './assets/Images/crotzponchs/venturi_crotz.png')
       document.getElementById("crotzsnippet")?.setAttribute('src', './assets/Images/crotzponchs/venturi_crotz.png')

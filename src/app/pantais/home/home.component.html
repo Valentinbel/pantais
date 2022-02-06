@@ -39,7 +39,7 @@
           <a class="spotify" href="https://open.spotify.com/artist/7cMWfV0yjQ0GPs8fiDp3UA?si=GxRTmzsrSHCsYbFS-_ipHw" target="_blank"></a>
           <a class="instagram" href="https://instagram.com/rodiin" target="_blank"></a>
           <a class="facebook" href="https://www.facebook.com/pantaisclus" target="_blank"></a>
-          <a class="twitter" href="https://twitter.com/pantaisclus" target="_blank"></a>
+          <a class="twitter" href="https://twitter.com/_rodiin_" target="_blank"></a>
           <a class="bandcamp" href="https://rodiin.bandcamp.com" target="_blank"></a>
           <a class="soundcloud" href="https://soundcloud.com/rodiin" target="_blank"></a>
           <a class="youtube" href="https://www.youtube.com/c/rodínmusica" target="_blank"></a>
@@ -68,7 +68,8 @@
       </div>
       <div class="insideframe"> <!-----------cadre interieur--------------->
         <div class=" d-flex fenestra">
-          <p class="text-center">pantaisclus.art ©Valentin Belhomme + <a href="https://neblum.art/pantaislabel" target="_blank" class="textlink">PantaisRecords</a> 2021 </p>
+          <p class="text-center">pantaisclus.art <a href="https://www.linkedin.com/in/valentinbelhomme/" target="_blank" class="textlink">©Valentin Belhomme</a> + <a href="https://neblum.art/pantaislabel" target="_blank" class="textlink">PantaisRecords</a> 2022 </p>
+          <p class="hide">And a special thanks to the creators of poolsuite.net for the inspiration </p>
         </div>
       </div>    
     </div>
@@ -89,7 +90,7 @@
         <span><img id="crotzfilms" src="./assets/Images/crotzponchs/godas_crotz.png" #iconclosefilms (click)="closewindow(draggablefilms)" class="draggableheadericon"alt="icon_crotz"></span> PANTAIS CLUS films
       </div>
       <div class="insideframe"> <!-----------cadre interieur--------------->
-        <div id="player" class=" d-flex">
+        <div id="player" class=" d-flex filmsframe">
         </div>
       </div>
     </div>
@@ -146,117 +147,57 @@
         <span><img id="crotzshop" src="./assets/Images/crotzponchs/godas_crotz.png" #iconcloseshop (click)="closewindow(draggableshop)" 
           class="draggableheadericon"alt="icon_crotz"></span> PANTAIS CLUS shop
       </div>
-      <div class="insideframe"> <!-----------cadre interieur--------------->
-        <div class="d-flex fenestra iconas imgshop">
-            <div class="row margin-btm">
-              <div class="col colshop">
+      <div class="insideframe shopframe"> <!-----------cadre interieur--------------->
+        <div class="d-flex fenestra imgshop">
+            <div class="row">
+              <img class="img-fluid shopimage" src='./assets/Images/shop/shop_banner.png'  alt="banner"/>
+            </div>
+            <div class="row">
                 <a href="https://botiga.pantaisrecords.com/product/pantaisclus" target="_blank">
-                  <img class="img-fluid shopimage" src='./assets/Images/shop/pantaiclus.png' 
-                    onmouseover="this.src='./assets/Images/shop/pantaiclus_hover.png';" 
-                    onmouseout="this.src='./assets/Images/shop/pantaiclus.png';" alt="CD"/>
+                  <img class="img-fluid shopimage" src='./assets/Images/shop/shop_lp.png' 
+                    onmouseover="this.src='./assets/Images/shop/shop_lp_hover.png';" 
+                    onmouseout="this.src='./assets/Images/shop/shop_lp.png';" alt="CD"/>
                 </a>
-              </div>
-              <div class="col shopparagraph">
-                <p><strong class="weissModern">PANTAIS CLUS [LP US edition] • rodín</strong><br>
-                limited 12" 140g transparent blue LP US edition, gatefold + black inner bag + 
-                  two sides colour inlay US distribution by Fake Four Inc.<br><br>
-                <i>vinil blu transparent 12" 140g edicion US, cuberta gatefold + saquet interior negre + 
-                  insert color 2 facias distribucion US per Fake Four Inc.</i></p>
-                  <strong class="float-end">25€</strong>
-              </div>
             </div>
-            <div class="row margin-btm">
-              <div class="col colshop">
+            <div class="row">
                 <a href="https://botiga.pantaisrecords.com/product/pantaiscd" target="_blank">
-                  <img class="img-fluid shopimage" src='./assets/Images/shop/pantaicluscd.png' 
-                    onmouseover="this.src='./assets/Images/shop/pantaiscluscd_hover.png';" 
-                    onmouseout="this.src='./assets/Images/shop/pantaicluscd.png';" alt="CD"/>
+                  <img class="img-fluid shopimage" src='./assets/Images/shop/shop_cd.png' 
+                    onmouseover="this.src='./assets/Images/shop/shop_cd_hover.png';" 
+                    onmouseout="this.src='./assets/Images/shop/shop_cd.png';" alt="CD"/>
                 </a>
-              </div>
-              <div class="col shopparagraph">
-                <p><strong class="weissModern">PANTAIS CLUS [CD deluxe] • rodín</strong><br>
-                  b&w print + gold pantone, inside & outside cover limited series of 1000, 
-                  numbered 32 pages color artistic booklet with lyrics on 80g paper 40 pages b&w 
-                  booklet + lyrics, english & french translation 80g paper 10 songs, 55 mn
-                  <br><br>
-                <i>cuberta n&b + pantone aur, dedins & defòra seria limitada de 1000, 
-                  numerotada libret artistic 32 paginas color + paraulas sus papier 80g libret 40 paginas n&b 
-                  + paraulas, traduccion anglés e francés sus papier 80g 10 cançons, 55 mn</i></p>
-                  <strong class="float-end">17€</strong>
-                
-              </div>
             </div>
-            <div class="row margin-btm">
-              <div class="col colshop">
+            <div class="row">
                 <a href="https://botiga.pantaisrecords.com/product/pantaisusina" target="_blank">
-                  <img class="img-fluid shopimage" src='./assets/Images/shop/pantaisusina.png' 
-                    onmouseover="this.src='./assets/Images/shop/pantaisusina_hover.png';" 
-                    onmouseout="this.src='./assets/Images/shop/pantaisusina.png';" alt="CD_Usina"/>
+                  <img class="img-fluid shopimage" src='./assets/Images/shop/shop_cdUsina.png' 
+                    onmouseover="this.src='./assets/Images/shop/shop_cdUsina_hover.png';" 
+                    onmouseout="this.src='./assets/Images/shop/shop_cdUsina.png';" alt="CD_Usina"/>
                 </a>
-              </div>
-              <div class="col shopparagraph">
-                <p><strong class="weissModern">PANTAIS CLUS [CD usina] • rodín</strong><br>
-                  cardboard cover + stamp printing 4 pages booklet, black print on 160g terracotta art paper 
-                  limited series, numbered 10 songs, 55 mn
-                  <br><br>
-                <i>cuberta kraft + estampatge tampon libret 4 paginas, estampatge negre sus papier d'art 160g 
-                  terracotta seria limitada, numerotada 10 cançons, 55 mn</i></p>
-                  <strong class="float-end">10€</strong>
-              </div>
             </div>
-            <div class="row margin-btm">
-              <div class="col colshop">
+            <div class="row">
                 <a href="https://botiga.pantaisrecords.com/product/pantais-clus-stickers-lot-rodin" target="_blank">
-                  <img class="img-fluid shopimage" src='./assets/Images/shop/stickers.png' 
-                    onmouseover="this.src='./assets/Images/shop/stickers_hover.png';" 
-                    onmouseout="this.src='./assets/Images/shop/stickers.png';" alt="Stickers"/>
+                  <img class="img-fluid shopimage" src='./assets/Images/shop/shop_stickers.png' 
+                    onmouseover="this.src='./assets/Images/shop/shop_stickers_hover.png';" 
+                    onmouseout="this.src='./assets/Images/shop/shop_stickers.png';" alt="Stickers"/>
                 </a>
-              </div>
-              <div class="col shopparagraph">
-                <p><strong class="weissModern">PANTAIS CLUS [4 stickers] • rodín</strong><br>
-                  4 stickers pack: MONTANHA DE LURA: 10x7 cm holographic + CMYK // 
-                  REI DE LA LUNA: 8 cm round holographic + white // LOGO x 2: 5 cm round CYMK // free shipping
-                  <br><br>
-                <i>lòt de 4 pegasolets: MONTANHA DE LURA: 10x7 cm olografic + CMJN // 
-                  REI DE LA LUNA: 8 cm redond olografic + blanc // LOGO x 2: 5 cm redond CMJN // mandadís a gratis</i></p>
-                  <strong class="float-end">12€</strong>
-              </div>
             </div>
-            <div class="row margin-btm">
-              <div class="col colshop">
+            <div class="row">
                 <a href="https://botiga.pantaisrecords.com/product/pantaisclusk7" target="_blank">
-                  <img class="img-fluid shopimage" src='./assets/Images/shop/k7.png' 
-                    onmouseover="this.src='./assets/Images/shop/k7_hover.png';" 
-                    onmouseout="this.src='./assets/Images/shop/k7.png';" alt="k7"/>
+                  <img class="img-fluid shopimage" src='./assets/Images/shop/shop_k7.png' 
+                    onmouseover="this.src='./assets/Images/shop/shop_k7_hover.png';" 
+                    onmouseout="this.src='./assets/Images/shop/shop_k7.png';" alt="k7"/>
                 </a>
-              </div>
-              <div class="col shopparagraph">
-                <p><strong class="weissModern">PANTAIS CLUS [casseta] • rodín</strong><br>
-                  limited transparent blue tape uv led body print, jcard +1
-                  <br><br>
-                <i>casseta blu transparent, estampatge uv, edicion limitada, cuberta jcard +1</i></p>
-                  <strong class="float-end">10€</strong>
-              </div>
             </div>
-            <div class="row margin-btm">
-              <div class="col colshop">
+            <div class="row">
                 <a href="https://botiga.pantaisrecords.com/product/flor-sabon" target="_blank">
-                  <img class="img-fluid shopimage" src='./assets/Images/shop/sabon.png' 
-                    onmouseover="this.src='./assets/Images/shop/sabon_hover.png';" 
-                    onmouseout="this.src='./assets/Images/shop/sabon.png';" alt="sabon"/>
+                  <img class="img-fluid shopimage" src='./assets/Images/shop/shop_sabon.png' 
+                    onmouseover="this.src='./assets/Images/shop/shop_sabon_hover.png';" 
+                    onmouseout="this.src='./assets/Images/shop/shop_sabon.png';" alt="sabon"/>
                 </a>
-              </div>
-              <div class="col shopparagraph">
-                <p><strong class="weissModern">PICHÒTA FLOR [sabon balicòt mandarina] • rodín</strong><br>
-                  basil & mandarin handmade soap obtained by cold saponification. 100g
-                  caution cold saponification can cause the soap to melt faster if left in the water. 
-                  Keep in a dry place after use.
-                  <br><br>
-                <i>sabon artisanau balicòt & mandarina, obtengut per saponificacion a freg. 100g
-                  mèfi la saponificacion a freg pòu accelerar la fonduda dau sabon s'es laissat dins una environa umida. 
-                  Gardatz-lo au sec après utilisacion.</i></p>
-                  <strong class="float-end">7€</strong>
-              </div>
+            </div>
+            <div class="row">
+              <a href="https://neblum.art/pantaislabel" target="_blank">              
+                <img class="img-fluid shopimage" src='./assets/Images/shop/shop_footer.png'  alt="footer"/>
+              </a>
             </div>
         </div>
       </div>    
@@ -269,16 +210,7 @@
       </div>
       <div class="insideframe"> <!-----------cadre interieur--------------->
         <div class="d-flex fenestra iconas iconaspro">
-          <p>en espera de docs</p>
-          <iframe width="560" height="315" 
-            src="https://myshmup.com/app?game=2b433d14-ee61-4a3d-b341-645cfd86986c&session-type=play"
-            title="myshmup" frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen >
-          </iframe>
-          
-
-          
+          <p>en espèra de docs</p>
         </div>
       </div>    
     </div>

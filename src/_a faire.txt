@@ -1,9 +1,8 @@
-
-
 * mag: 
 >> css pages comme la premiere (photo)
 >> rajouter le hover
 >> html du component mag, voir le javascriupt auoi rajouter + les classes du html. De choses en css? 
+https://www.npmjs.com/package/page-flip
 https://www.npmjs.com/package/page-flip
 pure CSS (NON): https://codepen.io/diemoritat/pen/LKROYZ / https://codepen.io/jayhansim/pen/Hytmg
 
@@ -38,6 +37,7 @@ Overlay tv bgTv (z-index+1) https://www.w3schools.com/howto/howto_css_overlay.as
 
 
 * solet --> si on se chauffe de faire le solitaire custom 
+http://radovanjanjic.com/js-solitaire/
 
 * Films --> pareil mais avec les clips en 16:9 
 
@@ -49,8 +49,11 @@ Music.Service.ts >randomTrack(tracks) : elements en comment dans la fonction. Ch
 https://scotch.io/tutorials/build-a-music-player-with-angular-2-electron-i-setup-basics-concepts
 https://scotch.io/tutorials/build-a-music-player-with-angular-electron-ii-making-the-ui#toc-up-next
 https://scotch.io/tutorials/build-a-music-player-with-angular-electron-iii-bringing-it-all-together
-
-
+Autres npm audio:
+https://www.npmjs.com/package/soundcloud-audio
+https://www.npmjs.com/package/soundcloud.ts
+https://github.com/ToneDen/Player#api
+https://www.hongkiat.com/blog/customize-soundcloud-audio-player-toneden
 
 
 Faire un lecteur audio: 
@@ -66,6 +69,8 @@ Drumkit:
 
 Solitaire:
     * lancer le projet Solitaire > Voir si on peut choper juste la partie SCSS/HTML /JS a exporter dans notre projet 
+    http://radovanjanjic.com/js-solitaire/
+    https://codepen.io/rjanjic/pen/goWoKR <> iframed?
 
 Create module (with routing)
 ng g module admin --routing
@@ -91,7 +96,39 @@ videostopper
 init
 
 =========================================================
-ng build
+ng build 
 --ng deploy
 ng serve --open
 
+------------
+* position pour mobile
+* size fenetre video mobile
+* Police blanc sauf Salagon
+* Radio: 
+behavior:scroll > trouver un autre qui soit fixe    
+    enlever playlist: mettre un height de la taille de la cassette. 
+    https://stackoverflow.com/questions/600743/how-to-get-div-height-to-auto-adjust-to-background-size
+    mettre le titre centré statique
+    (j'ai remplacé le marquee par p)
+    <p *ngIf=\"isPlaying\" behavior=\"scroll\" direction=\"left\">{{ tracks[currentIndex]?.title\n                }}{{ displayArtist && tracks[currentIndex]?.artist ? ' | ' + tracks[currentIndex]?.artist : ''}}\n            </p>
+* fond de fenetre (insideframe > background-image)
+    fonsfenestra
+
+* videos : inserer avec un npm
+* https://angular.io/guide/router
+* ngx-videogular 
+
+.element {
+   overflow: hidden;
+   -webkit-overflow-scrolling: touch;
+}
+
+.draggable-bounds {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0%;
+    height: auto;
+    overflow: hidden;
