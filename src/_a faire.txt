@@ -101,13 +101,11 @@ ng build
 ng serve --open
 
 ------------
-* vh on mobile
-    > https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
-    > https://juristr.com/blog/2016/09/ng2-event-registration-document/
+//A VALIDER: 
+// * vh on mobile
+//     > https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
+//    > https://juristr.com/blog/2016/09/ng2-event-registration-document/
 
-* shop: enlever insideframe qui fait apparaitre le fond 
-* fond de fenetre (insideframe > background-image)
-    fonsfenestra
 * Police blanc sauf Salagon
 * Radio: 
     > behavior:scroll > trouver un autre qui soit fixe    

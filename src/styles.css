@@ -5,6 +5,7 @@
     --noir-background: #131518;
     --bordFenetre: #b55c5c; /*navbar+ bordsFenetres*/
     --typoPonchs: #ffba00; /*Typo + fond fenetres (ponchs)*/
+    --fonsFenestra: url(./assets/Images/fonsfenestra/fenestra_godas.jpg);
     --rouge_text: #DF9F1F;
     --white: white;
     --bgimg: url(./assets/Images/backgrounds/godas.jpg);
@@ -50,7 +51,11 @@ mat-icon svg, mat-icon svg path, button {
     font-family: 'ChicagoFLF';
     src: url('./assets/Fonts/ChicagoFLF.ttf') format('truetype'), url('./assets/Fonts/ChicagoFLF.ttf') format('truetype');
 }
-
+@media (max-width:725px) {
+    .shopimage{
+        max-width: 100%!important;
+    }
+}
 @media (min-width:576px) {
     .row{
         padding-right: 0px;
@@ -111,7 +116,8 @@ body, .ng-isolate-scope, home, index2, index, headerview{
     position: relative;
     width: 100%;
     height: 100vh;
-    top: 1.5em;
+    height: calc(var(--vh, 1vh) * 100);
+    top: 1.5em!important;
     background-repeat: repeat-y;
     background-size: 100%;
     /*background-size: cover;*/
@@ -258,9 +264,10 @@ a, a:hover {
     border: 1px solid var(--noir-background);
     margin: 0px 5px 8px;
     background: var(--typoPonchs);
-    /*background-image: radial-gradient(var(--bordFenetre) 20%, transparent 0), radial-gradient(var(--bordFenetre) 20%, transparent 0);*/
+    background-image: var(--fonsFenestra); 
     background-size: 5px 5px;
-    background-position: 0px 0px, 10px 10px;
+    /*background-image: radial-gradient(var(--bordFenetre) 20%, transparent 0), radial-gradient(var(--bordFenetre) 20%, transparent 0);
+    background-position: 0px 0px, 10px 10px;*/
 }
 
 .filmsframe{
@@ -337,6 +344,8 @@ a, a:hover {
 .shopframe{
     background-size: cover;
     background-image: url(./assets/Images/shop/shop_fons.jpg);
+    border: 1px solid var(--noir-background);
+    margin: 0px 5px 8px;
 }
 
 .imgshop{
@@ -348,11 +357,9 @@ a, a:hover {
     margin: 0px;
 }
 .shopimage{
-    max-height: 310px;
-    /*max-width: 310px;*/
-    margin-right: 0px;
-    margin-left: 0px;
-    /*margin-bottom: 2rem;*/
+    margin-right: auto!important;
+    margin-left: auto!important;
+    max-width: 600px;
     /*display: block;*/
 }
 
@@ -462,7 +469,7 @@ tr.mat-header-row.cdk-header-row.ng-star-inserted,
 }
 
 .mat-card {
-    background: var(--typoPonchs)
+    background: var(--fonsfenestra);    
 }
 
 .mat-table,

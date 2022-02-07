@@ -54,10 +54,16 @@ export class HomeComponent implements OnInit, ElementRef {
   autoPlay : boolean = false;
   //autoPlay: false;
   // voir: AudioPlayerComponent
+ 
 
-
-
-  constructor(private activatedroute: ActivatedRoute,) {}
+  constructor(private activatedroute: ActivatedRoute) 
+  {
+    window.addEventListener('resize', () => 
+    {
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    });
+  }
   
   ngOnInit() 
   { 
@@ -255,6 +261,7 @@ export class HomeComponent implements OnInit, ElementRef {
       root.style.setProperty('--bgimg', 'url(./assets/Images/backgrounds/lura.jpg)');
       root.style.setProperty('--bordFenetre', '#39378e');
       root.style.setProperty('--typoPonchs', '#ec7744');
+      root.style.setProperty('--fonsFenestra', 'url(./assets/Images/fonsfenestra/fenestra_lura.jpg)');
       document.getElementById("quatreponchs")?.setAttribute('src', './assets/Images/crotzponchs/lura_ponchs.png');
       document.getElementById("crotzsociau")?.setAttribute('src', './assets/Images/crotzponchs/lura_crotz.png')
       document.getElementById("crotzcredits")?.setAttribute('src', './assets/Images/crotzponchs/lura_crotz.png')
@@ -271,6 +278,7 @@ export class HomeComponent implements OnInit, ElementRef {
       root.style.setProperty('--bgimg', 'url(./assets/Images/backgrounds/marselha.jpg)');
       root.style.setProperty('--bordFenetre', '#b7e1ff');
       root.style.setProperty('--typoPonchs', '#11584d');
+      root.style.setProperty('--fonsFenestra', 'url(./assets/Images/fonsfenestra/fenestra_marselha.jpg)');
       document.getElementById("quatreponchs")?.setAttribute('src', './assets/Images/crotzponchs/marselha_ponchs.png');
       document.getElementById("crotzsociau")?.setAttribute('src', './assets/Images/crotzponchs/marselha_crotz.png')
       document.getElementById("crotzcredits")?.setAttribute('src', './assets/Images/crotzponchs/marselha_crotz.png')
@@ -287,6 +295,7 @@ export class HomeComponent implements OnInit, ElementRef {
       root.style.setProperty('--bgimg', 'url(./assets/Images/backgrounds/godas.jpg)');
       root.style.setProperty('--bordFenetre', '#b55c5c');
       root.style.setProperty('--typoPonchs', '#ffba00');
+      root.style.setProperty('--fonsFenestra', 'url(./assets/Images/fonsfenestra/fenestra_godas.jpg)');
       document.getElementById("quatreponchs")?.setAttribute('src', './assets/Images/crotzponchs/godas_ponchs.png');
       document.getElementById("crotzsociau")?.setAttribute('src', './assets/Images/crotzponchs/godas_crotz.png')
       document.getElementById("crotzcredits")?.setAttribute('src', './assets/Images/crotzponchs/godas_crotz.png')
@@ -303,6 +312,7 @@ export class HomeComponent implements OnInit, ElementRef {
       root.style.setProperty('--bgimg', 'url(./assets/Images/backgrounds/vitrolas.jpg)');
       root.style.setProperty('--bordFenetre', '#ffe400');
       root.style.setProperty('--typoPonchs', '#476d55');
+      root.style.setProperty('--fonsFenestra', 'url(./assets/Images/fonsfenestra/fenestra_vitrolas.jpg)');
       document.getElementById("quatreponchs")?.setAttribute('src', './assets/Images/crotzponchs/vitrolas_ponchs.png');
       document.getElementById("crotzsociau")?.setAttribute('src', './assets/Images/crotzponchs/vitrolas_crotz.png')
       document.getElementById("crotzcredits")?.setAttribute('src', './assets/Images/crotzponchs/vitrolas_crotz.png')
@@ -319,6 +329,7 @@ export class HomeComponent implements OnInit, ElementRef {
       root.style.setProperty('--bgimg', 'url(./assets/Images/backgrounds/salagon.jpg)');
       root.style.setProperty('--bordFenetre', '#3b8b7f');
       root.style.setProperty('--typoPonchs', '#ffffff');
+      root.style.setProperty('--fonsFenestra', 'url(./assets/Images/fonsfenestra/fenestra_salagon.jpg)');
       document.getElementById("quatreponchs")?.setAttribute('src', './assets/Images/crotzponchs/salagon_ponchs.png');
       document.getElementById("crotzsociau")?.setAttribute('src', './assets/Images/crotzponchs/salagon_crotz.png')
       document.getElementById("crotzcredits")?.setAttribute('src', './assets/Images/crotzponchs/salagon_crotz.png')
@@ -335,6 +346,7 @@ export class HomeComponent implements OnInit, ElementRef {
       root.style.setProperty('--bgimg', 'url(./assets/Images/backgrounds/venturi.jpg)');
       root.style.setProperty('--bordFenetre', '#b085cc');
       root.style.setProperty('--typoPonchs', '#3e4abb');
+      root.style.setProperty('--fonsFenestra', 'url(./assets/Images/fonsfenestra/fenestra_venturi.jpg)');
       document.getElementById("quatreponchs")?.setAttribute('src', './assets/Images/crotzponchs/venturi_ponchs.png');
       document.getElementById("crotzsociau")?.setAttribute('src', './assets/Images/crotzponchs/venturi_crotz.png')
       document.getElementById("crotzcredits")?.setAttribute('src', './assets/Images/crotzponchs/venturi_crotz.png')
