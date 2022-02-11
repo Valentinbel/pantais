@@ -1,9 +1,8 @@
 * mag: 
->> css pages comme la premiere (photo)
->> rajouter le hover
->> html du component mag, voir le javascriupt auoi rajouter + les classes du html. De choses en css? 
-https://www.npmjs.com/package/page-flip
-https://www.npmjs.com/package/page-flip
+https://github.com/labsforge/flipbook-ng/tree/master/projects/flipbook-lib
+
+https://github.com/Nodlik/StPageFlip/releases/tag/v2.0.0 installer ca sur neblum en local pour voir?
+https://embed.plnkr.co/mgBGe1IsYZ3NEW6BNnUz/ angularjs > frame depuis neblum?
 pure CSS (NON): https://codepen.io/diemoritat/pen/LKROYZ / https://codepen.io/jayhansim/pen/Hytmg
 
 
@@ -101,34 +100,18 @@ ng build
 ng serve --open
 
 ------------
-//A VALIDER: 
-// * vh on mobile
-//     > https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
-//    > https://juristr.com/blog/2016/09/ng2-event-registration-document/
-
-* Police blanc sauf Salagon
 * Radio: 
+    Rajouter les titres qui manquent. cf whatzapp Rodin
+
     > behavior:scroll > trouver un autre qui soit fixe    
-    > enlever playlist: mettre un height de la taille de la cassette. 
-    > https://stackoverflow.com/questions/600743/how-to-get-div-height-to-auto-adjust-to-background-size
     > mettre le titre centré statique
     > https://stackoverflow.com/questions/32693061/how-can-i-select-an-element-in-a-component-template
 
-* videos : inserer avec un npm
+* mag: 
+https://github.com/labsforge/flipbook-ng/tree/master/projects/flipbook-lib
+
 * https://angular.io/guide/router
+* videos : inserer avec un npm
 * ngx-videogular 
 
-.element {
-   overflow: hidden;
-   -webkit-overflow-scrolling: touch;
-}
 
-.draggable-bounds {
-    -webkit-box-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-    flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: 0%;
-    height: auto;
-    overflow: hidden;

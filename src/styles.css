@@ -1,17 +1,29 @@
-:root {
-    --orange_background: #DF9F1F; /*ACABAT*/
-    
-
+:root {    
     --noir-background: #131518;
     --bordFenetre: #b55c5c; /*navbar+ bordsFenetres*/
     --typoPonchs: #ffba00; /*Typo + fond fenetres (ponchs)*/
-    --fonsFenestra: url(./assets/Images/fonsfenestra/fenestra_godas.jpg);
+    --fonsFenestra: ; /*url(./assets/Images/fonsfenestra/fenestra_godas.jpg);*/
     --rouge_text: #DF9F1F;
     --white: white;
-    --bgimg: url(./assets/Images/backgrounds/godas.jpg);
-    /*--ponchs: url(./assets/Images/crotzponchs/godas_ponchs.png);*/
+    --bgimg: ;/*url(./assets/Images/backgrounds/godas.jpg);*/
 
-}
+    --apple: ;
+    --appleHover: ;
+    --bandcamp: ;
+    --bandcampHover: ;
+    --facebook: ; /* url('./assets/Images/sociau/fb_link.png')  no-repeat*/
+    --facebookHover: ;
+    --instagram: ;
+    --instagramHover: ;
+    --soundcloud: ;
+    --soundcloudHover: ;
+    --spotify: ;
+    --spotifyHover: ;
+    --twitter: ;
+    --twitterHover: ;
+    --youtube: ;
+    --youtubeHover: ;
+}   
 
 * {
     box-sizing: border-box;
@@ -67,9 +79,8 @@ body {
     font-family: 'ChicagoFLF';
     margin: 0px;
     background-position: center;
-    /*background-color: var(--orange_background);
-    color: var(--noir-background);*/
 }
+
 body, .ng-isolate-scope, home, index2, index, headerview{
     overflow: hidden;
 }
@@ -120,9 +131,8 @@ body, .ng-isolate-scope, home, index2, index, headerview{
     top: 1.5em!important;
     background-repeat: repeat-y;
     background-size: 100%;
-    /*background-size: cover;*/
     background-position-x: center;
-    /*Est ce aue ça résout le pb sur mobile?*/
+    /*Est ce que ça résout le pb sur mobile?*/
     -webkit-box-flex: 1;
     -ms-flex: 1;
     flex: 1;
@@ -176,7 +186,7 @@ body, .ng-isolate-scope, home, index2, index, headerview{
 }
 .lyrics{
     top:30%;
-    left: 12%;
+    left: 8%;
 }
 .mag{
     top:5%;
@@ -205,11 +215,11 @@ a, a:hover {
 }
 
 .textlink{
-    color: var(--rouge_text);
+    color: var(--bordFenetre);
     text-decoration: underline;
 }
 .textlink:hover{
-    color: var(--rouge_text);
+    color: var(--noir-background);
 }
 
 .margin_topbottom{
@@ -266,8 +276,6 @@ a, a:hover {
     background: var(--typoPonchs);
     background-image: var(--fonsFenestra); 
     background-size: 5px 5px;
-    /*background-image: radial-gradient(var(--bordFenetre) 20%, transparent 0), radial-gradient(var(--bordFenetre) 20%, transparent 0);
-    background-position: 0px 0px, 10px 10px;*/
 }
 
 .filmsframe{
@@ -380,72 +388,101 @@ a, a:hover {
 .margin-btm {
     margin-bottom: 1em;
 }
+.rowsansgutterx{
+    --bs-gutter-x: 0rem!important;
+}
+
+.iconframe{
+    margin-right: 0!important;
+}
 /*------SOCIAU-------*/
+.apple{
+	background: var(--apple);
+    height: 45px;
+	width: 40px;
+	background-size: 40px 45px;
+}
+
+.apple:hover{
+    background-image: var(--appleHover);
+}
+
+.bandcamp{
+	background: var(--bandcamp);
+    height: 45px;
+	width: 65px;
+	background-size: 65px 45px;
+}
+
+.bandcamp:hover{
+    background-image: var(--bandcampHover);
+}
+
 .facebook{
-	background: url('./assets/Images/sociau/fb_link.png') no-repeat;
+	background: var(--facebook); 
     height: 45px;
 	width: 26px;
 	background-size: 26px 45px;
 }
+
 .facebook:hover{
-    background-image: url('./assets/Images/sociau/fb_hover.png');
-    }
+    background-image: var(--facebookHover);
+}
     
 .instagram{
-	background: url('./assets/Images/sociau/insta_link.png') no-repeat;
+	background: var(--instagram);
     height: 45px;
 	width: 49px;
-	background-size: 49px 45px;}
+	background-size: 49px 45px;
+}
+
 .instagram:hover{
-    background-image: url('./assets/Images/sociau/insta_hover.png');}
-
-.twitter{
-	background: url('./assets/Images/sociau/twitter_link.png') no-repeat;
-    height: 45px;
-	width: 54px;
-	background-size: 54px 45px;}
-.twitter:hover{
-    background-image: url('./assets/Images/sociau/twitter_hover.png');}
-    
-.apple{
-	background: url('./assets/Images/sociau/apple_link.png') no-repeat;
-    height: 45px;
-	width: 40px;
-	background-size: 40px 45px;}
-.apple:hover{
-    background-image: url('./assets/Images/sociau/apple_hover.png');}
-
-.spotify{
-	background: url('./assets/Images/sociau/spot_link.png') no-repeat;
-    height: 45px;
-	width: 49px;
-	background-size: 49px 45px;}
-.spotify:hover{
-    background-image: url('./assets/Images/sociau/spot_hover.png');}
-
-.bandcamp{
-	background: url('./assets/Images/sociau/bc_link.png') no-repeat;
-    height: 45px;
-	width: 65px;
-	background-size: 65px 45px;}
-.bandcamp:hover{
-    background-image: url('./assets/Images/sociau/bc_hover.png');}
+    background-image: var(--instagramHover);
+}
 
 .soundcloud{
-	background: url('./assets/Images/sociau/sound_link.png') no-repeat;
+	background: var(--soundcloud);
     height: 45px;
 	width: 64px;
-	background-size: 64px 45px;}
+	background-size: 64px 45px;
+}
+
 .soundcloud:hover{
-    background-image: url('./assets/Images/sociau/sound_hover.png');}
+    background-image: var(--soundcloudHover);
+}
+
+.spotify{
+	background: var(--spotify);
+    height: 45px;
+	width: 49px;
+	background-size: 49px 45px;
+}
+
+.spotify:hover{
+    background-image: var(--spotifyHover);
+}
+
+.twitter{
+	background: var(--twitter);
+    height: 45px;
+	width: 54px;
+	background-size: 54px 45px;
+}
+
+.twitter:hover{
+    background-image: var(--twitterHover);
+}
 
 .youtube {
-	background: url('./assets/Images/sociau/ytb_link.png') no-repeat;
+	background: var(--youtube);
     height: 45px;
     width: 42px;
-    background-size: 42px 45px;}
+    background-size: 42px 45px;
+}
+
 .youtube:hover{
-    background-image: url('./assets/Images/sociau/ytb_hover.png');}
+    background-image: var(--youtubeHover);
+}
 
 /*------RADIO (ngx-audio-player)-------*/
 
@@ -453,17 +490,22 @@ a, a:hover {
     max-width: 100%!important;
     min-width: 340px!important;
 }
+
 .mat-paginator, .mat-content, .mat-expansion-indicator::after {
     display: none!important;
 }
+
 .mat-card {
     font-family: var(--bs-font-sans-serif)!important;
 }
 
-/* 
+.mat-slider-thumb {
+    background: var(--bordFenetre)!important;
+}
 
+/* 
 mat-card.mat-card.mat-focus-indicator.mat-elevation-z1.ngx-audio-player.ng-star-inserted,*/
-tr.mat-header-row.cdk-header-row.ng-star-inserted, 
+tr.mat-header-row.cdk-header-row.ng-star-inserted, .mat-expansion-panel-content,
 .mat-expansion-panel-header {
    display: none!important;
 }
@@ -479,7 +521,14 @@ tr.mat-header-row.cdk-header-row.ng-star-inserted,
 .mat-expansion-panel{
     background-size: 100% auto;
     background-image: url('./assets/Images/GIFk7.gif');
+    background-repeat: no-repeat;
+    box-sizing: border-box!important;;
+    padding: 32.5%;
+    width: 100%;
+    height: 0;
+    background-size: contain;
 }
+
 .mat-cell, .mat-footer-cell{
     color:white
 }

@@ -35,28 +35,28 @@
       <div class="insideframe"> <!-----------cadre interieur--------------->
         <!--Computer-->
         <div class="d-flex fenestra computermenu">
-          <a class="apple" href="https://music.apple.com/fr/artist/rod%C3%ADn/1495701565" target="_blank"></a>
-          <a class="spotify" href="https://open.spotify.com/artist/7cMWfV0yjQ0GPs8fiDp3UA?si=GxRTmzsrSHCsYbFS-_ipHw" target="_blank"></a>
-          <a class="instagram" href="https://instagram.com/rodiin" target="_blank"></a>
-          <a class="facebook" href="https://www.facebook.com/pantaisclus" target="_blank"></a>
-          <a class="twitter" href="https://twitter.com/_rodiin_" target="_blank"></a>
-          <a class="bandcamp" href="https://rodiin.bandcamp.com" target="_blank"></a>
-          <a class="soundcloud" href="https://soundcloud.com/rodiin" target="_blank"></a>
-          <a class="youtube" href="https://www.youtube.com/c/rodínmusica" target="_blank"></a>
+          <a class="apple" id="apple" href="https://music.apple.com/fr/artist/rod%C3%ADn/1495701565" target="_blank"></a>
+          <a class="spotify" id="spotify" href="https://open.spotify.com/artist/7cMWfV0yjQ0GPs8fiDp3UA?si=GxRTmzsrSHCsYbFS-_ipHw" target="_blank"></a>
+          <a class="instagram" id="instagram" href="https://instagram.com/rodiin" target="_blank"></a>
+          <a class="facebook" id="facebook" href="https://www.facebook.com/pantaisclus" target="_blank"></a>
+          <a class="twitter" id="twitter" href="https://twitter.com/_rodiin_" target="_blank"></a>
+          <a class="bandcamp" id="bandcamp" href="https://rodiin.bandcamp.com" target="_blank"></a>
+          <a class="soundcloud" id="soundcloud" href="https://soundcloud.com/rodiin" target="_blank"></a>
+          <a class="youtube" id="youtube" href="https://www.youtube.com/c/rodínmusica" target="_blank"></a>
         </div>
         <!--Mobile1-->
         <div class="d-flex fenestra mobilemenu">
-            <a class="apple" href="https://music.apple.com/fr/artist/rod%C3%ADn/1495701565" target="_blank"></a>
-            <a class="spotify" href="https://open.spotify.com/artist/7cMWfV0yjQ0GPs8fiDp3UA?si=GxRTmzsrSHCsYbFS-_ipHw" target="_blank"></a>
-            <a class="instagram" href="https://instagram.com/rodiin" target="_blank"></a>
-            <a class="facebook" href="https://www.facebook.com/pantaisclus" target="_blank"></a>
+            <a class="apple" id="apple_mobile" href="https://music.apple.com/fr/artist/rod%C3%ADn/1495701565" target="_blank"></a>
+            <a class="spotify" id="spotify_mobile" href="https://open.spotify.com/artist/7cMWfV0yjQ0GPs8fiDp3UA?si=GxRTmzsrSHCsYbFS-_ipHw" target="_blank"></a>
+            <a class="instagram" id="instagram_mobile" href="https://instagram.com/rodiin" target="_blank"></a>
+            <a class="facebook" id="facebook_mobile" href="https://www.facebook.com/pantaisclus" target="_blank"></a>
         </div>
         <!--Mobile2-->
         <div class="d-flex fenestra mobilemenu">
-            <a class="twitter" href="https://twitter.com/pantaisclus" target="_blank"></a>
-            <a class="bandcamp" href="https://rodiin.bandcamp.com" target="_blank"></a>
-            <a class="soundcloud" href="https://soundcloud.com/rodiin" target="_blank"></a>
-            <a class="youtube" href="https://www.youtube.com/c/rodínmusica" target="_blank"></a>
+            <a class="twitter" id="twitter_mobile" href="https://twitter.com/pantaisclus" target="_blank"></a>
+            <a class="bandcamp" id="bandcamp_mobile" href="https://rodiin.bandcamp.com" target="_blank"></a>
+            <a class="soundcloud" id="soundcloud_mobile" href="https://soundcloud.com/rodiin" target="_blank"></a>
+            <a class="youtube" id="youtube_mobile" href="https://www.youtube.com/c/rodínmusica" target="_blank"></a>
         </div>
       </div>    
     </div>
@@ -69,7 +69,7 @@
       <div class="insideframe"> <!-----------cadre interieur--------------->
         <div class=" d-flex fenestra">
           <p class="text-center">pantaisclus.art <a href="https://www.linkedin.com/in/valentinbelhomme/" target="_blank" class="textlink">©Valentin Belhomme</a> + <a href="https://neblum.art/pantaislabel" target="_blank" class="textlink">PantaisRecords</a> 2022 </p>
-          <p class="hide">And a special thanks to the creators of poolsuite.net for the inspiration </p>
+          <p class="hide">And a special thanks to the creators of poolsuite.net. </p>
         </div>
       </div>    
     </div>
@@ -117,16 +117,43 @@
         <span><img id="crotzlyrics" src="./assets/Images/crotzponchs/godas_crotz.png" #iconcloselyrics (click)="closewindow(draggablelyrics)" class="draggableheadericon"alt="icon_crotz"></span> PANTAIS CLUS lyrics
       </div>
       <div class="insideframe"> <!-----------cadre interieur--------------->
-        <div class="d-flex fenestra iconas iconaslyrics">
-          <a href="./assets/Images/pantaisclus.pdf" target="_blank">
-            <img class="img-fluid" src="./assets/Images/icones/lyrics_art.png" alt="lyrics"> 
-          </a>
-          <a href="./assets/Images/pantaisclus_eng.pdf" target="_blank">
-            <img class="img-fluid" src="./assets/Images/icones/lyrics_eng.png" alt="english">
-          </a>
-          <a href="./assets/Images/pantaisclus_fr.pdf" target="_blank">
-            <img class="img-fluid" src="./assets/Images/icones/lyrics_fr.png" alt="francais">
-          </a>
+        <div class="fenestra iconas iconaslyrics">
+          <div class="row margin-btm rowsansgutterx">
+            <p class="text-center">[U.S. LP]</p>
+            <div class="col">
+              <a class="iconframe" href="https://neblum.art/Images/pdf/pantaisclus.pdf" target="_blank">
+                <img class="img-fluid" src="./assets/Images/icones/lyrics_art.png" alt="art"> 
+              </a>
+            </div>
+            <div class="col">
+              <a class="iconframe" href="https://neblum.art/Images/pdf/pantaisclus_eng.pdf" target="_blank">
+                <img class="img-fluid" src="./assets/Images/icones/lyrics_eng.png" alt="english">
+              </a>
+            </div>
+            <div class="col">
+              <a class="iconframe" href="https://neblum.art/Images/pdf/pantaisclus_fr.pdf" target="_blank">
+                <img class="img-fluid" src="./assets/Images/icones/lyrics_fr.png" alt="francais">
+              </a>
+            </div>
+          </div>
+          <div class="row rowsansgutterx">
+            <p class="text-center">[deluxe]</p>
+            <div class="col">
+              <a class="iconframe" href="https://neblum.art/Images/pdf/pantaisclusDLX.pdf" target="_blank">
+                <img class="img-fluid" src="./assets/Images/icones/lyrics_art_deluxe.png" alt="art_deluxe"> 
+              </a>
+            </div>
+            <div class="col">
+              <a class="iconframe" href="https://neblum.art/Images/pdf/pantaisclusDLXeng.pdf" target="_blank">
+                <img class="img-fluid" src="./assets/Images/icones/lyrics_eng_deluxe.png" alt="english_deluxe">
+              </a>
+            </div>
+            <div class="col">
+              <a class="iconframe" href="https://neblum.art/Images/pdf/pantaisclusDLXfr.pdf" target="_blank">
+                <img class="img-fluid" src="./assets/Images/icones/lyrics_fr_deluxe.png" alt="francais_deluxe">
+              </a>
+            </div>
+          </div>
         </div>
       </div>    
     </div>
@@ -210,7 +237,23 @@
       </div>
       <div class="insideframe"> <!-----------cadre interieur--------------->
         <div class="d-flex fenestra iconas iconaspro">
-          <p>en espèra de docs</p>
+          <div class="row rowsansgutterx">
+            <div class="col">
+              <a class="" href="https://neblum.art/Images/pdf/press_book.pdf" target="_blank">
+                <img class="img-fluid" src="./assets/Images/icones/press.png" alt="press"> 
+              </a>
+            </div>
+            <!--<div class="col">
+              <a class="" href="https://neblum.art/Images/pdf/XXXXXXXXXXXXXX" target="_blank">
+                <img class="img-fluid" src="./assets/Images/icones/bio.png" alt="bio">
+              </a>
+            </div>-->
+            <div class="col">
+              <a class="" href="https://neblum.art/Images/pdf/pantaislive.pdf" target="_blank">
+                <img class="img-fluid" src="./assets/Images/icones/live.png" alt="live">
+              </a>
+            </div>
+          </div>
         </div>
       </div>    
     </div>
@@ -233,7 +276,7 @@
             <img class="img-fluid" src="./assets/Images/icones/tv.png" alt="snippets">
           </a> -->
           <a #iconvideos href="http://pantaisclus.tv/" target="_blank">
-            <img class="img-fluid" src="./assets/Images/icones/videos.png" alt="videos">
+            <img class="img-fluid" src="./assets/Images/icones/tv.png" alt="tv">
           </a>
           <a #iconfilms (click)="displaywindow(draggablefilms)" >
             <img class="img-fluid" src="./assets/Images/icones/films.png" alt="films">

@@ -118,6 +118,18 @@ export class HomeComponent implements OnInit, ElementRef {
       duration: 415
     },
   ];
+//pichòta flor 
+//rei
+//alas avec Rouquette
+//pensarai single 
+//ma cançon 
+//temps 
+//me'n vau 
+//vòli 
+//bauç
+//alas vo
+//pensarai vo
+//camin
   
   init() { // init(dragorigin:any)
     var tag = document.createElement('script');
@@ -262,6 +274,22 @@ export class HomeComponent implements OnInit, ElementRef {
       root.style.setProperty('--bordFenetre', '#39378e');
       root.style.setProperty('--typoPonchs', '#ec7744');
       root.style.setProperty('--fonsFenestra', 'url(./assets/Images/fonsfenestra/fenestra_lura.jpg)');
+      root.style.setProperty('--apple', 'url(./assets/Images/sociau/lura/apple_link.png');
+      root.style.setProperty('--appleHover', 'url(./assets/Images/sociau/lura/apple_hover.png');
+      root.style.setProperty('--bandcamp', 'url(./assets/Images/sociau/lura/bc_link.png');
+      root.style.setProperty('--bandcampHover', 'url(./assets/Images/sociau/lura/bc_hover.png');
+      root.style.setProperty('--facebook', 'url(./assets/Images/sociau/lura/fb_link.png');
+      root.style.setProperty('--facebookHover', 'url(./assets/Images/sociau/lura/fb_hover.png');
+      root.style.setProperty('--instagram', 'url(./assets/Images/sociau/lura/insta_link.png');
+      root.style.setProperty('--instagramHover', 'url(./assets/Images/sociau/lura/insta_hover.png');
+      root.style.setProperty('--soundcloud', 'url(./assets/Images/sociau/lura/sound_link.png');
+      root.style.setProperty('--soundcloudHover', 'url(./assets/Images/sociau/lura/sound_hover.png');
+      root.style.setProperty('--spotify', 'url(./assets/Images/sociau/lura/spot_link.png');
+      root.style.setProperty('--spotifyHover', 'url(./assets/Images/sociau/lura/spot_hover.png');
+      root.style.setProperty('--twitter', 'url(./assets/Images/sociau/lura/twitter_link.png');
+      root.style.setProperty('--twitterHover', 'url(./assets/Images/sociau/lura/twitter_hover.png');
+      root.style.setProperty('--youtube', 'url(./assets/Images/sociau/lura/ytb_link.png');
+      root.style.setProperty('--youtubeHover', 'url(./assets/Images/sociau/lura/ytb_hover.png');
       document.getElementById("quatreponchs")?.setAttribute('src', './assets/Images/crotzponchs/lura_ponchs.png');
       document.getElementById("crotzsociau")?.setAttribute('src', './assets/Images/crotzponchs/lura_crotz.png')
       document.getElementById("crotzcredits")?.setAttribute('src', './assets/Images/crotzponchs/lura_crotz.png')
@@ -279,6 +307,22 @@ export class HomeComponent implements OnInit, ElementRef {
       root.style.setProperty('--bordFenetre', '#b7e1ff');
       root.style.setProperty('--typoPonchs', '#11584d');
       root.style.setProperty('--fonsFenestra', 'url(./assets/Images/fonsfenestra/fenestra_marselha.jpg)');
+      root.style.setProperty('--apple', 'url(./assets/Images/sociau/marselha/apple_link.png');
+      root.style.setProperty('--appleHover', 'url(./assets/Images/sociau/marselha/apple_hover.png');
+      root.style.setProperty('--bandcamp', 'url(./assets/Images/sociau/marselha/bc_link.png');
+      root.style.setProperty('--bandcampHover', 'url(./assets/Images/sociau/marselha/bc_hover.png');
+      root.style.setProperty('--facebook', 'url(./assets/Images/sociau/marselha/fb_link.png');
+      root.style.setProperty('--facebookHover', 'url(./assets/Images/sociau/marselha/fb_hover.png');
+      root.style.setProperty('--instagram', 'url(./assets/Images/sociau/marselha/insta_link.png');
+      root.style.setProperty('--instagramHover', 'url(./assets/Images/sociau/marselha/insta_hover.png');
+      root.style.setProperty('--soundcloud', 'url(./assets/Images/sociau/marselha/sound_link.png');
+      root.style.setProperty('--soundcloudHover', 'url(./assets/Images/sociau/marselha/sound_hover.png');
+      root.style.setProperty('--spotify', 'url(./assets/Images/sociau/marselha/spot_link.png');
+      root.style.setProperty('--spotifyHover', 'url(./assets/Images/sociau/marselha/spot_hover.png');
+      root.style.setProperty('--twitter', 'url(./assets/Images/sociau/marselha/twitter_link.png');
+      root.style.setProperty('--twitterHover', 'url(./assets/Images/sociau/marselha/twitter_hover.png');
+      root.style.setProperty('--youtube', 'url(./assets/Images/sociau/marselha/ytb_link.png');
+      root.style.setProperty('--youtubeHover', 'url(./assets/Images/sociau/marselha/ytb_hover.png');
       document.getElementById("quatreponchs")?.setAttribute('src', './assets/Images/crotzponchs/marselha_ponchs.png');
       document.getElementById("crotzsociau")?.setAttribute('src', './assets/Images/crotzponchs/marselha_crotz.png')
       document.getElementById("crotzcredits")?.setAttribute('src', './assets/Images/crotzponchs/marselha_crotz.png')
@@ -296,6 +340,22 @@ export class HomeComponent implements OnInit, ElementRef {
       root.style.setProperty('--bordFenetre', '#b55c5c');
       root.style.setProperty('--typoPonchs', '#ffba00');
       root.style.setProperty('--fonsFenestra', 'url(./assets/Images/fonsfenestra/fenestra_godas.jpg)');
+      root.style.setProperty('--apple', 'url(./assets/Images/sociau/godas/apple_link.png');
+      root.style.setProperty('--appleHover', 'url(./assets/Images/sociau/godas/apple_hover.png');
+      root.style.setProperty('--bandcamp', 'url(./assets/Images/sociau/godas/bc_link.png');
+      root.style.setProperty('--bandcampHover', 'url(./assets/Images/sociau/godas/bc_hover.png');
+      root.style.setProperty('--facebook', 'url(./assets/Images/sociau/godas/fb_link.png');
+      root.style.setProperty('--facebookHover', 'url(./assets/Images/sociau/godas/fb_hover.png');
+      root.style.setProperty('--instagram', 'url(./assets/Images/sociau/godas/insta_link.png');
+      root.style.setProperty('--instagramHover', 'url(./assets/Images/sociau/godas/insta_hover.png');
+      root.style.setProperty('--soundcloud', 'url(./assets/Images/sociau/godas/sound_link.png');
+      root.style.setProperty('--soundcloudHover', 'url(./assets/Images/sociau/godas/sound_hover.png');
+      root.style.setProperty('--spotify', 'url(./assets/Images/sociau/godas/spot_link.png');
+      root.style.setProperty('--spotifyHover', 'url(./assets/Images/sociau/godas/spot_hover.png');
+      root.style.setProperty('--twitter', 'url(./assets/Images/sociau/godas/twitter_link.png');
+      root.style.setProperty('--twitterHover', 'url(./assets/Images/sociau/godas/twitter_hover.png');
+      root.style.setProperty('--youtube', 'url(./assets/Images/sociau/godas/ytb_link.png');
+      root.style.setProperty('--youtubeHover', 'url(./assets/Images/sociau/godas/ytb_hover.png');
       document.getElementById("quatreponchs")?.setAttribute('src', './assets/Images/crotzponchs/godas_ponchs.png');
       document.getElementById("crotzsociau")?.setAttribute('src', './assets/Images/crotzponchs/godas_crotz.png')
       document.getElementById("crotzcredits")?.setAttribute('src', './assets/Images/crotzponchs/godas_crotz.png')
@@ -313,6 +373,22 @@ export class HomeComponent implements OnInit, ElementRef {
       root.style.setProperty('--bordFenetre', '#ffe400');
       root.style.setProperty('--typoPonchs', '#476d55');
       root.style.setProperty('--fonsFenestra', 'url(./assets/Images/fonsfenestra/fenestra_vitrolas.jpg)');
+      root.style.setProperty('--apple', 'url(./assets/Images/sociau/vitrolas/apple_link.png');
+      root.style.setProperty('--appleHover', 'url(./assets/Images/sociau/vitrolas/apple_hover.png');
+      root.style.setProperty('--bandcamp', 'url(./assets/Images/sociau/vitrolas/bc_link.png');
+      root.style.setProperty('--bandcampHover', 'url(./assets/Images/sociau/vitrolas/bc_hover.png');
+      root.style.setProperty('--facebook', 'url(./assets/Images/sociau/vitrolas/fb_link.png');
+      root.style.setProperty('--facebookHover', 'url(./assets/Images/sociau/vitrolas/fb_hover.png');
+      root.style.setProperty('--instagram', 'url(./assets/Images/sociau/vitrolas/insta_link.png');
+      root.style.setProperty('--instagramHover', 'url(./assets/Images/sociau/vitrolas/insta_hover.png');
+      root.style.setProperty('--soundcloud', 'url(./assets/Images/sociau/vitrolas/sound_link.png');
+      root.style.setProperty('--soundcloudHover', 'url(./assets/Images/sociau/vitrolas/sound_hover.png');
+      root.style.setProperty('--spotify', 'url(./assets/Images/sociau/vitrolas/spot_link.png');
+      root.style.setProperty('--spotifyHover', 'url(./assets/Images/sociau/vitrolas/spot_hover.png');
+      root.style.setProperty('--twitter', 'url(./assets/Images/sociau/vitrolas/twitter_link.png');
+      root.style.setProperty('--twitterHover', 'url(./assets/Images/sociau/vitrolas/twitter_hover.png');
+      root.style.setProperty('--youtube', 'url(./assets/Images/sociau/vitrolas/ytb_link.png');
+      root.style.setProperty('--youtubeHover', 'url(./assets/Images/sociau/vitrolas/ytb_hover.png');
       document.getElementById("quatreponchs")?.setAttribute('src', './assets/Images/crotzponchs/vitrolas_ponchs.png');
       document.getElementById("crotzsociau")?.setAttribute('src', './assets/Images/crotzponchs/vitrolas_crotz.png')
       document.getElementById("crotzcredits")?.setAttribute('src', './assets/Images/crotzponchs/vitrolas_crotz.png')
@@ -330,6 +406,22 @@ export class HomeComponent implements OnInit, ElementRef {
       root.style.setProperty('--bordFenetre', '#3b8b7f');
       root.style.setProperty('--typoPonchs', '#ffffff');
       root.style.setProperty('--fonsFenestra', 'url(./assets/Images/fonsfenestra/fenestra_salagon.jpg)');
+      root.style.setProperty('--apple', 'url(./assets/Images/sociau/salagon/apple_link.png');
+      root.style.setProperty('--appleHover', 'url(./assets/Images/sociau/salagon/apple_hover.png');
+      root.style.setProperty('--bandcamp', 'url(./assets/Images/sociau/salagon/bc_link.png');
+      root.style.setProperty('--bandcampHover', 'url(./assets/Images/sociau/salagon/bc_hover.png');
+      root.style.setProperty('--facebook', 'url(./assets/Images/sociau/salagon/fb_link.png');
+      root.style.setProperty('--facebookHover', 'url(./assets/Images/sociau/salagon/fb_hover.png');
+      root.style.setProperty('--instagram', 'url(./assets/Images/sociau/salagon/insta_link.png');
+      root.style.setProperty('--instagramHover', 'url(./assets/Images/sociau/salagon/insta_hover.png');
+      root.style.setProperty('--soundcloud', 'url(./assets/Images/sociau/salagon/sound_link.png');
+      root.style.setProperty('--soundcloudHover', 'url(./assets/Images/sociau/salagon/sound_hover.png');
+      root.style.setProperty('--spotify', 'url(./assets/Images/sociau/salagon/spot_link.png');
+      root.style.setProperty('--spotifyHover', 'url(./assets/Images/sociau/salagon/spot_hover.png');
+      root.style.setProperty('--twitter', 'url(./assets/Images/sociau/salagon/twitter_link.png');
+      root.style.setProperty('--twitterHover', 'url(./assets/Images/sociau/salagon/twitter_hover.png');
+      root.style.setProperty('--youtube', 'url(./assets/Images/sociau/salagon/ytb_link.png');
+      root.style.setProperty('--youtubeHover', 'url(./assets/Images/sociau/salagon/ytb_hover.png');
       document.getElementById("quatreponchs")?.setAttribute('src', './assets/Images/crotzponchs/salagon_ponchs.png');
       document.getElementById("crotzsociau")?.setAttribute('src', './assets/Images/crotzponchs/salagon_crotz.png')
       document.getElementById("crotzcredits")?.setAttribute('src', './assets/Images/crotzponchs/salagon_crotz.png')
@@ -347,6 +439,22 @@ export class HomeComponent implements OnInit, ElementRef {
       root.style.setProperty('--bordFenetre', '#b085cc');
       root.style.setProperty('--typoPonchs', '#3e4abb');
       root.style.setProperty('--fonsFenestra', 'url(./assets/Images/fonsfenestra/fenestra_venturi.jpg)');
+      root.style.setProperty('--apple', 'url(./assets/Images/sociau/venturi/apple_link.png');
+      root.style.setProperty('--appleHover', 'url(./assets/Images/sociau/venturi/apple_hover.png');
+      root.style.setProperty('--bandcamp', 'url(./assets/Images/sociau/venturi/bc_link.png');
+      root.style.setProperty('--bandcampHover', 'url(./assets/Images/sociau/venturi/bc_hover.png');
+      root.style.setProperty('--facebook', 'url(./assets/Images/sociau/venturi/fb_link.png');
+      root.style.setProperty('--facebookHover', 'url(./assets/Images/sociau/venturi/fb_hover.png');
+      root.style.setProperty('--instagram', 'url(./assets/Images/sociau/venturi/insta_link.png');
+      root.style.setProperty('--instagramHover', 'url(./assets/Images/sociau/venturi/insta_hover.png');
+      root.style.setProperty('--soundcloud', 'url(./assets/Images/sociau/venturi/sound_link.png');
+      root.style.setProperty('--soundcloudHover', 'url(./assets/Images/sociau/venturi/sound_hover.png');
+      root.style.setProperty('--spotify', 'url(./assets/Images/sociau/venturi/spot_link.png');
+      root.style.setProperty('--spotifyHover', 'url(./assets/Images/sociau/venturi/spot_hover.png');
+      root.style.setProperty('--twitter', 'url(./assets/Images/sociau/venturi/twitter_link.png');
+      root.style.setProperty('--twitterHover', 'url(./assets/Images/sociau/venturi/twitter_hover.png');
+      root.style.setProperty('--youtube', 'url(./assets/Images/sociau/venturi/ytb_link.png');
+      root.style.setProperty('--youtubeHover', 'url(./assets/Images/sociau/venturi/ytb_hover.png');
       document.getElementById("quatreponchs")?.setAttribute('src', './assets/Images/crotzponchs/venturi_ponchs.png');
       document.getElementById("crotzsociau")?.setAttribute('src', './assets/Images/crotzponchs/venturi_crotz.png')
       document.getElementById("crotzcredits")?.setAttribute('src', './assets/Images/crotzponchs/venturi_crotz.png')

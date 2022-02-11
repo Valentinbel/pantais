@@ -18,7 +18,7 @@ import { MagComponent } from './pantais/mag/mag.component';
 import { SnippetComponent } from './pantais/snippet/snippet.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MusicModule } from './music/music.module';
-//import {PageFlip} from '../page-flip';
+//import {PageFlip} from 'page-flip';
 
 @NgModule({
   declarations: [
