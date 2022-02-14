@@ -100,13 +100,13 @@ export class HomeComponent implements OnInit, ElementRef {
       duration: 228
     },
     {
-      title: 'ma cançon',
+      title: 'ma cançon',
       link: './assets/audio/5_ma_cançon.mp3',
       artist: 'Rodín',
       duration: 283
     },
     {
-      title: 'temps dei sòmis',
+      title: 'temps dei sòmis',
       link: './assets/audio/6_temps_dei_somis.mp3',
       artist: 'Rodín',
       duration: 324

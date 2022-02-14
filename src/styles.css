@@ -183,6 +183,7 @@ body, .ng-isolate-scope, home, index2, index, headerview{
 .radio{
     top:5%;
     left: 0%;
+    width: 360px;
 }
 .lyrics{
     top:30%;
@@ -537,4 +538,8 @@ tr.mat-header-row.cdk-header-row.ng-star-inserted, .mat-expansion-panel-content,
 }
 mat-icon.mat-icon.notranslate.currently-playing.material-icons.mat-icon-no-color.ng-star-inserted {
     fill: var(--typoPonchs);
+}
+
+mat-card.mat-card.mat-focus-indicator.mat-elevation-z1.ngx-audio-player.ng-star-inserted {
+    height: 55px;
 }

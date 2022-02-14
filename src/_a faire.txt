@@ -99,14 +99,7 @@ ng build
 --ng deploy
 ng serve --open
 
-Command + / : commenter
 ------------
-* Radio: 
-    /*  
-  
-  --> si y a moyen de mettre les titres en typo chicago aussi sur le lecteur c'est cool 
-  --> le jpg meta est dans le drive aussi  */
-
 * mag: 
 https://github.com/labsforge/flipbook-ng/tree/master/projects/flipbook-lib
 

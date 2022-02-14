@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-//import * as St from 'page-flip';
-// import {PageFlip} from 'page-flip';
+import { Book } from '@labsforge/flipbook';
 
 
 @Component({
@@ -14,24 +13,82 @@ export class MagComponent implements OnInit {
   nativeElement: any;
 
   ngOnInit(): void {
-    //const pageFlip = new PageFlip();
-
-    //or if you're using a script tag and page-flip.browser.js:
-    let book: any = null;
-    book =document.getElementById('book');
-    //const pageFlip = new St.PageFlip(book,
-    //{
-      //  width: 400, // required parameter - base page width
-       // height: 600,  // required parameter - base page height
-        //showCover: true
-    //});
-
-    //pageFlip.loadFromHTML(document.querySelectorAll('.my-page'));
+    
      
   }
 
- 
-  
+  book: Book = {
+    width: 1190,
+      height: 800,
+      zoom: 1,
+      cover: {
+        front: {
+          imageUrl: 'assets/demo/02-right.png',
+        },
+        back: {
+          imageUrl: 'assets/demo/02-left.png',
+        }
+      },
+      pages: [
+        { // start guard section
+          imageUrl: 'assets/demo/guard.jpg',
+          backgroundColor: '#41473A', // don't use if want to see front-cover inverted image
+        },
+        {
+          imageUrl: 'assets/demo/guard.jpg',
+        }, // end guard section
+        { // start transparent-sheet section
+          imageUrl: 'assets/demo/blank.jpg',
+        },
+        {
+          imageUrl: 'assets/demo/01-left.png',
+          opacity: 0.6,
+        },
+        {
+          imageUrl: 'assets/demo/blank.jpg',
+          opacity: 0.4,
+        },
+        {
+          imageUrl: 'assets/demo/blank.jpg',
+        }, // end transparent-sheet section
+        {
+          imageUrl: 'assets/demo/03-left.png',
+        },
+        {
+          imageUrl: 'assets/demo/03-right.png',
+        },
+        {
+          imageUrl: 'assets/demo/04-left.png',
+        },
+        {
+          imageUrl: 'assets/demo/04-right.png',
+        },
+        {
+          imageUrl: 'assets/demo/05-left.png',
+        },
+        {
+          imageUrl: 'assets/demo/05-right.png',
+        },
+        {
+          imageUrl: 'assets/demo/06-left.png',
+        },
+        {
+          imageUrl: 'assets/demo/06-right.png',
+        },
+        { // start guard section
+          imageUrl: 'assets/demo/guard.jpg',
+        },
+        {
+          imageUrl: 'assets/demo/guard.jpg',
+          backgroundColor: '#41473A', // don't use if want to see back-cover inverted image
+        }, // end guard section
+      ],
+      pageWidth: 585,
+      pageHeight: 780,
+      //startPageType: PageType.Double,
+      //endPageType: PageType.Double
+  }
+
    closewindow(windowid: any): void
    {
      windowid.classList.add('hide');
