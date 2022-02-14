@@ -76,7 +76,7 @@ export class HomeComponent implements OnInit, ElementRef {
   msaapPlaylist: Track[] = 
   [
     {
-      title: 'pichòta flor',
+      title: 'pichòta flor',
       link: './assets/audio/1_pichota_flor.mp3',
       artist: 'Rodín',
       duration: 248
@@ -88,7 +88,7 @@ export class HomeComponent implements OnInit, ElementRef {
       duration: 259
     },
     {
-      title: 'leis alas dau temps',
+      title: 'leis alas dau temps [amb Max Rouquette]',
       link: './assets/audio/3_leis_alas_dau_temps.mp3',
       artist: 'Rodín',
       duration: 230
@@ -117,19 +117,37 @@ export class HomeComponent implements OnInit, ElementRef {
       artist: 'Rodín',
       duration: 415
     },
+    {
+      title: 'leis alas dau temps [version alternativa]',
+      link: './assets/audio/leis_alas_dau_temps-version_alternativa.mp3',
+      artist: 'Rodín',
+      duration: 393 
+    },
+    {
+      title: 'pensarai en tu [version alternativa]',
+      link: './assets/audio/pensarai_en_tu-version_alternativa.mp3',
+      artist: 'Rodín',
+      duration: 328 
+    },
+    {
+      title: 'vòli [amb uèi]',
+      link: './assets/audio/voli-feat_uei.mp3',
+      artist: 'Rodín',
+      duration: 422 
+    },
+    {
+      title: 'lo bauç',
+      link: './assets/audio/lo_bauc.mp3',
+      artist: 'Rodín',
+      duration: 346 
+    },
+    {
+      title: 'camin de l\'estela [inedit]',
+      link: './assets/audio/camin_del_estela-inedit.mp3',
+      artist: 'Rodín',
+      duration: 221 
+    },
   ];
-//pichòta flor 
-//rei
-//alas avec Rouquette
-//pensarai single 
-//ma cançon 
-//temps 
-//me'n vau 
-//vòli 
-//bauç
-//alas vo
-//pensarai vo
-//camin
   
   init() { // init(dragorigin:any)
     var tag = document.createElement('script');

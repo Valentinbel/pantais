@@ -99,13 +99,13 @@ ng build
 --ng deploy
 ng serve --open
 
+Command + / : commenter
 ------------
 * Radio: 
-    Rajouter les titres qui manquent. cf whatzapp Rodin
-
-    > behavior:scroll > trouver un autre qui soit fixe    
-    > mettre le titre centré statique
-    > https://stackoverflow.com/questions/32693061/how-can-i-select-an-element-in-a-component-template
+    /*  
+  
+  --> si y a moyen de mettre les titres en typo chicago aussi sur le lecteur c'est cool 
+  --> le jpg meta est dans le drive aussi  */
 
 * mag: 
 https://github.com/labsforge/flipbook-ng/tree/master/projects/flipbook-lib
