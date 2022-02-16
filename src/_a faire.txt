@@ -54,11 +54,6 @@ https://www.npmjs.com/package/soundcloud.ts
 https://github.com/ToneDen/Player#api
 https://www.hongkiat.com/blog/customize-soundcloud-audio-player-toneden
 
-
-Faire un lecteur audio: 
-    * https://npm.io/package/ngx-audio-player ==> Ok; Sons internes
-    * https://developers.soundcloud.com/docs/api/html5-widget.html 
-
 Electron: 
     * https://www.npmjs.com/package/ngx-electron 
 
@@ -91,8 +86,6 @@ sass --watch src/mag_style.scss:src/app/pantais/mag/mag.component.css
 
 https://developers.google.com/youtube/iframe_api_reference
 
-videostopper
-init
 
 =========================================================
 ng build 
@@ -100,11 +93,33 @@ ng build
 ng serve --open
 
 ------------
+* icone clip au lieu de films + titre fenetre
+
+* Lien fanlink sur pantaisclus en haut à gauche (cf whatzapp)
+
+* cookies:
+    https://www.npmjs.com/package/ngx-cookie-service
+    https://www.tutorialswebsite.com/how-to-use-cookies-in-angular/
+    https://santunu23.medium.com/how-to-implement-cookie-service-in-angularjs-easily-3aa37fac900e
+
+    ou : https://github.com/salemdar/ngx-cookie
+
+    doc: https://auth0.com/docs/manage-users/cookies/samesite-cookie-attribute-changes
+
+    <a href="https://www.songkick.com/artists/10092111" class="songkick-widget" data-theme="light" data-track-button="on" data-detect-style="true" data-background-color="transparent" data-locale="en">rodín tour dates</a>
+    <script src="//widget.songkick.com/10092111/widget.js"></script>
+
+    https://codepen.io/wead2c/pen/RrbbpL
+
 * mag: 
-https://github.com/labsforge/flipbook-ng/tree/master/projects/flipbook-lib
+    https://github.com/labsforge/flipbook-ng/tree/master/projects/flipbook-lib
 
-* https://angular.io/guide/router
-* videos : inserer avec un npm
-* ngx-videogular 
+* Videos
+    Celle ci devrait fonctionner et accepter plusieurs lecteurs 
+    https://mugan86.medium.com/angular-9-como-a%C3%B1adir-videos-de-youtube-en-unas-sencilos-pasos-bf8ee55de46b
 
+    oubien  inserer avec un npm
+    ngx-videogular 
 
+* router
+    https://angular.io/guide/router

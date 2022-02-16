@@ -507,7 +507,10 @@ a, a:hover {
 /* 
 mat-card.mat-card.mat-focus-indicator.mat-elevation-z1.ngx-audio-player.ng-star-inserted,*/
 tr.mat-header-row.cdk-header-row.ng-star-inserted, .mat-expansion-panel-content,
-.mat-expansion-panel-header {
+.mat-expansion-panel-header, 
+.mat-slider, /*slider temps*/
+.ngx-d-none.ngx-d-sm-block.ngx-py-3.ngx-px-1 /*temps écoulé*/
+ {
    display: none!important;
 }
 
@@ -542,4 +545,8 @@ mat-icon.mat-icon.notranslate.currently-playing.material-icons.mat-icon-no-color
 
 mat-card.mat-card.mat-focus-indicator.mat-elevation-z1.ngx-audio-player.ng-star-inserted {
     height: 55px;
+}
+
+mat-card.mat-card.mat-focus-indicator.ngx-d-flex.ngx-justify-content-center.ngx-audio-player.z-depth-1.mat-elevation-z2 {
+    height: 50px;
 }
