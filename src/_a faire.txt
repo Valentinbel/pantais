@@ -93,23 +93,26 @@ ng build
 ng serve --open
 
 ------------
-* icone clip au lieu de films + titre fenetre
+* play error: A investiguer
+* si ca marche, mettre les snippets pareil. 
+* Widget cookies: Voir avec le doubme tel quel si ça change qqch online. 
 
-* Lien fanlink sur pantaisclus en haut à gauche (cf whatzapp)
+* remonter les icones (vérifier)
 
 * cookies:
+ESsayer de publier voir si ca change quelaue chose. 
     https://www.npmjs.com/package/ngx-cookie-service
     https://www.tutorialswebsite.com/how-to-use-cookies-in-angular/
     https://santunu23.medium.com/how-to-implement-cookie-service-in-angularjs-easily-3aa37fac900e
 
     ou : https://github.com/salemdar/ngx-cookie
 
-    doc: https://auth0.com/docs/manage-users/cookies/samesite-cookie-attribute-changes
 
     <a href="https://www.songkick.com/artists/10092111" class="songkick-widget" data-theme="light" data-track-button="on" data-detect-style="true" data-background-color="transparent" data-locale="en">rodín tour dates</a>
     <script src="//widget.songkick.com/10092111/widget.js"></script>
 
     https://codepen.io/wead2c/pen/RrbbpL
+    >>Si on a plus besoin du cookieService, l'enlever de index, app.module, import, fonction home.component.ts
 
 * mag: 
     https://github.com/labsforge/flipbook-ng/tree/master/projects/flipbook-lib

@@ -26,6 +26,7 @@
     "bootstrap": "^5.0.1",
     "font-awesome": "^4.7.0",
     "ngx-audio-player": "^11.0.4",
+    "ngx-cookie-service": "^13.1.2",
     "page-flip": "^2.0.7",
     "reframe.js": "^3.0.3",
     "rxjs": "~6.6.0",

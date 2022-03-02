@@ -2,7 +2,9 @@
         
   <!--NAVBAR-->
   <nav class="navbar navbar-expand navbar-light topnavbar fixed-top">
-    <img id="quatreponchs" src="./assets/Images/crotzponchs/godas_ponchs.png"/> <!--;class="quatreponchs"-->
+    <a class="nav-link quatreponchs" id="linkquatreponchs" #pantaisclus href="https://fanlink.to/pantaisclus" target="_blank" aria-labelledby="PANTAIS CLUS">
+      <img id="quatreponchs" src="./assets/Images/crotzponchs/godas_ponchs.png"/> 
+    </a>
     <div class="" #navbarSupportedContent>
       <ul class="navbar-nav mr-auto">
         <li class="nav-item titolmenu">
@@ -74,20 +76,10 @@
       </div>    
     </div>
 
-    <!-----------snippet--------------->
-    <div #draggablesnippet id="draggablesnippet" class="draggable todrag tv hide" (click)="addzindex(draggablesnippet)"  cdkDragBoundary="#draggingzone" cdkDrag>
-      <div #draggablesnippetheader class="drag-header todrag" cdkDragHandle>
-        <span><img id="crotzsnippet" src="./assets/Images/crotzponchs/godas_crotz.png" #iconclosetv (click)="closewindow(draggablesnippet)" class="draggableheadericon"alt="icon_crotz"></span> PANTAIS CLUS television
-      </div>
-      <div class="insideframe">
-        <app-snippet *ngIf="snippetView"></app-snippet>
-      </div>
-    </div>
-
     <!-----------FILMS--------------->
     <div #draggablefilms id="draggablefilms" class="draggable todrag films hide" (click)="addzindex(draggablefilms)"  cdkDragBoundary="#draggingzone" cdkDrag>
       <div #draggablefilmsheader class="drag-header todrag" cdkDragHandle>
-        <span><img id="crotzfilms" src="./assets/Images/crotzponchs/godas_crotz.png" #iconclosefilms (click)="closewindow(draggablefilms)" class="draggableheadericon"alt="icon_crotz"></span> PANTAIS CLUS films
+        <span><img id="crotzfilms" src="./assets/Images/crotzponchs/godas_crotz.png" #iconclosefilms (click)="closewindow(draggablefilms)" class="draggableheadericon"alt="icon_crotz"></span> PANTAIS CLUS clips
       </div>
       <div class="insideframe"> <!-----------cadre interieur--------------->
         <div id="player" class=" d-flex filmsframe">
@@ -230,6 +222,76 @@
       </div>    
     </div>
 
+    <!-----------FRIENDS--------------->
+    <div #draggablefriends  id="draggablefriends" class="draggable todrag friends hide" (click)="addzindex(draggablefriends)"  cdkDragBoundary="#draggingzone" cdkDrag>
+      <div #draggablefriendsheader class="drag-header todrag" cdkDragHandle>
+        <span><img id="crotzfriends" src="./assets/Images/crotzponchs/godas_crotz.png" #iconclosefriends (click)="closewindow(draggablefriends)" class="draggableheadericon"alt="icon_crotz"></span> PANTAIS CLUS friends
+      </div>
+      <div class="insideframe"> <!-----------cadre interieur--------------->
+        <div class="d-flex fenestra iconas iconasfriends">
+          <div class="row rowsansgutterx">
+            <div class="col">
+              <a class="" href="https://www.facebook.com/doradorovitchLabel" target="_blank">
+                <img class="img-fluid" src="./assets/Images/icones/dora.png" alt="dora"> 
+              </a>
+            </div>
+            <div class="col">
+              <a class="" href="https://fakefourinc.com" target="_blank">
+                <img class="img-fluid" src="./assets/Images/icones/fakefour.png" alt="fakefour">
+              </a>
+            </div>
+            <div class="col">
+              <a class="" href="https://pantaisrecords.com" target="_blank">
+                <img class="img-fluid" src="./assets/Images/icones/prec.png" alt="pantaisrecord">
+              </a>
+            </div>
+            <div class="col">
+              <a class="" href="https://vimeo.com/piget" target="_blank">
+                <img class="img-fluid" src="./assets/Images/icones/piget.png" alt="piget">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>    
+    </div>
+
+    <!-----------TOUR--------------->
+    <div #draggabletour  id="draggabletour" class="draggable todrag tour hide" (click)="addzindex(draggabletour)"  cdkDragBoundary="#draggingzone" cdkDrag>
+      <div #draggabletourheader class="drag-header todrag" cdkDragHandle>
+        <span><img id="crotztour" src="./assets/Images/crotzponchs/godas_crotz.png" #iconclosetour (click)="closewindow(draggabletour)" class="draggableheadericon"alt="icon_crotz"></span> PANTAIS CLUS tour
+      </div>
+      <div class="insideframe"> <!-----------cadre interieur--------------->
+        <div class="d-flex fenestra iconas">
+          <div class="row rowsansgutterx">
+            <a href="https://www.songkick.com/artists/10092111" class="songkick-widget" data-theme="light" data-track-button="on" data-detect-style="true" data-background-color="transparent" data-locale="en">rodín tour dates</a>
+            <script src="//widget.songkick.com/10092111/widget.js"></script>
+          </div>
+        </div>
+      </div>    
+    </div>
+
+ <!-----------Live--------------->
+    <div #draggablelive  id="draggablelive" class="draggable todrag live hide" (click)="addzindex(draggablelive)"  cdkDragBoundary="#draggingzone" cdkDrag>
+      <div #draggableliveheader class="drag-header todrag" cdkDragHandle>
+        <span><img id="crotzlive" src="./assets/Images/crotzponchs/godas_crotz.png" #iconcloselive (click)="closewindow(draggablelive)" class="draggableheadericon"alt="icon_crotz"></span> PANTAIS CLUS live
+      </div>
+      <div class="insideframe"> <!-----------cadre interieur--------------->
+        <iframe id="palomasrc" width="560" height="315" src="https://www.youtube.com/embed/qEpcCirzkoo" title="Rodín live paloma" 
+        frameborder="0" allowfullscreen></iframe>
+      </div>    
+    </div>
+
+        <!-----------snippet--------------->
+        <div #draggablesnippet id="draggablesnippet" class="draggable todrag tv hide" (click)="addzindex(draggablesnippet)"  cdkDragBoundary="#draggingzone" cdkDrag>
+          <div #draggablesnippetheader class="drag-header todrag" cdkDragHandle>
+            <span><img id="crotzsnippet" src="./assets/Images/crotzponchs/godas_crotz.png" #iconclosetv (click)="closewindow(draggablesnippet)" class="draggableheadericon"alt="icon_crotz"></span> PANTAIS CLUS television
+          </div>
+          <div class="insideframe">
+            <iframe id="televisionsrc" width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PL81csO796eDB_jrvC1As4g4LHHxd7RYry" title="television" 
+            frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+
     <!-----------PRO--------------->
     <div #draggablepro  id="draggablepro" class="draggable todrag pro hide" (click)="addzindex(draggablepro)"  cdkDragBoundary="#draggingzone" cdkDrag>
       <div #draggableproheader class="drag-header todrag" cdkDragHandle>
@@ -243,11 +305,11 @@
                 <img class="img-fluid" src="./assets/Images/icones/press.png" alt="press"> 
               </a>
             </div>
-            <!--<div class="col">
-              <a class="" href="https://neblum.art/Images/pdf/XXXXXXXXXXXXXX" target="_blank">
-                <img class="img-fluid" src="./assets/Images/icones/bio.png" alt="bio">
+            <div class="col">
+              <a class="" href="https://neblum.art/Images/pdf/pantaistec.pdf" target="_blank">
+                <img class="img-fluid" src="./assets/Images/icones/tech.png" alt="tec">
               </a>
-            </div>-->
+            </div>
             <div class="col">
               <a class="" href="https://neblum.art/Images/pdf/pantaislive.pdf" target="_blank">
                 <img class="img-fluid" src="./assets/Images/icones/live.png" alt="live">
@@ -261,37 +323,41 @@
     <app-not-found *ngIf="errorView === 404"></app-not-found>
   
     <div class="cosdepagina">
-      <!--<div class="justify-content-center d-flex margin_topbottom grostitreorange">
-        <img src="./assets/Images/GrosTitreOrange.png" class="img-fluid">            
-      </div> -->
       <div class="justify-content-center d-flex margin_topbottom">
         <div class="iconas">
           <a #iconlyrics (click)="displaywindow(draggablelyrics)" >
-            <img class="img-fluid" src="./assets/Images/icones/lyrics.png" alt="lyrics">
+            <img class="img-fluid margin-top" src="./assets/Images/icones/lyrics.png" alt="lyrics">
           </a>
           <a #iconlinkssociau (click)="displaywindow(draggablesociau)" >
-            <img class="img-fluid" src="./assets/Images/icones/links.png" alt="sociau">
+            <img class="img-fluid margin-top" src="./assets/Images/icones/links.png" alt="sociau">
           </a>
-          <!-- <a #iconyoutube (click)="displaywindow(draggablesnippet)" >
-            <img class="img-fluid" src="./assets/Images/icones/tv.png" alt="snippets">
-          </a> -->
-          <a #iconvideos href="http://pantaisclus.tv/" target="_blank">
-            <img class="img-fluid" src="./assets/Images/icones/tv.png" alt="tv">
-          </a>
+          <a #iconvideos (click)="displaywindow(draggablesnippet)" >
+            <img class="img-fluid margin-top" src="./assets/Images/icones/tv.png" alt="tv">
+          </a> 
+         
           <a #iconfilms (click)="displaywindow(draggablefilms)" >
-            <img class="img-fluid" src="./assets/Images/icones/films.png" alt="films">
+            <img class="img-fluid margin-top" src="./assets/Images/icones/clips.png" alt="clips">
           </a>
           <a #iconradio (click)="displaywindow(draggableradio)" >
-            <img class="img-fluid" src="./assets/Images/icones/radio.png" alt="radio">
+            <img class="img-fluid margin-top" src="./assets/Images/icones/radio.png" alt="radio">
           </a>
           <!-- <a #iconmag (click)="displaywindow(draggablemag)" >
-            <img class="img-fluid" src="./assets/Images/icones/mag.png" alt="mag">
+            <img class="img-fluid margin-top" src="./assets/Images/icones/mag.png" alt="mag">
           </a> -->
           <a #iconshop (click)="displaywindow(draggableshop)" >
-            <img class="img-fluid" src="./assets/Images/icones/shop.png" alt="shop">
+            <img class="img-fluid margin-top" src="./assets/Images/icones/shop.png" alt="shop">
+          </a>
+          <a #iconfriends (click)="displaywindow(draggablefriends)" >
+            <img class="img-fluid margin-top" src="./assets/Images/icones/friends.png" alt="friends">
+          </a>
+          <a #iconlive (click)="displaywindow(draggablelive)" >
+            <img class="img-fluid margin-top" src="./assets/Images/icones/livepaloma.png" alt="live">
+          </a>
+          <a #icontour (click)="displaywindow(draggabletour)" >
+            <img class="img-fluid margin-top" src="./assets/Images/icones/tour.png" alt="tour">
           </a>
           <a #iconpro (click)="displaywindow(draggablepro)" >
-            <img class="img-fluid" src="./assets/Images/icones/pro.png" alt="pro">
+            <img class="img-fluid margin-top" src="./assets/Images/icones/pro.png" alt="pro">
           </a>
         </div>
       </div>

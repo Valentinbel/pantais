@@ -38,7 +38,7 @@
     padding-left: 0px;
 }
 
-a:-webkit-any-link, a img, .underline, .dropdown-item, .draggableheadericon, .drag-header span img, 
+a:-webkit-any-link, a img, .underline, .dropdown-item, .draggableheadericon, .drag-header span img,
 mat-icon svg, mat-icon svg path, button {
     cursor: url('./assets/Images/cursor/cursor_det.svg'), url('./assets/Images/cursorlite/cursordet.png') 3 0, auto!important;
 }
@@ -55,6 +55,10 @@ mat-icon svg, mat-icon svg path, button {
     cursor: url('./assets/Images/cursor/cursor_man.svg'), url('./assets/Images/cursorlite/cursor_man.svg'),auto!important
 }
 
+#quatreponchs, #linkquatreponchs{
+    cursor: url('./assets/Images/cursor/cursor.svg'), url('./assets/Images/cursorlite/cursor.svg'),auto!important;
+}
+
 @font-face {
     font-family: 'WeissModernGothic';
     src: url('./assets/Fonts/WeissModernGothic.otf') format('truetype'), url('./assets/Fonts/WeissModernGothic.otf') format('truetype');
@@ -66,6 +70,11 @@ mat-icon svg, mat-icon svg path, button {
 @media (max-width:725px) {
     .shopimage{
         max-width: 100%!important;
+    }
+}
+@media (max-width:800px) {
+    .cosdepagina{
+        margin-bottom: 8%!important ;
     }
 }
 @media (min-width:576px) {
@@ -114,6 +123,7 @@ body, .ng-isolate-scope, home, index2, index, headerview{
     flex-direction: column;
     position: absolute;
     bottom: 0;
+    max-width: 630px;
     margin-bottom: 3%;
 }
 
@@ -129,6 +139,7 @@ body, .ng-isolate-scope, home, index2, index, headerview{
     height: 100vh;
     height: calc(var(--vh, 1vh) * 100);
     top: 1.5em!important;
+    bottom: -1.5em!important;
     background-repeat: repeat-y;
     background-size: 100%;
     background-position-x: center;
@@ -201,6 +212,20 @@ body, .ng-isolate-scope, home, index2, index, headerview{
 .pro{
     top:20%;
     left: 5%;
+}
+.friends{
+    top:8%;
+    left: 12%;
+}
+
+.tour{
+    top:17%;
+    left: 2%;
+}
+
+.live{
+    top:11%;
+    left: 12%;
 }
 
 .text-center{
@@ -288,20 +313,14 @@ a, a:hover {
 
 
 .iconaslyrics a img, 
-.iconaspro a img
+.iconaspro a img,
+.iconasfriends a img
 {
     height: 60px;
     width: 55px;
 }
 
 /*******NavbarMenu*******/
-
-/*.quatreponchs{
-    background-image: var(--ponchs);
-    width: 10px;
-    height: 13px;
-	background-size: 10px 13px;
-} */
 
 .topnavbar {
     background-color: var(--bordFenetre);
@@ -349,6 +368,9 @@ a, a:hover {
     text-decoration:underline;
 }
 
+.quatreponchs{
+    padding: 0.1rem 0rem;
+}
 /*------SHOP-------*/
 .shopframe{
     background-size: cover;
@@ -388,6 +410,10 @@ a, a:hover {
 
 .margin-btm {
     margin-bottom: 1em;
+}
+
+.margin-top{
+    margin-top: 1rem;
 }
 .rowsansgutterx{
     --bs-gutter-x: 0rem!important;
@@ -549,4 +575,10 @@ mat-card.mat-card.mat-focus-indicator.mat-elevation-z1.ngx-audio-player.ng-star-
 
 mat-card.mat-card.mat-focus-indicator.ngx-d-flex.ngx-justify-content-center.ngx-audio-player.z-depth-1.mat-elevation-z2 {
     height: 50px;
+}
+
+/*------TOUR-------*/
+.songkick-widget{
+    color: var(--noir-background);
+    text-decoration: none;
 }

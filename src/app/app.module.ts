@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {CDK_DRAG_CONFIG, DragDropModule} from '@angular/cdk/drag-drop';
-
+import { CookieService } from 'ngx-cookie-service';
 //import { FormsModule } from '@angular/forms';
 //import { HttpClientModule } from "@angular/common/http";
 //import { CommonModule } from '@angular/common';
@@ -42,6 +42,7 @@ import { FlipBookModule } from '@labsforge/flipbook';
 
   ],
   providers: [
+    CookieService
   ],
   bootstrap: [AppComponent]
 })

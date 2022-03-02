@@ -7,6 +7,8 @@ import { YouTubePlayerModule } from "@angular/youtube-player";
 import { Track , AudioPlayerComponent} from 'ngx-audio-player'; 
 import { map , debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { Observable, Subject, of } from 'rxjs';
+//import { NONE_TYPE } from '@angular/compiler';
+import { CookieService } from 'ngx-cookie-service';
 
 
 @Component({
@@ -20,7 +22,6 @@ export class HomeComponent implements OnInit, ElementRef {
   public uppedzindexreference: number =1;
   errorView: number | undefined;
   public magView: Boolean = false;
-  public snippetView: Boolean = false;
 
   /** YOUTUBE **/
   // public video: any;
@@ -55,8 +56,15 @@ export class HomeComponent implements OnInit, ElementRef {
   //autoPlay: false;
   // voir: AudioPlayerComponent
  
+  //Cookies
+  private cookie_name = '';
+  private all_cookies : any = '';
 
-  constructor(private activatedroute: ActivatedRoute) 
+  //livePaloma
+  //var url = $("#cartoonVideo").attr('src');
+  public palomasrc : any =  document.getElementById("palomasrc")?.getAttribute('src');
+
+  constructor(private activatedroute: ActivatedRoute, private cookieService:CookieService) 
   {
     window.addEventListener('resize', () => 
     {
@@ -71,7 +79,39 @@ export class HomeComponent implements OnInit, ElementRef {
     const random = Math.floor(Math.random() * theme.length);
     this.changetheme(theme[random]);
     console.log("theme on init:", theme[random]);
+  
+    this.cookieService.set('split_test_identifier', '13f53f232ca39e5a5bdb03174092b74023e1cc2', { secure: true,sameSite: 'None' });
+    this.cookieService.set('AMCVS_2DED4480533B2D590A490D4C', '1', { secure: true,sameSite: 'None' });
+    this.cookieService.set('s_gvo_9', 'D%3Dc9', { secure: true,sameSite: 'None' });
+    this.cookieService.set('s_gvo_10', 'D%3Dc10', { secure: true,sameSite: 'None' });
+    this.cookieService.set('s_gvo_11', 'D%3Dc11', { secure: true,sameSite: 'None' });
+    this.cookieService.set('s_gvo_21', 'Songkick%3Arod%C3%ADn%3AArtist%3AHome', {secure: true,sameSite: 'None' });
+    this.cookieService.set('s_gvo_22', 'Songkick%3ASite', {secure: true,sameSite: 'None' });
+    this.cookieService.set('s_gvo_51', 'Logged%20Out', { secure: true,sameSite: 'None' });
+    this.cookieService.set('s_cc', 'true', {secure: true,sameSite: 'None' });
+    this.cookieService.set('s_gvo_15', 'Repeat', { secure: true,sameSite: 'None' });
+    this.cookieService.set('OptanonAlertBoxClosed', '2022-02-15T21:02:15.813Z', { secure: true,sameSite: 'None' });
+    this.cookieService.set('AAMC_wmg_0', 'REGION%7C6', { secure: true,sameSite: 'None' });
+    this.cookieService.set('aam_uuid', '84820227647259454630248766722725372393', {secure: true,sameSite: 'None' });
+    
+    //this.cookieService.set( name: string, value: string, options?: { expires?: number | Date, path?: string, domain?: string, secure?: boolean, sameSite?: 'Lax' | 'None' | 'Strict'}): void;
+    //this.cookie_name=this.cookieService.get('split_test_identifier');
+    //this.all_cookies=this.cookieService.getAll();  
+    
   }
+   //header("Set-Cookie: cross-site-cookie=whatever; SameSite=None; Secure");
+
+  // setCookie(){
+  //   this.cookieService.set('name','Tutorialswebsite');
+  // }
+  
+  // deleteCookie(){
+  //   this.cookieService.delete('name');
+  // }
+  
+  // deleteAll(){
+  //   this.cookieService.deleteAll();
+  // }
 
   msaapPlaylist: Track[] = 
   [
@@ -309,16 +349,19 @@ export class HomeComponent implements OnInit, ElementRef {
       root.style.setProperty('--youtube', 'url(./assets/Images/sociau/lura/ytb_link.png');
       root.style.setProperty('--youtubeHover', 'url(./assets/Images/sociau/lura/ytb_hover.png');
       document.getElementById("quatreponchs")?.setAttribute('src', './assets/Images/crotzponchs/lura_ponchs.png');
-      document.getElementById("crotzsociau")?.setAttribute('src', './assets/Images/crotzponchs/lura_crotz.png')
-      document.getElementById("crotzcredits")?.setAttribute('src', './assets/Images/crotzponchs/lura_crotz.png')
-      document.getElementById("crotzsnippet")?.setAttribute('src', './assets/Images/crotzponchs/lura_crotz.png')
-      document.getElementById("crotzfilms")?.setAttribute('src', './assets/Images/crotzponchs/lura_crotz.png')
-      document.getElementById("crotzradio")?.setAttribute('src', './assets/Images/crotzponchs/lura_crotz.png')
-      document.getElementById("crotzlyrics")?.setAttribute('src', './assets/Images/crotzponchs/lura_crotz.png')
-      document.getElementById("crotzmag")?.setAttribute('src', './assets/Images/crotzponchs/lura_crotz.png')
-      document.getElementById("crotzshop")?.setAttribute('src', './assets/Images/crotzponchs/lura_crotz.png')
-      document.getElementById("crotzpro")?.setAttribute('src', './assets/Images/crotzponchs/lura_crotz.png')
-      document.getElementById("crotz404")?.setAttribute('src', './assets/Images/crotzponchs/lura_crotz.png')
+      document.getElementById("crotzsociau")?.setAttribute('src', './assets/Images/crotzponchs/lura_crotz.png');
+      document.getElementById("crotzcredits")?.setAttribute('src', './assets/Images/crotzponchs/lura_crotz.png');
+      document.getElementById("crotzsnippet")?.setAttribute('src', './assets/Images/crotzponchs/lura_crotz.png');
+      document.getElementById("crotzfilms")?.setAttribute('src', './assets/Images/crotzponchs/lura_crotz.png');
+      document.getElementById("crotzradio")?.setAttribute('src', './assets/Images/crotzponchs/lura_crotz.png');
+      document.getElementById("crotzlyrics")?.setAttribute('src', './assets/Images/crotzponchs/lura_crotz.png');
+      document.getElementById("crotzmag")?.setAttribute('src', './assets/Images/crotzponchs/lura_crotz.png');
+      document.getElementById("crotzshop")?.setAttribute('src', './assets/Images/crotzponchs/lura_crotz.png');
+      document.getElementById("crotzfriends")?.setAttribute('src', './assets/Images/crotzponchs/lura_crotz.png');
+      document.getElementById("crotztour")?.setAttribute('src', './assets/Images/crotzponchs/lura_crotz.png');
+      document.getElementById("crotzlive")?.setAttribute('src', './assets/Images/crotzponchs/lura_crotz.png');
+      document.getElementById("crotzpro")?.setAttribute('src', './assets/Images/crotzponchs/lura_crotz.png');
+      document.getElementById("crotz404")?.setAttribute('src', './assets/Images/crotzponchs/lura_crotz.png');
     }
     if(theme=="marselha"){
       root.style.setProperty('--bgimg', 'url(./assets/Images/backgrounds/marselha.jpg)');
@@ -342,16 +385,19 @@ export class HomeComponent implements OnInit, ElementRef {
       root.style.setProperty('--youtube', 'url(./assets/Images/sociau/marselha/ytb_link.png');
       root.style.setProperty('--youtubeHover', 'url(./assets/Images/sociau/marselha/ytb_hover.png');
       document.getElementById("quatreponchs")?.setAttribute('src', './assets/Images/crotzponchs/marselha_ponchs.png');
-      document.getElementById("crotzsociau")?.setAttribute('src', './assets/Images/crotzponchs/marselha_crotz.png')
-      document.getElementById("crotzcredits")?.setAttribute('src', './assets/Images/crotzponchs/marselha_crotz.png')
-      document.getElementById("crotzsnippet")?.setAttribute('src', './assets/Images/crotzponchs/marselha_crotz.png')
-      document.getElementById("crotzfilms")?.setAttribute('src', './assets/Images/crotzponchs/marselha_crotz.png')
-      document.getElementById("crotzradio")?.setAttribute('src', './assets/Images/crotzponchs/marselha_crotz.png')
-      document.getElementById("crotzlyrics")?.setAttribute('src', './assets/Images/crotzponchs/marselha_crotz.png')
-      document.getElementById("crotzmag")?.setAttribute('src', './assets/Images/crotzponchs/marselha_crotz.png')
-      document.getElementById("crotzshop")?.setAttribute('src', './assets/Images/crotzponchs/marselha_crotz.png')
-      document.getElementById("crotzpro")?.setAttribute('src', './assets/Images/crotzponchs/marselha_crotz.png')
-      document.getElementById("crotz404")?.setAttribute('src', './assets/Images/crotzponchs/marselha_crotz.png')
+      document.getElementById("crotzsociau")?.setAttribute('src', './assets/Images/crotzponchs/marselha_crotz.png');
+      document.getElementById("crotzcredits")?.setAttribute('src', './assets/Images/crotzponchs/marselha_crotz.png');
+      document.getElementById("crotzsnippet")?.setAttribute('src', './assets/Images/crotzponchs/marselha_crotz.png');
+      document.getElementById("crotzfilms")?.setAttribute('src', './assets/Images/crotzponchs/marselha_crotz.png');
+      document.getElementById("crotzradio")?.setAttribute('src', './assets/Images/crotzponchs/marselha_crotz.png');
+      document.getElementById("crotzlyrics")?.setAttribute('src', './assets/Images/crotzponchs/marselha_crotz.png');
+      document.getElementById("crotzmag")?.setAttribute('src', './assets/Images/crotzponchs/marselha_crotz.png');
+      document.getElementById("crotzshop")?.setAttribute('src', './assets/Images/crotzponchs/marselha_crotz.png');
+      document.getElementById("crotzfriends")?.setAttribute('src', './assets/Images/crotzponchs/marselha_crotz.png');
+      document.getElementById("crotztour")?.setAttribute('src', './assets/Images/crotzponchs/marselha_crotz.png');
+      document.getElementById("crotzlive")?.setAttribute('src', './assets/Images/crotzponchs/marselha_crotz.png');
+      document.getElementById("crotzpro")?.setAttribute('src', './assets/Images/crotzponchs/marselha_crotz.png');
+      document.getElementById("crotz404")?.setAttribute('src', './assets/Images/crotzponchs/marselha_crotz.png');
     }
     if(theme=="godas"){
       root.style.setProperty('--bgimg', 'url(./assets/Images/backgrounds/godas.jpg)');
@@ -375,16 +421,19 @@ export class HomeComponent implements OnInit, ElementRef {
       root.style.setProperty('--youtube', 'url(./assets/Images/sociau/godas/ytb_link.png');
       root.style.setProperty('--youtubeHover', 'url(./assets/Images/sociau/godas/ytb_hover.png');
       document.getElementById("quatreponchs")?.setAttribute('src', './assets/Images/crotzponchs/godas_ponchs.png');
-      document.getElementById("crotzsociau")?.setAttribute('src', './assets/Images/crotzponchs/godas_crotz.png')
-      document.getElementById("crotzcredits")?.setAttribute('src', './assets/Images/crotzponchs/godas_crotz.png')
-      document.getElementById("crotzsnippet")?.setAttribute('src', './assets/Images/crotzponchs/godas_crotz.png')
-      document.getElementById("crotzfilms")?.setAttribute('src', './assets/Images/crotzponchs/godas_crotz.png')
-      document.getElementById("crotzradio")?.setAttribute('src', './assets/Images/crotzponchs/godas_crotz.png')
-      document.getElementById("crotzlyrics")?.setAttribute('src', './assets/Images/crotzponchs/godas_crotz.png')
-      document.getElementById("crotzmag")?.setAttribute('src', './assets/Images/crotzponchs/godas_crotz.png')
-      document.getElementById("crotzshop")?.setAttribute('src', './assets/Images/crotzponchs/godas_crotz.png')
-      document.getElementById("crotzpro")?.setAttribute('src', './assets/Images/crotzponchs/godas_crotz.png')
-      document.getElementById("crotz404")?.setAttribute('src', './assets/Images/crotzponchs/godas_crotz.png')
+      document.getElementById("crotzsociau")?.setAttribute('src', './assets/Images/crotzponchs/godas_crotz.png');
+      document.getElementById("crotzcredits")?.setAttribute('src', './assets/Images/crotzponchs/godas_crotz.png');
+      document.getElementById("crotzsnippet")?.setAttribute('src', './assets/Images/crotzponchs/godas_crotz.png');
+      document.getElementById("crotzfilms")?.setAttribute('src', './assets/Images/crotzponchs/godas_crotz.png');
+      document.getElementById("crotzradio")?.setAttribute('src', './assets/Images/crotzponchs/godas_crotz.png');
+      document.getElementById("crotzlyrics")?.setAttribute('src', './assets/Images/crotzponchs/godas_crotz.png');
+      document.getElementById("crotzmag")?.setAttribute('src', './assets/Images/crotzponchs/godas_crotz.png');
+      document.getElementById("crotzshop")?.setAttribute('src', './assets/Images/crotzponchs/godas_crotz.png');
+      document.getElementById("crotzfriends")?.setAttribute('src', './assets/Images/crotzponchs/godas_crotz.png');
+      document.getElementById("crotztour")?.setAttribute('src', './assets/Images/crotzponchs/godas_crotz.png');
+      document.getElementById("crotzlive")?.setAttribute('src', './assets/Images/crotzponchs/godas_crotz.png');
+      document.getElementById("crotzpro")?.setAttribute('src', './assets/Images/crotzponchs/godas_crotz.png');
+      document.getElementById("crotz404")?.setAttribute('src', './assets/Images/crotzponchs/godas_crotz.png');
     }
     if(theme=="vitrolas"){
       root.style.setProperty('--bgimg', 'url(./assets/Images/backgrounds/vitrolas.jpg)');
@@ -409,15 +458,18 @@ export class HomeComponent implements OnInit, ElementRef {
       root.style.setProperty('--youtubeHover', 'url(./assets/Images/sociau/vitrolas/ytb_hover.png');
       document.getElementById("quatreponchs")?.setAttribute('src', './assets/Images/crotzponchs/vitrolas_ponchs.png');
       document.getElementById("crotzsociau")?.setAttribute('src', './assets/Images/crotzponchs/vitrolas_crotz.png')
-      document.getElementById("crotzcredits")?.setAttribute('src', './assets/Images/crotzponchs/vitrolas_crotz.png')
-      document.getElementById("crotzsnippet")?.setAttribute('src', './assets/Images/crotzponchs/vitrolas_crotz.png')
-      document.getElementById("crotzfilms")?.setAttribute('src', './assets/Images/crotzponchs/vitrolas_crotz.png')
-      document.getElementById("crotzradio")?.setAttribute('src', './assets/Images/crotzponchs/vitrolas_crotz.png')
-      document.getElementById("crotzlyrics")?.setAttribute('src', './assets/Images/crotzponchs/vitrolas_crotz.png')
-      document.getElementById("crotzmag")?.setAttribute('src', './assets/Images/crotzponchs/vitrolas_crotz.png')
-      document.getElementById("crotzshop")?.setAttribute('src', './assets/Images/crotzponchs/vitrolas_crotz.png')
-      document.getElementById("crotzpro")?.setAttribute('src', './assets/Images/crotzponchs/vitrolas_crotz.png')
-      document.getElementById("crotz404")?.setAttribute('src', './assets/Images/crotzponchs/vitrolas_crotz.png')
+      document.getElementById("crotzcredits")?.setAttribute('src', './assets/Images/crotzponchs/vitrolas_crotz.png');
+      document.getElementById("crotzsnippet")?.setAttribute('src', './assets/Images/crotzponchs/vitrolas_crotz.png');
+      document.getElementById("crotzfilms")?.setAttribute('src', './assets/Images/crotzponchs/vitrolas_crotz.png');
+      document.getElementById("crotzradio")?.setAttribute('src', './assets/Images/crotzponchs/vitrolas_crotz.png');
+      document.getElementById("crotzlyrics")?.setAttribute('src', './assets/Images/crotzponchs/vitrolas_crotz.png');
+      document.getElementById("crotzmag")?.setAttribute('src', './assets/Images/crotzponchs/vitrolas_crotz.png');
+      document.getElementById("crotzshop")?.setAttribute('src', './assets/Images/crotzponchs/vitrolas_crotz.png');
+      document.getElementById("crotzfriends")?.setAttribute('src', './assets/Images/crotzponchs/vitrolas_crotz.png');
+      document.getElementById("crotztour")?.setAttribute('src', './assets/Images/crotzponchs/vitrolas_crotz.png');
+      document.getElementById("crotzlive")?.setAttribute('src', './assets/Images/crotzponchs/vitrolas_crotz.png');
+      document.getElementById("crotzpro")?.setAttribute('src', './assets/Images/crotzponchs/vitrolas_crotz.png');
+      document.getElementById("crotz404")?.setAttribute('src', './assets/Images/crotzponchs/vitrolas_crotz.png');
     }
     if(theme=="salagon"){
       root.style.setProperty('--bgimg', 'url(./assets/Images/backgrounds/salagon.jpg)');
@@ -441,16 +493,19 @@ export class HomeComponent implements OnInit, ElementRef {
       root.style.setProperty('--youtube', 'url(./assets/Images/sociau/salagon/ytb_link.png');
       root.style.setProperty('--youtubeHover', 'url(./assets/Images/sociau/salagon/ytb_hover.png');
       document.getElementById("quatreponchs")?.setAttribute('src', './assets/Images/crotzponchs/salagon_ponchs.png');
-      document.getElementById("crotzsociau")?.setAttribute('src', './assets/Images/crotzponchs/salagon_crotz.png')
-      document.getElementById("crotzcredits")?.setAttribute('src', './assets/Images/crotzponchs/salagon_crotz.png')
-      document.getElementById("crotzsnippet")?.setAttribute('src', './assets/Images/crotzponchs/salagon_crotz.png')
-      document.getElementById("crotzfilms")?.setAttribute('src', './assets/Images/crotzponchs/salagon_crotz.png')
-      document.getElementById("crotzradio")?.setAttribute('src', './assets/Images/crotzponchs/salagon_crotz.png')
-      document.getElementById("crotzlyrics")?.setAttribute('src', './assets/Images/crotzponchs/salagon_crotz.png')
-      document.getElementById("crotzmag")?.setAttribute('src', './assets/Images/crotzponchs/salagon_crotz.png')
-      document.getElementById("crotzshop")?.setAttribute('src', './assets/Images/crotzponchs/salagon_crotz.png')
-      document.getElementById("crotzpro")?.setAttribute('src', './assets/Images/crotzponchs/salagon_crotz.png')
-      document.getElementById("crotz404")?.setAttribute('src', './assets/Images/crotzponchs/salagon_crotz.png')
+      document.getElementById("crotzsociau")?.setAttribute('src', './assets/Images/crotzponchs/salagon_crotz.png');
+      document.getElementById("crotzcredits")?.setAttribute('src', './assets/Images/crotzponchs/salagon_crotz.png');
+      document.getElementById("crotzsnippet")?.setAttribute('src', './assets/Images/crotzponchs/salagon_crotz.png');
+      document.getElementById("crotzfilms")?.setAttribute('src', './assets/Images/crotzponchs/salagon_crotz.png');
+      document.getElementById("crotzradio")?.setAttribute('src', './assets/Images/crotzponchs/salagon_crotz.png');
+      document.getElementById("crotzlyrics")?.setAttribute('src', './assets/Images/crotzponchs/salagon_crotz.png');
+      document.getElementById("crotzmag")?.setAttribute('src', './assets/Images/crotzponchs/salagon_crotz.png');
+      document.getElementById("crotzshop")?.setAttribute('src', './assets/Images/crotzponchs/salagon_crotz.png');
+      document.getElementById("crotzfriends")?.setAttribute('src', './assets/Images/crotzponchs/salagon_crotz.png');
+      document.getElementById("crotztour")?.setAttribute('src', './assets/Images/crotzponchs/salagon_crotz.png');
+      document.getElementById("crotzlive")?.setAttribute('src', './assets/Images/crotzponchs/salagon_crotz.png');
+      document.getElementById("crotzpro")?.setAttribute('src', './assets/Images/crotzponchs/salagon_crotz.png');
+      document.getElementById("crotz404")?.setAttribute('src', './assets/Images/crotzponchs/salagon_crotz.png');
     }
     if(theme=="venturi"){
       root.style.setProperty('--bgimg', 'url(./assets/Images/backgrounds/venturi.jpg)');
@@ -474,16 +529,19 @@ export class HomeComponent implements OnInit, ElementRef {
       root.style.setProperty('--youtube', 'url(./assets/Images/sociau/venturi/ytb_link.png');
       root.style.setProperty('--youtubeHover', 'url(./assets/Images/sociau/venturi/ytb_hover.png');
       document.getElementById("quatreponchs")?.setAttribute('src', './assets/Images/crotzponchs/venturi_ponchs.png');
-      document.getElementById("crotzsociau")?.setAttribute('src', './assets/Images/crotzponchs/venturi_crotz.png')
-      document.getElementById("crotzcredits")?.setAttribute('src', './assets/Images/crotzponchs/venturi_crotz.png')
-      document.getElementById("crotzsnippet")?.setAttribute('src', './assets/Images/crotzponchs/venturi_crotz.png')
-      document.getElementById("crotzfilms")?.setAttribute('src', './assets/Images/crotzponchs/venturi_crotz.png')
-      document.getElementById("crotzradio")?.setAttribute('src', './assets/Images/crotzponchs/venturi_crotz.png')
-      document.getElementById("crotzlyrics")?.setAttribute('src', './assets/Images/crotzponchs/venturi_crotz.png')
-      document.getElementById("crotzmag")?.setAttribute('src', './assets/Images/crotzponchs/venturi_crotz.png')
-      document.getElementById("crotzshop")?.setAttribute('src', './assets/Images/crotzponchs/venturi_crotz.png')
-      document.getElementById("crotzpro")?.setAttribute('src', './assets/Images/crotzponchs/venturi_crotz.png')
-      document.getElementById("crotz404")?.setAttribute('src', './assets/Images/crotzponchs/venturi_crotz.png')
+      document.getElementById("crotzsociau")?.setAttribute('src', './assets/Images/crotzponchs/venturi_crotz.png');
+      document.getElementById("crotzcredits")?.setAttribute('src', './assets/Images/crotzponchs/venturi_crotz.png');
+      document.getElementById("crotzsnippet")?.setAttribute('src', './assets/Images/crotzponchs/venturi_crotz.png');
+      document.getElementById("crotzfilms")?.setAttribute('src', './assets/Images/crotzponchs/venturi_crotz.png');
+      document.getElementById("crotzradio")?.setAttribute('src', './assets/Images/crotzponchs/venturi_crotz.png');
+      document.getElementById("crotzlyrics")?.setAttribute('src', './assets/Images/crotzponchs/venturi_crotz.png');
+      document.getElementById("crotzmag")?.setAttribute('src', './assets/Images/crotzponchs/venturi_crotz.png');
+      document.getElementById("crotzshop")?.setAttribute('src', './assets/Images/crotzponchs/venturi_crotz.png');
+      document.getElementById("crotzfriends")?.setAttribute('src', './assets/Images/crotzponchs/venturi_crotz.png');
+      document.getElementById("crotztour")?.setAttribute('src', './assets/Images/crotzponchs/venturi_crotz.png');
+      document.getElementById("crotzlive")?.setAttribute('src', './assets/Images/crotzponchs/venturi_crotz.png');
+      document.getElementById("crotzpro")?.setAttribute('src', './assets/Images/crotzponchs/venturi_crotz.png');
+      document.getElementById("crotz404")?.setAttribute('src', './assets/Images/crotzponchs/venturi_crotz.png');
     }
   }
 
@@ -510,11 +568,6 @@ export class HomeComponent implements OnInit, ElementRef {
     { 
       this.magView = true; 
     }
-      //if ( windowid.id === "draggablesnippet" ) { this.init("snippets"); } 
-      // if ( windowid.id === "draggablesnippet" ) 
-      // { 
-      //   this.snippetView = true; 
-      // } 
     if ( windowid.id === "draggableradio" ) 
     { 
       const self = this
@@ -524,16 +577,21 @@ export class HomeComponent implements OnInit, ElementRef {
           element.play();
       });
     }
+    if ( windowid.id === "draggablelive" ) 
+    {
+      document.getElementById("palomasrc")?.setAttribute('src', 'https://www.youtube.com/embed/qEpcCirzkoo'+ '?autoplay=1');
+    }
+    if ( windowid.id === "draggablesnippet" ) 
+    { 
+      document.getElementById("televisionsrc")?.setAttribute('src', 'https://www.youtube.com/embed/videoseries?list=PL81csO796eDB_jrvC1As4g4LHHxd7RYry');
+    } 
   }   
 
   closewindow(windowid: any): void{
     windowid.classList.add('hide');
-    /*if(windowid.id==="draggablesnippet"){
-      this.videoStopper(this.playersnippets); 
-    }*/
     if(windowid.id==="draggablefilms")
     {
-      this.videoStopper(this); // this.videoStopper(this.playerfilms); 
+      this.videoStopper(this); 
     }
     if(windowid.id==="draggableradio")
     {
@@ -543,6 +601,13 @@ export class HomeComponent implements OnInit, ElementRef {
       {
           element.pause();
       });
+    }
+    if(windowid.id==="draggablelive")
+    {
+      document.getElementById("palomasrc")?.setAttribute('src', '');
+    }
+    if(windowid.id==="draggablesnippet"){
+      document.getElementById("televisionsrc")?.setAttribute('src', '');
     }
   }
 }
