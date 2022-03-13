@@ -12,6 +12,8 @@ equalizer: https://codepen.io/munkholm/pen/mdbOpBp (?)
 plugin from: https://npm.io/package/ngx-audio-player ==> Ok; Sons internes
 
 * SNIPPET: 
+https://stackoverflow.com/questions/43022449/autoplay-and-playlist-not-working-on-multiple-youtube-api-iframe-players
+ou:
 Deplacer mag en enfant de Home et voir si ca marche
 (creer et supprimer l'ancien?)
 OU BIEN essayer un trick via css (changemen de classe...?)
@@ -30,32 +32,10 @@ Overlay tv bgTv (z-index+1) https://www.w3schools.com/howto/howto_css_overlay.as
     background-size: 2px 2px;
 }
 
-* Oninit random theme
-
-* Icones en bas sur 2 lignes
-
-
 * solet --> si on se chauffe de faire le solitaire custom 
 http://radovanjanjic.com/js-solitaire/
 
 * Films --> pareil mais avec les clips en 16:9 
-
-/*** SOUNDCLOUD ANGULAR API ***/
-Search Component Events & Properties + footerComponent > pas créé
-Erreur du detailsMusic Constructor?
-Qaudn le site dit AppComponent, j'ai mis ça dans HomeComponent
-Music.Service.ts >randomTrack(tracks) : elements en comment dans la fonction. Check si ok
-https://scotch.io/tutorials/build-a-music-player-with-angular-2-electron-i-setup-basics-concepts
-https://scotch.io/tutorials/build-a-music-player-with-angular-electron-ii-making-the-ui#toc-up-next
-https://scotch.io/tutorials/build-a-music-player-with-angular-electron-iii-bringing-it-all-together
-Autres npm audio:
-https://www.npmjs.com/package/soundcloud-audio
-https://www.npmjs.com/package/soundcloud.ts
-https://github.com/ToneDen/Player#api
-https://www.hongkiat.com/blog/customize-soundcloud-audio-player-toneden
-
-Electron: 
-    * https://www.npmjs.com/package/ngx-electron 
 
 Drumkit: 
     * https://github.com/BlackTafita/electron-drum-machine
@@ -71,8 +51,6 @@ ng g module admin --routing
 
 create component
 
-
-
 ng g service music/shared/music
 
 Ajouter meta Reseaux Sociaux
@@ -83,9 +61,6 @@ npm install -g sass
 // The watch flag tells Sass to watch your source files for changes, and re-compile CSS each time you save your Sass
 sass --watch src/mag_style.scss:src/app/pantais/mag/mag.component.css
 // version manuelle: (sass src/mag_style.scss:src/app/pantais/mag/mag.component.css)
-
-https://developers.google.com/youtube/iframe_api_reference
-
 
 =========================================================
 ng build 

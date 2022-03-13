@@ -19,7 +19,6 @@ import { SnippetComponent } from './pantais/snippet/snippet.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MusicModule } from './music/music.module';
 import { FlipBookModule } from '@labsforge/flipbook';
-//import {PageFlip} from 'page-flip';
 
 @NgModule({
   declarations: [
@@ -38,8 +37,6 @@ import { FlipBookModule } from '@labsforge/flipbook';
     MusicModule,
     NgxAudioPlayerModule,
     FlipBookModule
-    //PageFlip
-
   ],
   providers: [
     CookieService

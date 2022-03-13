@@ -161,6 +161,11 @@ body, .ng-isolate-scope, home, index2, index, headerview{
     width:100vw;
     height: 100vh;
 }
+#dragginzonemag{
+    max-width: 100%;
+    width:100vw;
+    height: 100vh;
+}
 
 .fenestra{
     /*justify-content: center !important;*/
@@ -200,10 +205,10 @@ body, .ng-isolate-scope, home, index2, index, headerview{
     top:30%;
     left: 8%;
 }
-.mag{
+/*.mag{
     top:5%;
     left: 5%;
-}
+}*/
 .shop{
     top:10%;
     left: 15%;

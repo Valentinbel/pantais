@@ -7,7 +7,7 @@ import { YouTubePlayerModule } from "@angular/youtube-player";
 import { Track , AudioPlayerComponent} from 'ngx-audio-player'; 
 import { map , debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { Observable, Subject, of } from 'rxjs';
-//import { NONE_TYPE } from '@angular/compiler';
+//import { NONE_TYPE } from '@angular/compiler'; // investiguer a quoi ça sert? 
 import { CookieService } from 'ngx-cookie-service';
 
 
@@ -80,19 +80,19 @@ export class HomeComponent implements OnInit, ElementRef {
     this.changetheme(theme[random]);
     console.log("theme on init:", theme[random]);
   
-    this.cookieService.set('split_test_identifier', '13f53f232ca39e5a5bdb03174092b74023e1cc2', { secure: true,sameSite: 'None' });
-    this.cookieService.set('AMCVS_2DED4480533B2D590A490D4C', '1', { secure: true,sameSite: 'None' });
-    this.cookieService.set('s_gvo_9', 'D%3Dc9', { secure: true,sameSite: 'None' });
-    this.cookieService.set('s_gvo_10', 'D%3Dc10', { secure: true,sameSite: 'None' });
-    this.cookieService.set('s_gvo_11', 'D%3Dc11', { secure: true,sameSite: 'None' });
-    this.cookieService.set('s_gvo_21', 'Songkick%3Arod%C3%ADn%3AArtist%3AHome', {secure: true,sameSite: 'None' });
-    this.cookieService.set('s_gvo_22', 'Songkick%3ASite', {secure: true,sameSite: 'None' });
-    this.cookieService.set('s_gvo_51', 'Logged%20Out', { secure: true,sameSite: 'None' });
-    this.cookieService.set('s_cc', 'true', {secure: true,sameSite: 'None' });
-    this.cookieService.set('s_gvo_15', 'Repeat', { secure: true,sameSite: 'None' });
-    this.cookieService.set('OptanonAlertBoxClosed', '2022-02-15T21:02:15.813Z', { secure: true,sameSite: 'None' });
-    this.cookieService.set('AAMC_wmg_0', 'REGION%7C6', { secure: true,sameSite: 'None' });
-    this.cookieService.set('aam_uuid', '84820227647259454630248766722725372393', {secure: true,sameSite: 'None' });
+    // this.cookieService.set('split_test_identifier', '13f53f232ca39e5a5bdb03174092b74023e1cc2', { secure: true,sameSite: 'None' });
+    // this.cookieService.set('AMCVS_2DED4480533B2D590A490D4C', '1', { secure: true,sameSite: 'None' });
+    // this.cookieService.set('s_gvo_9', 'D%3Dc9', { secure: true,sameSite: 'None' });
+    // this.cookieService.set('s_gvo_10', 'D%3Dc10', { secure: true,sameSite: 'None' });
+    // this.cookieService.set('s_gvo_11', 'D%3Dc11', { secure: true,sameSite: 'None' });
+    // this.cookieService.set('s_gvo_21', 'Songkick%3Arod%C3%ADn%3AArtist%3AHome', {secure: true,sameSite: 'None' });
+    // this.cookieService.set('s_gvo_22', 'Songkick%3ASite', {secure: true,sameSite: 'None' });
+    // this.cookieService.set('s_gvo_51', 'Logged%20Out', { secure: true,sameSite: 'None' });
+    // this.cookieService.set('s_cc', 'true', {secure: true,sameSite: 'None' });
+    // this.cookieService.set('s_gvo_15', 'Repeat', { secure: true,sameSite: 'None' });
+    // this.cookieService.set('OptanonAlertBoxClosed', '2022-02-15T21:02:15.813Z', { secure: true,sameSite: 'None' });
+    // this.cookieService.set('AAMC_wmg_0', 'REGION%7C6', { secure: true,sameSite: 'None' });
+    // this.cookieService.set('aam_uuid', '84820227647259454630248766722725372393', {secure: true,sameSite: 'None' });
     
     //this.cookieService.set( name: string, value: string, options?: { expires?: number | Date, path?: string, domain?: string, secure?: boolean, sameSite?: 'Lax' | 'None' | 'Strict'}): void;
     //this.cookie_name=this.cookieService.get('split_test_identifier');
