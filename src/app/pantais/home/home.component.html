@@ -156,7 +156,8 @@
           <span><img id="crotzmag" src="./assets/Images/crotzponchs/godas_crotz.png" #iconclosemag (click)="closewindow(draggablemag)" class="draggableheadericon"alt="icon_crotz"></span> PANTAIS CLUS mag
         </div>
         <div class="insideframe"> <!-----------cadre interieur--------------->
-          <app-mag *ngIf="magView"></app-mag>
+          <flipbook  id="magflipbook" class="magflipbook" [model]="book" [startAt]="0"></flipbook>
+          <!--<app-mag *ngIf="magView"></app-mag>-->
         </div>    
       </div>
 
@@ -276,7 +277,7 @@
         <span><img id="crotzlive" src="./assets/Images/crotzponchs/godas_crotz.png" #iconcloselive (click)="closewindow(draggablelive)" class="draggableheadericon"alt="icon_crotz"></span> PANTAIS CLUS live
       </div>
       <div class="insideframe"> <!-----------cadre interieur--------------->
-        <iframe id="palomasrc" width="560" height="315" src="https://www.youtube.com/embed/qEpcCirzkoo" title="Rodín live paloma" 
+        <iframe id="palomasrc" class="d-flex filmsframe" width="560" height="315" src="https://www.youtube.com/embed/qEpcCirzkoo" title="Rodín live paloma" 
         frameborder="0" allowfullscreen></iframe>
       </div>    
     </div>
@@ -287,7 +288,7 @@
             <span><img id="crotzsnippet" src="./assets/Images/crotzponchs/godas_crotz.png" #iconclosetv (click)="closewindow(draggablesnippet)" class="draggableheadericon"alt="icon_crotz"></span> PANTAIS CLUS television
           </div>
           <div class="insideframe">
-            <iframe id="televisionsrc" width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PL81csO796eDB_jrvC1As4g4LHHxd7RYry" title="television" 
+            <iframe id="televisionsrc" class="d-flex filmsframe" width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PL81csO796eDB_jrvC1As4g4LHHxd7RYry" title="television" 
             frameborder="0" allowfullscreen></iframe>
           </div>
         </div>
@@ -353,9 +354,11 @@
           <a #iconlive (click)="displaywindow(draggablelive)" >
             <img class="img-fluid margin-top" src="./assets/Images/icones/livepaloma.png" alt="live">
           </a>
-          <a #icontour (click)="displaywindow(draggabletour)" >
+          <!--
+            <a #icontour (click)="displaywindow(draggabletour)" >
             <img class="img-fluid margin-top" src="./assets/Images/icones/tour.png" alt="tour">
           </a>
+          -->
           <a #iconpro (click)="displaywindow(draggablepro)" >
             <img class="img-fluid margin-top" src="./assets/Images/icones/pro.png" alt="pro">
           </a>

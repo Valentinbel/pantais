@@ -1,7 +1,7 @@
 import { QueryBindingType } from '@angular/compiler/src/core';
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { MagComponent } from '../mag/mag.component';
+//import { MagComponent } from '../mag/mag.component';
 // import reframe from 'refame.js';
 import { YouTubePlayerModule } from "@angular/youtube-player";
 import { Track , AudioPlayerComponent} from 'ngx-audio-player'; 
@@ -9,6 +9,7 @@ import { map , debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { Observable, Subject, of } from 'rxjs';
 //import { NONE_TYPE } from '@angular/compiler'; // investiguer a quoi ça sert? 
 import { CookieService } from 'ngx-cookie-service';
+import { Book, PageType } from '@labsforge/flipbook';
 
 
 @Component({
@@ -66,10 +67,16 @@ export class HomeComponent implements OnInit, ElementRef {
 
   constructor(private activatedroute: ActivatedRoute, private cookieService:CookieService) 
   {
+    //calcule heith navbar
+    //la mettre dans une var. 
+    //la deduire de la height du draggable
+
     window.addEventListener('resize', () => 
     {
       let vh = window.innerHeight * 0.01;
       document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+      this.magDimensions(); 
     });
   }
   
@@ -79,7 +86,7 @@ export class HomeComponent implements OnInit, ElementRef {
     const random = Math.floor(Math.random() * theme.length);
     this.changetheme(theme[random]);
     console.log("theme on init:", theme[random]);
-  
+
     // this.cookieService.set('split_test_identifier', '13f53f232ca39e5a5bdb03174092b74023e1cc2', { secure: true,sameSite: 'None' });
     // this.cookieService.set('AMCVS_2DED4480533B2D590A490D4C', '1', { secure: true,sameSite: 'None' });
     // this.cookieService.set('s_gvo_9', 'D%3Dc9', { secure: true,sameSite: 'None' });
@@ -96,7 +103,7 @@ export class HomeComponent implements OnInit, ElementRef {
     
     //this.cookieService.set( name: string, value: string, options?: { expires?: number | Date, path?: string, domain?: string, secure?: boolean, sameSite?: 'Lax' | 'None' | 'Strict'}): void;
     //this.cookie_name=this.cookieService.get('split_test_identifier');
-    //this.all_cookies=this.cookieService.getAll();  
+    this.all_cookies=this.cookieService.getAll();  
     
   }
    //header("Set-Cookie: cross-site-cookie=whatever; SameSite=None; Secure");
@@ -189,79 +196,39 @@ export class HomeComponent implements OnInit, ElementRef {
     },
   ];
   
-  init() { // init(dragorigin:any)
+  init() 
+  {
     var tag = document.createElement('script');
     tag.src='https://www.youtube.com/iframe_api';
     var firstScriptTag = document.getElementsByTagName('script')[0];
     firstScriptTag.parentNode!.insertBefore(tag, firstScriptTag);
-    /*if (dragorigin==="snippets"){
-      var tagsnippet = document.createElement('script');
-      tagsnippet.src='https://www.youtube.com/iframe_api';
-      var snippetScriptTag = document.getElementsByTagName('script')[0];
-      console.log("snippetScriptTag : ",snippetScriptTag);
-      snippetScriptTag.parentNode!.insertBefore(tagsnippet, snippetScriptTag);
-      window['onYouTubeIframeAPIReady'] = () => this.startVideo("snippets");
-      console.log("init snippets works");
-    }*/
-    /*if (dragorigin==="films"){
-      var tagfilms = document.createElement('script');
-      tagfilms.src='https://www.youtube.com/iframe_api';
-      var filmScriptTag = document.getElementsByTagName('script')[0];*/
-      console.log("firstScriptTag : ", firstScriptTag);
-      window['onYouTubeIframeAPIReady'] = () => this.startVideo();
-      //firstScriptTag.parentNode!.insertBefore(tagfilms, filmScriptTag);
-      //window['onYouTubeIframeAPIReady'] = () => this.startVideo("films");
-      console.log("init films works");
-    //}
-     
+    console.log("firstScriptTag : ", firstScriptTag);
+    window['onYouTubeIframeAPIReady'] = () => this.startVideo();
+    console.log("init films works");     
   }
 
-  startVideo() { // startVideo(dragorigin:any) {
-    //this.reframed = false;
-    /*if (dragorigin==="snippets"){
-      this.reframedsnippets = false;
-      this.playersnippets = new window['YT'].Player('player', {
-        playerVars: {
-          autoplay: 1,
-          modestbranding: 1,
-          controls: 0,
-          disablekb: 1,
-          rel: 0,
-          showinfo: 0,
-          fs: 0,
-          playsinline: 1, list:'PL81csO796eDB_jrvC1As4g4LHHxd7RYry',
-          listType: 'player'
-        },
-        events: {
-          'onStateChange': this.onPlayerStateChange.bind(this.playersnippets),
-          'onError': this.onPlayerError.bind(this.playersnippets),
-          'onReady': this.onPlayerReady.bind(this.playersnippets),
-        }
-      });
-      console.log("this is snippets : ", this.playersnippets);
-    }*/
-    //if(dragorigin==="films"){ //else if
-      this.reframed = false;
-      this.player = new window['YT'].Player('player', {
-        playerVars: {
-          autoplay: 1,
-          modestbranding: 1,
-          controls: 0,
-          disablekb: 1,
-          rel: 0,
-          showinfo: 0,
-          fs: 0,
-          playsinline: 1, list:'PL81csO796eDDUIqRMau1niRxqHLrXAVJz',
-          listType: 'player'
-        },
-        events: {
-          'onStateChange': this.onPlayerStateChange.bind(this), // .bind(this.playerfilms),
-          'onError': this.onPlayerError.bind(this),
-          'onReady': this.onPlayerReady.bind(this),
-        }
-      });
-      console.log("this is films : ", this);
-    //}
+  startVideo() 
+  { 
+    this.reframed = false;
+    this.player = new window['YT'].Player('player', {
+      playerVars: {
+        autoplay: 1,
+        modestbranding: 1,
+        controls: 0,
+        disablekb: 1,
+        rel: 0,
+        showinfo: 0,
+        fs: 0,
+        playsinline: 1, list:'PL81csO796eDDUIqRMau1niRxqHLrXAVJz',
+        listType: 'player'
+      },
+      events: {
+        'onStateChange': this.onPlayerStateChange.bind(this), // .bind(this.playerfilms),
+        'onError': this.onPlayerError.bind(this),
+        'onReady': this.onPlayerReady.bind(this),
+      }
+    });
+    console.log("this is films : ", this);
   }
 
   onPlayerReady(event:any) {
@@ -277,22 +244,15 @@ export class HomeComponent implements OnInit, ElementRef {
     switch (event.data) {
       case window['YT'].PlayerState.PLAYING:
         if (this.cleanTime() == 0) { // if (this.cleanTime(event) == 0) {
-          console.log('started ' + this.cleanTime()); //console.log('started ' + this.cleanTime(event));
+          console.log('started ' + this.cleanTime()); 
         } else {
-          console.log('playing ' + this.cleanTime()) //console.log('playing ' + this.cleanTime(event))
+          console.log('playing ' + this.cleanTime()) 
         };
         break;
       case window['YT'].PlayerState.PAUSED:
-       /* if(event=== this.playersnippets){
-          if (this.playersnippets.getDuration() - this.playersnippets.getCurrentTime() != 0) {
-            console.log('paused' + ' @ ' + this.cleanTime()); //console.log('paused' + ' @ ' + this.cleanTime(event));
-          };
-        }*/
-        //if (event===this.playerfilms){
-          if (this.player.getDuration() - this.player.getCurrentTime() != 0) {
-            console.log('paused' + ' @ ' + this.cleanTime()); // console.log('paused' + ' @ ' + this.cleanTime(event));
-          };
-        //}
+        if (this.player.getDuration() - this.player.getCurrentTime() != 0) {
+          console.log('paused' + ' @ ' + this.cleanTime()); 
+        };
         break;
       case window['YT'].PlayerState.ENDED:
         console.log('ended ');
@@ -301,15 +261,7 @@ export class HomeComponent implements OnInit, ElementRef {
   }
       
   cleanTime() { // cleanTime(player:any) {
-    return Math.round(this.player.getCurrentTime()) //return Math.round(this.playerfilms.getCurrentTime())
-    
-   /* if (player=== this.playerfilms){
-      return Math.round(this.playersnippets.getCurrentTime())
-    }
-     else if(player=== this.playersnippets){
-      return Math.round(this.playerfilms.getCurrentTime())
-    }
-    else{return console.log("error in CleanTime")}*/
+    return Math.round(this.player.getCurrentTime()) 
   }
 
   onPlayerError(event:any) {
@@ -324,6 +276,24 @@ export class HomeComponent implements OnInit, ElementRef {
     }
   }
   
+  magDimensions(){
+    let magflipbook = document.getElementById('magflipbook');
+    let magcurrentheight = document.querySelector<HTMLElement>(".page")?.offsetHeight;
+    let calculatedWidth= 0;
+
+    if(magcurrentheight != undefined)
+    { calculatedWidth = magcurrentheight* 1.4; }
+    
+    if (magflipbook != null && magcurrentheight != undefined)
+    { magflipbook.style.width = calculatedWidth.toString()+ "px"; }
+    
+    
+    let root = document.documentElement;
+    let calculatedPageWidth = calculatedWidth /2;
+    root.style.setProperty('--pagewidth', calculatedPageWidth.toString()+"px");
+    console.log("magcurrentheight: "+ magcurrentheight + "widthFlipBook: " + calculatedWidth);
+  }
+
   changetheme(theme:any):void{
     //document.documentElement.style.setProperty('--your-variable', '#YOURCOLOR');
     let root = document.documentElement;
@@ -567,6 +537,7 @@ export class HomeComponent implements OnInit, ElementRef {
     if ( windowid.id === "draggablemag" ) 
     { 
       this.magView = true; 
+      this.magDimensions();
     }
     if ( windowid.id === "draggableradio" ) 
     { 
@@ -609,5 +580,177 @@ export class HomeComponent implements OnInit, ElementRef {
     if(windowid.id==="draggablesnippet"){
       document.getElementById("televisionsrc")?.setAttribute('src', '');
     }
+  }
+  book: Book = {
+    width: 1760,
+      height: 1250,
+      zoom: 1, //0.5 ? pour voir
+      cover: {
+        front: {
+          imageUrl: 'assets/Images/mag/mag_1.jpg',
+        },
+        back: {
+          imageUrl: 'assets/Images/mag/mag_52.jpg',
+        }
+      },
+      pages: [
+        { // start guard section
+          imageUrl: 'assets/Images/mag/mag_2.jpg',
+          
+          //backgroundColor: '#41473A', // don't use if want to see front-cover inverted image
+        },
+        {
+          imageUrl: 'assets/Images/mag/mag_3.jpg',
+        }, // end guard section
+        { 
+          imageUrl: 'assets/Images/mag/mag_4.jpg',
+        },
+        {
+          imageUrl: 'assets/Images/mag/mag_5.jpg',
+        },
+        {
+          imageUrl: 'assets/Images/mag/mag_6.jpg',
+        },
+        {
+          imageUrl: 'assets/Images/mag/mag_7.jpg',
+        }, 
+        {
+          imageUrl: 'assets/Images/mag/mag_8.jpg',
+        },
+        {
+          imageUrl: 'assets/Images/mag/mag_9.jpg',
+        },
+        {
+          imageUrl: 'assets/Images/mag/mag_10.jpg',
+        },
+        {
+          imageUrl: 'assets/Images/mag/mag_11.jpg',
+        },
+        {
+          imageUrl: 'assets/Images/mag/mag_12.jpg',
+        },
+        {
+          imageUrl: 'assets/Images/mag/mag_13.jpg',
+        },
+        {
+          imageUrl: 'assets/Images/mag/mag_14.jpg',
+        },
+        {
+          imageUrl: 'assets/Images/mag/mag_15.jpg',
+        },
+        {
+          imageUrl: 'assets/Images/mag/mag_16.jpg',
+        },
+        {
+          imageUrl: 'assets/Images/mag/mag_17.jpg',
+        },
+        {
+          imageUrl: 'assets/Images/mag/mag_18.jpg',
+        },
+        {
+          imageUrl: 'assets/Images/mag/mag_19.jpg',
+        },
+        {
+          imageUrl: 'assets/Images/mag/mag_20.jpg',
+        },
+        {
+          imageUrl: 'assets/Images/mag/mag_21.jpg',
+        },
+        {
+          imageUrl: 'assets/Images/mag/mag_22.jpg',
+        },
+        {
+          imageUrl: 'assets/Images/mag/mag_23.jpg',
+        },
+        {
+          imageUrl: 'assets/Images/mag/mag_24.jpg',
+        },
+        {
+          imageUrl: 'assets/Images/mag/mag_25.jpg',
+        },
+        {
+          imageUrl: 'assets/Images/mag/mag_26.jpg',
+        },
+        {
+          imageUrl: 'assets/Images/mag/mag_27.jpg',
+        },
+        {
+          imageUrl: 'assets/Images/mag/mag_28.jpg',
+        },
+        {
+          imageUrl: 'assets/Images/mag/mag_29.jpg',
+        },
+        {
+          imageUrl: 'assets/Images/mag/mag_30.jpg',
+        },
+        {
+          imageUrl: 'assets/Images/mag/mag_31.jpg',
+        },
+        {
+          imageUrl: 'assets/Images/mag/mag_32.jpg',
+        },
+        {
+          imageUrl: 'assets/Images/mag/mag_33.jpg',
+        },
+        {
+          imageUrl: 'assets/Images/mag/mag_34.jpg',
+        },
+        {
+          imageUrl: 'assets/Images/mag/mag_35.jpg',
+        },
+        {
+          imageUrl: 'assets/Images/mag/mag_36.jpg',
+        },
+        {
+          imageUrl: 'assets/Images/mag/mag_37.jpg',
+        },
+        {
+          imageUrl: 'assets/Images/mag/mag_38.jpg',
+        },
+        {
+          imageUrl: 'assets/Images/mag/mag_39.jpg',
+        },
+        {
+          imageUrl: 'assets/Images/mag/mag_40.jpg',
+        },
+        {
+          imageUrl: 'assets/Images/mag/mag_41.jpg',
+        },
+        {
+          imageUrl: 'assets/Images/mag/mag_42.jpg',
+        },
+        {
+          imageUrl: 'assets/Images/mag/mag_43.jpg',
+        },
+        {
+          imageUrl: 'assets/Images/mag/mag_44.jpg',
+        },
+        {
+          imageUrl: 'assets/Images/mag/mag_45.jpg',
+        },
+        {
+          imageUrl: 'assets/Images/mag/mag_46.jpg',
+        },
+        {
+          imageUrl: 'assets/Images/mag/mag_47.jpg',
+        },
+        {
+          imageUrl: 'assets/Images/mag/mag_48.jpg',
+        },
+        {
+          imageUrl: 'assets/Images/mag/mag_49.jpg',
+        },
+        { // start guard section
+          imageUrl: 'assets/Images/mag/mag_50.jpg',
+        },
+        {
+          imageUrl: 'assets/Images/mag/mag_51.jpg',
+          //backgroundColor: '#41473A', // don't use if want to see back-cover inverted image
+        }, // end guard section
+      ],
+      pageWidth: 880,
+      pageHeight: 1250,
+      startPageType: PageType.Double,
+      endPageType: PageType.Double
   }
 }

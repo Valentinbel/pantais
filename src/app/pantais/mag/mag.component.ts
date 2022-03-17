@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+/* import { Component, OnInit ,ElementRef, ViewChild, AfterViewInit } from '@angular/core';
 import { Book, PageType } from '@labsforge/flipbook';
 
 
@@ -9,17 +9,19 @@ import { Book, PageType } from '@labsforge/flipbook';
 })
 export class MagComponent implements OnInit {
 
-  constructor(){}
+  constructor(private elRef:ElementRef){
+ 
+  }
 
   nativeElement: any;
 
   ngOnInit(): void { 
   }
-  
+
   book: Book = {
     width: 1760,
       height: 1250,
-      zoom: 1,
+      zoom: 1, //0.5 ? pour voir
       cover: {
         front: {
           imageUrl: 'assets/Images/mag/mag_1.jpg',
@@ -31,6 +33,7 @@ export class MagComponent implements OnInit {
       pages: [
         { // start guard section
           imageUrl: 'assets/Images/mag/mag_2.jpg',
+          
           //backgroundColor: '#41473A', // don't use if want to see front-cover inverted image
         },
         {
@@ -193,3 +196,4 @@ export class MagComponent implements OnInit {
      windowid.classList.add('hide');
    }
 }
+ */
