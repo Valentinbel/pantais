@@ -1,7 +1,7 @@
 <div class="container-fluid">
         
   <!--NAVBAR-->
-  <nav class="navbar navbar-expand navbar-light topnavbar fixed-top">
+  <nav id="navbar" class="navbar navbar-expand navbar-light topnavbar fixed-top">
     <a class="nav-link quatreponchs" id="linkquatreponchs" #pantaisclus href="https://fanlink.to/pantaisclus" target="_blank" aria-labelledby="PANTAIS CLUS">
       <img id="quatreponchs" src="./assets/Images/crotzponchs/godas_ponchs.png"/> 
     </a>
@@ -74,17 +74,6 @@
           <p class="hide">And a special thanks to the creators of poolsuite.net. </p>
         </div>
       </div>    
-    </div>
-
-    <!-----------FILMS--------------->
-    <div #draggablefilms id="draggablefilms" class="draggable todrag films hide" (click)="addzindex(draggablefilms)"  cdkDragBoundary="#draggingzone" cdkDrag>
-      <div #draggablefilmsheader class="drag-header todrag" cdkDragHandle>
-        <span><img id="crotzfilms" src="./assets/Images/crotzponchs/godas_crotz.png" #iconclosefilms (click)="closewindow(draggablefilms)" class="draggableheadericon"alt="icon_crotz"></span> PANTAIS CLUS clips
-      </div>
-      <div class="insideframe"> <!-----------cadre interieur--------------->
-        <div id="player" class=" d-flex filmsframe">
-        </div>
-      </div>
     </div>
 
     <!-----------Radio--------------->
@@ -271,7 +260,17 @@
       </div>    
     </div>
 
- <!-----------Live--------------->
+    <!-----------FILMS--------------->
+    <div #draggablefilms id="draggablefilms" class="draggable todrag films hide" (click)="addzindex(draggablefilms)"  cdkDragBoundary="#draggingzone" cdkDrag>
+      <div #draggablefilmsheader class="drag-header todrag" cdkDragHandle>
+        <span><img id="crotzfilms" src="./assets/Images/crotzponchs/godas_crotz.png" #iconclosefilms (click)="closewindow(draggablefilms)" class="draggableheadericon"alt="icon_crotz"></span> PANTAIS CLUS clips
+      </div>
+      <div class="insideframe"> <!-----------cadre interieur--------------->
+        <div id="player" class=" d-flex filmsframe">
+        </div>
+      </div>
+    </div>
+    <!-----------Live--------------->
     <div #draggablelive  id="draggablelive" class="draggable todrag live hide" (click)="addzindex(draggablelive)"  cdkDragBoundary="#draggingzone" cdkDrag>
       <div #draggableliveheader class="drag-header todrag" cdkDragHandle>
         <span><img id="crotzlive" src="./assets/Images/crotzponchs/godas_crotz.png" #iconcloselive (click)="closewindow(draggablelive)" class="draggableheadericon"alt="icon_crotz"></span> PANTAIS CLUS live
@@ -282,16 +281,16 @@
       </div>    
     </div>
 
-        <!-----------snippet--------------->
-        <div #draggablesnippet id="draggablesnippet" class="draggable todrag tv hide" (click)="addzindex(draggablesnippet)"  cdkDragBoundary="#draggingzone" cdkDrag>
-          <div #draggablesnippetheader class="drag-header todrag" cdkDragHandle>
-            <span><img id="crotzsnippet" src="./assets/Images/crotzponchs/godas_crotz.png" #iconclosetv (click)="closewindow(draggablesnippet)" class="draggableheadericon"alt="icon_crotz"></span> PANTAIS CLUS television
-          </div>
-          <div class="insideframe">
-            <iframe id="televisionsrc" class="d-flex filmsframe" width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PL81csO796eDB_jrvC1As4g4LHHxd7RYry" title="television" 
-            frameborder="0" allowfullscreen></iframe>
-          </div>
+      <!-----------snippet--------------->
+      <div #draggablesnippet id="draggablesnippet" class="draggable todrag tv hide" (click)="addzindex(draggablesnippet)"  cdkDragBoundary="#draggingzone" cdkDrag>
+        <div #draggablesnippetheader class="drag-header todrag" cdkDragHandle>
+          <span><img id="crotzsnippet" src="./assets/Images/crotzponchs/godas_crotz.png" #iconclosetv (click)="closewindow(draggablesnippet)" class="draggableheadericon"alt="icon_crotz"></span> PANTAIS CLUS television
         </div>
+        <div class="insideframe">
+          <iframe id="televisionsrc" class="d-flex filmsframe" width="624" height="456" src="https://www.youtube.com/embed/videoseries?list=PL81csO796eDB_jrvC1As4g4LHHxd7RYry" title="television" 
+          frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
 
     <!-----------PRO--------------->
     <div #draggablepro  id="draggablepro" class="draggable todrag pro hide" (click)="addzindex(draggablepro)"  cdkDragBoundary="#draggingzone" cdkDrag>
@@ -324,44 +323,47 @@
     <app-not-found *ngIf="errorView === 404"></app-not-found>
   
     <div class="cosdepagina">
-      <div class="justify-content-center d-flex margin_topbottom">
+      <div class="justify-content-center d-flex">
         <div class="iconas">
-          <a #iconlyrics (click)="displaywindow(draggablelyrics)" >
-            <img class="img-fluid margin-top" src="./assets/Images/icones/lyrics.png" alt="lyrics">
-          </a>
-          <a #iconlinkssociau (click)="displaywindow(draggablesociau)" >
-            <img class="img-fluid margin-top" src="./assets/Images/icones/links.png" alt="sociau">
-          </a>
-          <a #iconvideos (click)="displaywindow(draggablesnippet)" >
-            <img class="img-fluid margin-top" src="./assets/Images/icones/tv.png" alt="tv">
-          </a> 
-         
-          <a #iconfilms (click)="displaywindow(draggablefilms)" >
-            <img class="img-fluid margin-top" src="./assets/Images/icones/clips.png" alt="clips">
-          </a>
           <a #iconradio (click)="displaywindow(draggableradio)" >
             <img class="img-fluid margin-top" src="./assets/Images/icones/radio.png" alt="radio">
           </a>
           <a #iconmag (click)="displaywindow(draggablemag)" >
             <img class="img-fluid margin-top" src="./assets/Images/icones/mag.png" alt="mag">
           </a> 
+          <a #iconlyrics (click)="displaywindow(draggablelyrics)" >
+            <img class="img-fluid margin-top" src="./assets/Images/icones/lyrics.png" alt="lyrics">
+          </a>
+          <a #iconlive (click)="displaywindow(draggablelive)" >
+            <img class="img-fluid margin-top" src="./assets/Images/icones/livepaloma.png" alt="live">
+          </a>
           <a #iconshop (click)="displaywindow(draggableshop)" >
             <img class="img-fluid margin-top" src="./assets/Images/icones/shop.png" alt="shop">
+          </a>       
+        </div>
+      </div>
+      <div class="justify-content-center d-flex margin_topbottom">
+        <div class="iconas">
+          <a #iconlinkssociau (click)="displaywindow(draggablesociau)" >
+            <img class="img-fluid margin-top" src="./assets/Images/icones/links.png" alt="sociau">
+          </a>
+          <a #iconvideos (click)="displaywindow(draggablesnippet)" >
+            <img class="img-fluid margin-top" src="./assets/Images/icones/tv.png" alt="tv">
+          </a> 
+          <a #iconfilms (click)="displaywindow(draggablefilms)" >
+            <img class="img-fluid margin-top" src="./assets/Images/icones/clips.png" alt="clips">
           </a>
           <a #iconfriends (click)="displaywindow(draggablefriends)" >
             <img class="img-fluid margin-top" src="./assets/Images/icones/friends.png" alt="friends">
           </a>
-          <a #iconlive (click)="displaywindow(draggablelive)" >
-            <img class="img-fluid margin-top" src="./assets/Images/icones/livepaloma.png" alt="live">
+          <a #iconpro (click)="displaywindow(draggablepro)" >
+            <img class="img-fluid margin-top" src="./assets/Images/icones/pro.png" alt="pro">
           </a>
           <!--
             <a #icontour (click)="displaywindow(draggabletour)" >
             <img class="img-fluid margin-top" src="./assets/Images/icones/tour.png" alt="tour">
           </a>
           -->
-          <a #iconpro (click)="displaywindow(draggablepro)" >
-            <img class="img-fluid margin-top" src="./assets/Images/icones/pro.png" alt="pro">
-          </a>
         </div>
       </div>
     </div>

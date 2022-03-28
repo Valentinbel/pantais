@@ -110,8 +110,17 @@ Tester de regler le zoom et voir comment il ressort dans le css
 Prendre exemple sur fond d'ecran?
 
 
-//calcule heith navbar
-//la mettre dans une var. 
-//la deduire de la height du draggable
-
 //magDimensions() gérer si height> width
+
+CLIPS: width:636px; height: 336px;
+
+    il reste: 
+    - remonter les deux lignes d'icones comme ça plus de souci sur ipad 
+    - playlist snippets en 4:3 
+    - réduire la hauteur du mag (actuellement sur ipad ou chrome sur l'ordi c'est trop grand, ça dépasse de l'écran) 
+
+    - remettre un max width sur le cosdepagina OU un mode mobile si width < XX
+
+    let navh = document.querySelector<HTMLElement>("#navbar")?.getBoundingClientRect();
+    console.log("navh = " + navh?.height)
+    document.documentElement.style.setProperty('--navbarheight',`${navh?.height}px`)

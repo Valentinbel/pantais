@@ -1,5 +1,5 @@
 import { QueryBindingType } from '@angular/compiler/src/core';
-import { Component, OnInit, ElementRef } from '@angular/core';
+import { Component, OnInit, ElementRef, HostListener } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 //import { MagComponent } from '../mag/mag.component';
 // import reframe from 'refame.js';
@@ -9,7 +9,7 @@ import { map , debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { Observable, Subject, of } from 'rxjs';
 //import { NONE_TYPE } from '@angular/compiler'; // investiguer a quoi ça sert? 
 import { CookieService } from 'ngx-cookie-service';
-import { Book, PageType } from '@labsforge/flipbook';
+import { Book, FlipbookService, PageType } from '@labsforge/flipbook';
 
 
 @Component({
@@ -61,9 +61,7 @@ export class HomeComponent implements OnInit, ElementRef {
   private cookie_name = '';
   private all_cookies : any = '';
 
-  //livePaloma
-  //var url = $("#cartoonVideo").attr('src');
-  public palomasrc : any =  document.getElementById("palomasrc")?.getAttribute('src');
+  //public palomasrc : any =  document.getElementById("palomasrc")?.getAttribute('src');
 
   constructor(private activatedroute: ActivatedRoute, private cookieService:CookieService) 
   {
@@ -82,6 +80,12 @@ export class HomeComponent implements OnInit, ElementRef {
   
   ngOnInit() 
   { 
+    let navh = document.querySelector<HTMLElement>("#navbar")?.offsetHeight;
+    console.log("navh = " + navh)
+    document.documentElement.style.setProperty('--navbarheight',`${navh}px`)
+
+    
+    //
     const theme = ["lura", "marselha", "godas", "vitrolas", "salagon", "venturi",];
     const random = Math.floor(Math.random() * theme.length);
     this.changetheme(theme[random]);
@@ -280,6 +284,11 @@ export class HomeComponent implements OnInit, ElementRef {
     let magflipbook = document.getElementById('magflipbook');
     let magcurrentheight = document.querySelector<HTMLElement>(".page")?.offsetHeight;
     let calculatedWidth= 0;
+
+    
+    // let navh = document.querySelector<HTMLElement>("#navbar")?.getBoundingClientRect();
+    // console.log("navh = " + navh?.height)
+    // document.documentElement.style.setProperty('--navbarheight',`${navh?.height}px`)
 
     if(magcurrentheight != undefined)
     { calculatedWidth = magcurrentheight* 1.4; }
@@ -752,5 +761,15 @@ export class HomeComponent implements OnInit, ElementRef {
       pageHeight: 1250,
       startPageType: PageType.Double,
       endPageType: PageType.Double
+
   }
 }
+// @HostListener('window:resize')
+// onWindowResize() {
+//   if (!this.book) { return; }
+
+//   const boundsWidth = this.elr.nativeElement.getBoundingClientRect().width * .8;
+//   const boundsHeight = this.elr.nativeElement.getBoundingClientRect().height * .6;
+
+//   this.flipService.book.zoom = Math.min(boundsWidth / this.flipService.book.width, boundsHeight / this.flipService.book.height);
+// }
