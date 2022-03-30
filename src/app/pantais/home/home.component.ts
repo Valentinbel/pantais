@@ -60,14 +60,17 @@ export class HomeComponent implements OnInit, ElementRef {
   //Cookies
   private cookie_name = '';
   private all_cookies : any = '';
+  
+  get magazine() {
+    return this.flipService.book;
+  }
 
-  //public palomasrc : any =  document.getElementById("palomasrc")?.getAttribute('src');
-
-  constructor(private activatedroute: ActivatedRoute, private cookieService:CookieService) 
+  constructor(
+    private elr: ElementRef,
+    private activatedroute: ActivatedRoute, 
+    private cookieService:CookieService,
+    private flipService: FlipbookService) 
   {
-    //calcule heith navbar
-    //la mettre dans une var. 
-    //la deduire de la height du draggable
 
     window.addEventListener('resize', () => 
     {
@@ -81,10 +84,9 @@ export class HomeComponent implements OnInit, ElementRef {
   ngOnInit() 
   { 
     let navh = document.querySelector<HTMLElement>("#navbar")?.offsetHeight;
-    console.log("navh = " + navh)
     document.documentElement.style.setProperty('--navbarheight',`${navh}px`)
 
-    
+    this.launchbook();
     //
     const theme = ["lura", "marselha", "godas", "vitrolas", "salagon", "venturi",];
     const random = Math.floor(Math.random() * theme.length);
@@ -281,26 +283,12 @@ export class HomeComponent implements OnInit, ElementRef {
   }
   
   magDimensions(){
-    let magflipbook = document.getElementById('magflipbook');
-    let magcurrentheight = document.querySelector<HTMLElement>(".page")?.offsetHeight;
-    let calculatedWidth= 0;
-
+    const windowWidth = this.elr.nativeElement.getBoundingClientRect().width * 0.95;
+    const windowHeight = this.elr.nativeElement.getBoundingClientRect().height * 0.95;
+    console.log("windowWidth: "+windowWidth)
     
-    // let navh = document.querySelector<HTMLElement>("#navbar")?.getBoundingClientRect();
-    // console.log("navh = " + navh?.height)
-    // document.documentElement.style.setProperty('--navbarheight',`${navh?.height}px`)
-
-    if(magcurrentheight != undefined)
-    { calculatedWidth = magcurrentheight* 1.4; }
-    
-    if (magflipbook != null && magcurrentheight != undefined)
-    { magflipbook.style.width = calculatedWidth.toString()+ "px"; }
-    
-    
-    let root = document.documentElement;
-    let calculatedPageWidth = calculatedWidth /2;
-    root.style.setProperty('--pagewidth', calculatedPageWidth.toString()+"px");
-    console.log("magcurrentheight: "+ magcurrentheight + "widthFlipBook: " + calculatedWidth);
+    this.flipService.book.zoom = Math.min(windowWidth / this.flipService.book.width, windowHeight / this.flipService.book.height);
+    console.log("this.flipService.book.width : "+this.flipService.book.width )
   }
 
   changetheme(theme:any):void{
@@ -590,186 +578,180 @@ export class HomeComponent implements OnInit, ElementRef {
       document.getElementById("televisionsrc")?.setAttribute('src', '');
     }
   }
-  book: Book = {
-    width: 1760,
-      height: 1250,
-      zoom: 1, //0.5 ? pour voir
-      cover: {
-        front: {
-          imageUrl: 'assets/Images/mag/mag_1.jpg',
+  launchbook()
+  {
+    this.flipService.book = {
+      width: 1760,
+        height: 1250,
+        zoom: 1, //0.5 ? pour voir
+        cover: {
+          front: {
+            imageUrl: 'assets/Images/mag/mag_1.jpg',
+          },
+          back: {
+            imageUrl: 'assets/Images/mag/mag_52.jpg',
+          }
         },
-        back: {
-          imageUrl: 'assets/Images/mag/mag_52.jpg',
-        }
-      },
-      pages: [
-        { // start guard section
-          imageUrl: 'assets/Images/mag/mag_2.jpg',
-          
-          //backgroundColor: '#41473A', // don't use if want to see front-cover inverted image
-        },
-        {
-          imageUrl: 'assets/Images/mag/mag_3.jpg',
-        }, // end guard section
-        { 
-          imageUrl: 'assets/Images/mag/mag_4.jpg',
-        },
-        {
-          imageUrl: 'assets/Images/mag/mag_5.jpg',
-        },
-        {
-          imageUrl: 'assets/Images/mag/mag_6.jpg',
-        },
-        {
-          imageUrl: 'assets/Images/mag/mag_7.jpg',
-        }, 
-        {
-          imageUrl: 'assets/Images/mag/mag_8.jpg',
-        },
-        {
-          imageUrl: 'assets/Images/mag/mag_9.jpg',
-        },
-        {
-          imageUrl: 'assets/Images/mag/mag_10.jpg',
-        },
-        {
-          imageUrl: 'assets/Images/mag/mag_11.jpg',
-        },
-        {
-          imageUrl: 'assets/Images/mag/mag_12.jpg',
-        },
-        {
-          imageUrl: 'assets/Images/mag/mag_13.jpg',
-        },
-        {
-          imageUrl: 'assets/Images/mag/mag_14.jpg',
-        },
-        {
-          imageUrl: 'assets/Images/mag/mag_15.jpg',
-        },
-        {
-          imageUrl: 'assets/Images/mag/mag_16.jpg',
-        },
-        {
-          imageUrl: 'assets/Images/mag/mag_17.jpg',
-        },
-        {
-          imageUrl: 'assets/Images/mag/mag_18.jpg',
-        },
-        {
-          imageUrl: 'assets/Images/mag/mag_19.jpg',
-        },
-        {
-          imageUrl: 'assets/Images/mag/mag_20.jpg',
-        },
-        {
-          imageUrl: 'assets/Images/mag/mag_21.jpg',
-        },
-        {
-          imageUrl: 'assets/Images/mag/mag_22.jpg',
-        },
-        {
-          imageUrl: 'assets/Images/mag/mag_23.jpg',
-        },
-        {
-          imageUrl: 'assets/Images/mag/mag_24.jpg',
-        },
-        {
-          imageUrl: 'assets/Images/mag/mag_25.jpg',
-        },
-        {
-          imageUrl: 'assets/Images/mag/mag_26.jpg',
-        },
-        {
-          imageUrl: 'assets/Images/mag/mag_27.jpg',
-        },
-        {
-          imageUrl: 'assets/Images/mag/mag_28.jpg',
-        },
-        {
-          imageUrl: 'assets/Images/mag/mag_29.jpg',
-        },
-        {
-          imageUrl: 'assets/Images/mag/mag_30.jpg',
-        },
-        {
-          imageUrl: 'assets/Images/mag/mag_31.jpg',
-        },
-        {
-          imageUrl: 'assets/Images/mag/mag_32.jpg',
-        },
-        {
-          imageUrl: 'assets/Images/mag/mag_33.jpg',
-        },
-        {
-          imageUrl: 'assets/Images/mag/mag_34.jpg',
-        },
-        {
-          imageUrl: 'assets/Images/mag/mag_35.jpg',
-        },
-        {
-          imageUrl: 'assets/Images/mag/mag_36.jpg',
-        },
-        {
-          imageUrl: 'assets/Images/mag/mag_37.jpg',
-        },
-        {
-          imageUrl: 'assets/Images/mag/mag_38.jpg',
-        },
-        {
-          imageUrl: 'assets/Images/mag/mag_39.jpg',
-        },
-        {
-          imageUrl: 'assets/Images/mag/mag_40.jpg',
-        },
-        {
-          imageUrl: 'assets/Images/mag/mag_41.jpg',
-        },
-        {
-          imageUrl: 'assets/Images/mag/mag_42.jpg',
-        },
-        {
-          imageUrl: 'assets/Images/mag/mag_43.jpg',
-        },
-        {
-          imageUrl: 'assets/Images/mag/mag_44.jpg',
-        },
-        {
-          imageUrl: 'assets/Images/mag/mag_45.jpg',
-        },
-        {
-          imageUrl: 'assets/Images/mag/mag_46.jpg',
-        },
-        {
-          imageUrl: 'assets/Images/mag/mag_47.jpg',
-        },
-        {
-          imageUrl: 'assets/Images/mag/mag_48.jpg',
-        },
-        {
-          imageUrl: 'assets/Images/mag/mag_49.jpg',
-        },
-        { // start guard section
-          imageUrl: 'assets/Images/mag/mag_50.jpg',
-        },
-        {
-          imageUrl: 'assets/Images/mag/mag_51.jpg',
-          //backgroundColor: '#41473A', // don't use if want to see back-cover inverted image
-        }, // end guard section
-      ],
-      pageWidth: 880,
-      pageHeight: 1250,
-      startPageType: PageType.Double,
-      endPageType: PageType.Double
-
-  }
+        pages: [
+          { // start guard section
+            imageUrl: 'assets/Images/mag/mag_2.jpg',
+            
+            //backgroundColor: '#41473A', // don't use if want to see front-cover inverted image
+          },
+          {
+            imageUrl: 'assets/Images/mag/mag_3.jpg',
+          }, // end guard section
+          { 
+            imageUrl: 'assets/Images/mag/mag_4.jpg',
+          },
+          {
+            imageUrl: 'assets/Images/mag/mag_5.jpg',
+          },
+          {
+            imageUrl: 'assets/Images/mag/mag_6.jpg',
+          },
+          {
+            imageUrl: 'assets/Images/mag/mag_7.jpg',
+          }, 
+          {
+            imageUrl: 'assets/Images/mag/mag_8.jpg',
+          },
+          {
+            imageUrl: 'assets/Images/mag/mag_9.jpg',
+          },
+          {
+            imageUrl: 'assets/Images/mag/mag_10.jpg',
+          },
+          {
+            imageUrl: 'assets/Images/mag/mag_11.jpg',
+          },
+          {
+            imageUrl: 'assets/Images/mag/mag_12.jpg',
+          },
+          {
+            imageUrl: 'assets/Images/mag/mag_13.jpg',
+          },
+          {
+            imageUrl: 'assets/Images/mag/mag_14.jpg',
+          },
+          {
+            imageUrl: 'assets/Images/mag/mag_15.jpg',
+          },
+          {
+            imageUrl: 'assets/Images/mag/mag_16.jpg',
+          },
+          {
+            imageUrl: 'assets/Images/mag/mag_17.jpg',
+          },
+          {
+            imageUrl: 'assets/Images/mag/mag_18.jpg',
+          },
+          {
+            imageUrl: 'assets/Images/mag/mag_19.jpg',
+          },
+          {
+            imageUrl: 'assets/Images/mag/mag_20.jpg',
+          },
+          {
+            imageUrl: 'assets/Images/mag/mag_21.jpg',
+          },
+          {
+            imageUrl: 'assets/Images/mag/mag_22.jpg',
+          },
+          {
+            imageUrl: 'assets/Images/mag/mag_23.jpg',
+          },
+          {
+            imageUrl: 'assets/Images/mag/mag_24.jpg',
+          },
+          {
+            imageUrl: 'assets/Images/mag/mag_25.jpg',
+          },
+          {
+            imageUrl: 'assets/Images/mag/mag_26.jpg',
+          },
+          {
+            imageUrl: 'assets/Images/mag/mag_27.jpg',
+          },
+          {
+            imageUrl: 'assets/Images/mag/mag_28.jpg',
+          },
+          {
+            imageUrl: 'assets/Images/mag/mag_29.jpg',
+          },
+          {
+            imageUrl: 'assets/Images/mag/mag_30.jpg',
+          },
+          {
+            imageUrl: 'assets/Images/mag/mag_31.jpg',
+          },
+          {
+            imageUrl: 'assets/Images/mag/mag_32.jpg',
+          },
+          {
+            imageUrl: 'assets/Images/mag/mag_33.jpg',
+          },
+          {
+            imageUrl: 'assets/Images/mag/mag_34.jpg',
+          },
+          {
+            imageUrl: 'assets/Images/mag/mag_35.jpg',
+          },
+          {
+            imageUrl: 'assets/Images/mag/mag_36.jpg',
+          },
+          {
+            imageUrl: 'assets/Images/mag/mag_37.jpg',
+          },
+          {
+            imageUrl: 'assets/Images/mag/mag_38.jpg',
+          },
+          {
+            imageUrl: 'assets/Images/mag/mag_39.jpg',
+          },
+          {
+            imageUrl: 'assets/Images/mag/mag_40.jpg',
+          },
+          {
+            imageUrl: 'assets/Images/mag/mag_41.jpg',
+          },
+          {
+            imageUrl: 'assets/Images/mag/mag_42.jpg',
+          },
+          {
+            imageUrl: 'assets/Images/mag/mag_43.jpg',
+          },
+          {
+            imageUrl: 'assets/Images/mag/mag_44.jpg',
+          },
+          {
+            imageUrl: 'assets/Images/mag/mag_45.jpg',
+          },
+          {
+            imageUrl: 'assets/Images/mag/mag_46.jpg',
+          },
+          {
+            imageUrl: 'assets/Images/mag/mag_47.jpg',
+          },
+          {
+            imageUrl: 'assets/Images/mag/mag_48.jpg',
+          },
+          {
+            imageUrl: 'assets/Images/mag/mag_49.jpg',
+          },
+          { // start guard section
+            imageUrl: 'assets/Images/mag/mag_50.jpg',
+          },
+          {
+            imageUrl: 'assets/Images/mag/mag_51.jpg',
+            //backgroundColor: '#41473A', // don't use if want to see back-cover inverted image
+          }, // end guard section
+        ],
+        pageWidth: 880,
+        pageHeight: 1250,
+        startPageType: PageType.Double,
+        endPageType: PageType.Double
+    } as Book;
+  }  
 }
-// @HostListener('window:resize')
-// onWindowResize() {
-//   if (!this.book) { return; }
-
-//   const boundsWidth = this.elr.nativeElement.getBoundingClientRect().width * .8;
-//   const boundsHeight = this.elr.nativeElement.getBoundingClientRect().height * .6;
-
-//   this.flipService.book.zoom = Math.min(boundsWidth / this.flipService.book.width, boundsHeight / this.flipService.book.height);
-// }
+ 

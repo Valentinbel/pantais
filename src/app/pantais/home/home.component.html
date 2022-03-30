@@ -141,11 +141,11 @@
 
     <!-----------MAG---------------->
       <div #draggablemag  id="draggablemag" class="draggable todrag mag hide" (click)="addzindex(draggablemag)"  cdkDragBoundary="#draggingzone" cdkDrag>
-        <div #draggablemagheader class="drag-header todrag" cdkDragHandle>
+        <div #draggablemagheader class="drag-header todrag" id="dragmagHeader" cdkDragHandle>
           <span><img id="crotzmag" src="./assets/Images/crotzponchs/godas_crotz.png" #iconclosemag (click)="closewindow(draggablemag)" class="draggableheadericon"alt="icon_crotz"></span> PANTAIS CLUS mag
         </div>
         <div class="insideframe"> <!-----------cadre interieur--------------->
-          <flipbook  id="magflipbook" class="magflipbook" [model]="book" [startAt]="0"></flipbook>
+          <flipbook  id="magflipbook" class="magflipbook" [model]="magazine" [startAt]="0"></flipbook>
           <!--<app-mag *ngIf="magView"></app-mag>-->
         </div>    
       </div>
@@ -323,7 +323,7 @@
     <app-not-found *ngIf="errorView === 404"></app-not-found>
   
     <div class="cosdepagina">
-      <div class="justify-content-center d-flex">
+      <div class="justify-content-center d-flex margin_topbottom">
         <div class="iconas">
           <a #iconradio (click)="displaywindow(draggableradio)" >
             <img class="img-fluid margin-top" src="./assets/Images/icones/radio.png" alt="radio">
@@ -340,10 +340,6 @@
           <a #iconshop (click)="displaywindow(draggableshop)" >
             <img class="img-fluid margin-top" src="./assets/Images/icones/shop.png" alt="shop">
           </a>       
-        </div>
-      </div>
-      <div class="justify-content-center d-flex margin_topbottom">
-        <div class="iconas">
           <a #iconlinkssociau (click)="displaywindow(draggablesociau)" >
             <img class="img-fluid margin-top" src="./assets/Images/icones/links.png" alt="sociau">
           </a>
