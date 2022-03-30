@@ -7,7 +7,6 @@
     --white: white;
     --bgimg: ;/*url(./assets/Images/backgrounds/godas.jpg);*/
     --pagewidth:0;
-    --navbarheight: 24px;
 
     --apple: ;
     --appleHover: ;
@@ -140,7 +139,7 @@ body, .ng-isolate-scope, home, index2, index, headerview{
     width: 100%;
     height: 100vh;
     --dragHeight: calc(var(--vh, 1vh) * 100);
-    height: calc(var(--dragHeight) - var(--navbarheight));
+    height: calc(var(--dragHeight) - 24px);
     top: 1.5em!important;
     bottom: -1.5em!important;
     background-repeat: repeat-y;

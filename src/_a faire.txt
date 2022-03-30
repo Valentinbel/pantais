@@ -92,13 +92,6 @@ ESsayer de publier voir si ca change quelaue chose.
 * mag: 
     https://github.com/labsforge/flipbook-ng/tree/master/projects/flipbook-lib
 
-* Videos
-    Celle ci devrait fonctionner et accepter plusieurs lecteurs 
-    https://mugan86.medium.com/angular-9-como-a%C3%B1adir-videos-de-youtube-en-unas-sencilos-pasos-bf8ee55de46b
-
-    oubien  inserer avec un npm
-    ngx-videogular 
-
 * router
     https://angular.io/guide/router
 
@@ -109,9 +102,6 @@ regler les params pour mon ecran
 Tester de regler le zoom et voir comment il ressort dans le css
 Prendre exemple sur fond d'ecran?
 
-
-//magDimensions() gérer si height> width
-
 CLIPS: width:636px; height: 336px;
 
     il reste: 
@@ -121,6 +111,3 @@ CLIPS: width:636px; height: 336px;
 
     - remettre un max width sur le cosdepagina OU un mode mobile si width < XX
 
-    let navh = document.querySelector<HTMLElement>("#navbar")?.getBoundingClientRect();
-    console.log("navh = " + navh?.height)
-    document.documentElement.style.setProperty('--navbarheight',`${navh?.height}px`)

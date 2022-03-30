@@ -83,9 +83,6 @@ export class HomeComponent implements OnInit, ElementRef {
   
   ngOnInit() 
   { 
-    let navh = document.querySelector<HTMLElement>("#navbar")?.offsetHeight;
-    document.documentElement.style.setProperty('--navbarheight',`${navh}px`)
-
     this.launchbook();
     //
     const theme = ["lura", "marselha", "godas", "vitrolas", "salagon", "venturi",];
@@ -237,15 +234,18 @@ export class HomeComponent implements OnInit, ElementRef {
     console.log("this is films : ", this);
   }
 
-  onPlayerReady(event:any) {
+  onPlayerReady(event:any) 
+  {
     event.target.playVideo();
   }
 
-  videoStopper(event:any):void {
+  videoStopper(event:any):void 
+  {
     event.player.pauseVideo();
   }
 
-  onPlayerStateChange(event:any) {
+  onPlayerStateChange(event:any) 
+  {
     console.log(event)
     switch (event.data) {
       case window['YT'].PlayerState.PLAYING:
@@ -266,11 +266,13 @@ export class HomeComponent implements OnInit, ElementRef {
     }
   }
       
-  cleanTime() { // cleanTime(player:any) {
+  cleanTime() 
+  { 
     return Math.round(this.player.getCurrentTime()) 
   }
 
-  onPlayerError(event:any) {
+  onPlayerError(event:any) 
+  {
     switch (event.data) {
       case 2:
         console.log('')
@@ -282,7 +284,8 @@ export class HomeComponent implements OnInit, ElementRef {
     }
   }
   
-  magDimensions(){
+  magDimensions()
+  {
     const windowWidth = this.elr.nativeElement.getBoundingClientRect().width * 0.95;
     const windowHeight = this.elr.nativeElement.getBoundingClientRect().height * 0.95;
     console.log("windowWidth: "+windowWidth)
@@ -291,10 +294,11 @@ export class HomeComponent implements OnInit, ElementRef {
     console.log("this.flipService.book.width : "+this.flipService.book.width )
   }
 
-  changetheme(theme:any):void{
-    //document.documentElement.style.setProperty('--your-variable', '#YOURCOLOR');
+  changetheme(theme:any):void
+  {
     let root = document.documentElement;
-    if(theme=="lura"){
+    if(theme=="lura")
+    {
       root.style.setProperty('--bgimg', 'url(./assets/Images/backgrounds/lura.jpg)');
       root.style.setProperty('--bordFenetre', '#39378e');
       root.style.setProperty('--typoPonchs', '#ec7744');
@@ -330,7 +334,8 @@ export class HomeComponent implements OnInit, ElementRef {
       document.getElementById("crotzpro")?.setAttribute('src', './assets/Images/crotzponchs/lura_crotz.png');
       document.getElementById("crotz404")?.setAttribute('src', './assets/Images/crotzponchs/lura_crotz.png');
     }
-    if(theme=="marselha"){
+    if(theme=="marselha")
+    {
       root.style.setProperty('--bgimg', 'url(./assets/Images/backgrounds/marselha.jpg)');
       root.style.setProperty('--bordFenetre', '#b7e1ff');
       root.style.setProperty('--typoPonchs', '#11584d');
@@ -366,7 +371,8 @@ export class HomeComponent implements OnInit, ElementRef {
       document.getElementById("crotzpro")?.setAttribute('src', './assets/Images/crotzponchs/marselha_crotz.png');
       document.getElementById("crotz404")?.setAttribute('src', './assets/Images/crotzponchs/marselha_crotz.png');
     }
-    if(theme=="godas"){
+    if(theme=="godas")
+    {
       root.style.setProperty('--bgimg', 'url(./assets/Images/backgrounds/godas.jpg)');
       root.style.setProperty('--bordFenetre', '#b55c5c');
       root.style.setProperty('--typoPonchs', '#ffba00');
@@ -402,7 +408,8 @@ export class HomeComponent implements OnInit, ElementRef {
       document.getElementById("crotzpro")?.setAttribute('src', './assets/Images/crotzponchs/godas_crotz.png');
       document.getElementById("crotz404")?.setAttribute('src', './assets/Images/crotzponchs/godas_crotz.png');
     }
-    if(theme=="vitrolas"){
+    if(theme=="vitrolas")
+    {
       root.style.setProperty('--bgimg', 'url(./assets/Images/backgrounds/vitrolas.jpg)');
       root.style.setProperty('--bordFenetre', '#ffe400');
       root.style.setProperty('--typoPonchs', '#476d55');
@@ -438,7 +445,8 @@ export class HomeComponent implements OnInit, ElementRef {
       document.getElementById("crotzpro")?.setAttribute('src', './assets/Images/crotzponchs/vitrolas_crotz.png');
       document.getElementById("crotz404")?.setAttribute('src', './assets/Images/crotzponchs/vitrolas_crotz.png');
     }
-    if(theme=="salagon"){
+    if(theme=="salagon")
+    {
       root.style.setProperty('--bgimg', 'url(./assets/Images/backgrounds/salagon.jpg)');
       root.style.setProperty('--bordFenetre', '#3b8b7f');
       root.style.setProperty('--typoPonchs', '#ffffff');
@@ -474,7 +482,8 @@ export class HomeComponent implements OnInit, ElementRef {
       document.getElementById("crotzpro")?.setAttribute('src', './assets/Images/crotzponchs/salagon_crotz.png');
       document.getElementById("crotz404")?.setAttribute('src', './assets/Images/crotzponchs/salagon_crotz.png');
     }
-    if(theme=="venturi"){
+    if(theme=="venturi")
+    {
       root.style.setProperty('--bgimg', 'url(./assets/Images/backgrounds/venturi.jpg)');
       root.style.setProperty('--bordFenetre', '#b085cc');
       root.style.setProperty('--typoPonchs', '#3e4abb');
@@ -574,7 +583,8 @@ export class HomeComponent implements OnInit, ElementRef {
     {
       document.getElementById("palomasrc")?.setAttribute('src', '');
     }
-    if(windowid.id==="draggablesnippet"){
+    if(windowid.id==="draggablesnippet")
+    {
       document.getElementById("televisionsrc")?.setAttribute('src', '');
     }
   }
@@ -583,7 +593,7 @@ export class HomeComponent implements OnInit, ElementRef {
     this.flipService.book = {
       width: 1760,
         height: 1250,
-        zoom: 1, //0.5 ? pour voir
+        zoom: 1, 
         cover: {
           front: {
             imageUrl: 'assets/Images/mag/mag_1.jpg',
@@ -593,14 +603,12 @@ export class HomeComponent implements OnInit, ElementRef {
           }
         },
         pages: [
-          { // start guard section
+          { 
             imageUrl: 'assets/Images/mag/mag_2.jpg',
-            
-            //backgroundColor: '#41473A', // don't use if want to see front-cover inverted image
           },
           {
             imageUrl: 'assets/Images/mag/mag_3.jpg',
-          }, // end guard section
+          },
           { 
             imageUrl: 'assets/Images/mag/mag_4.jpg',
           },
@@ -739,13 +747,12 @@ export class HomeComponent implements OnInit, ElementRef {
           {
             imageUrl: 'assets/Images/mag/mag_49.jpg',
           },
-          { // start guard section
+          {
             imageUrl: 'assets/Images/mag/mag_50.jpg',
           },
           {
             imageUrl: 'assets/Images/mag/mag_51.jpg',
-            //backgroundColor: '#41473A', // don't use if want to see back-cover inverted image
-          }, // end guard section
+          },
         ],
         pageWidth: 880,
         pageHeight: 1250,
