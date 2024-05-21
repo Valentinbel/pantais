@@ -1,13 +1,6 @@
-import { QueryBindingType } from '@angular/compiler/src/core';
-import { Component, OnInit, ElementRef, HostListener } from '@angular/core';
+import { Component, OnInit, ElementRef,  } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-//import { MagComponent } from '../mag/mag.component';
-// import reframe from 'refame.js';
-import { YouTubePlayerModule } from "@angular/youtube-player";
-import { Track , AudioPlayerComponent} from 'ngx-audio-player'; 
-import { map , debounceTime, distinctUntilChanged } from 'rxjs/operators';
-import { Observable, Subject, of } from 'rxjs';
-//import { NONE_TYPE } from '@angular/compiler'; // investiguer a quoi ça sert? 
+import { Track } from 'ngx-audio-player';
 import { CookieService } from 'ngx-cookie-service';
 import { Book, FlipbookService, PageType } from '@labsforge/flipbook';
 
@@ -22,7 +15,7 @@ export class HomeComponent implements OnInit, ElementRef {
   nativeElement: any;
   public uppedzindexreference: number =1;
   errorView: number | undefined;
-  public magView: Boolean = false;
+  public magView: boolean = false;
 
   /** YOUTUBE **/
   // public video: any;
@@ -30,100 +23,63 @@ export class HomeComponent implements OnInit, ElementRef {
   public playersnippets: any;
   public playerfilms: any;
   public player: any;
-  public reframedsnippets: Boolean = false;
-  public reframedfilms: Boolean = false;
-  public reframed: Boolean = false;
+  public reframedsnippets: boolean = false;
+  public reframedfilms: boolean = false;
+  public reframed: boolean = false;
 
 
   title: any;
   position: any;
-  elapsed: any;
   duration: any;
   tracks: any[] = [];
-  backgroundStyle: any;
-
   paused = true;
 
    // ngx-audio-player
   msaapDisplayTitle = true;
   msaapDisplayPlayList = true;
-  msaapPageSizeOptions = [2,4,6];
   msaapDisplayVolumeControls = true;
   msaapDisplayRepeatControls = false;
   msaapDisplayArtist = false;
   msaapDisplayDuration = true;
-  msaapDisablePositionSlider = false;  
+  msaapDisablePositionSlider = false;
   autoPlay : boolean = false;
-  //autoPlay: false;
-  // voir: AudioPlayerComponent
- 
+
   //Cookies
   private cookie_name = '';
   private all_cookies : any = '';
-  
+
   get magazine() {
     return this.flipService.book;
   }
 
   constructor(
     private elr: ElementRef,
-    private activatedroute: ActivatedRoute, 
+    private activatedroute: ActivatedRoute,
     private cookieService:CookieService,
-    private flipService: FlipbookService) 
+    private flipService: FlipbookService)
   {
 
-    window.addEventListener('resize', () => 
+    window.addEventListener('resize', () =>
     {
       let vh = window.innerHeight * 0.01;
       document.documentElement.style.setProperty('--vh', `${vh}px`);
 
-      this.magDimensions(); 
+      this.magDimensions();
     });
   }
-  
-  ngOnInit() 
-  { 
+
+  ngOnInit()
+  {
     this.launchbook();
-    //
     const theme = ["lura", "marselha", "godas", "vitrolas", "salagon", "venturi",];
     const random = Math.floor(Math.random() * theme.length);
     this.changetheme(theme[random]);
     console.log("theme on init:", theme[random]);
+    this.all_cookies=this.cookieService.getAll();
 
-    // this.cookieService.set('split_test_identifier', '13f53f232ca39e5a5bdb03174092b74023e1cc2', { secure: true,sameSite: 'None' });
-    // this.cookieService.set('AMCVS_2DED4480533B2D590A490D4C', '1', { secure: true,sameSite: 'None' });
-    // this.cookieService.set('s_gvo_9', 'D%3Dc9', { secure: true,sameSite: 'None' });
-    // this.cookieService.set('s_gvo_10', 'D%3Dc10', { secure: true,sameSite: 'None' });
-    // this.cookieService.set('s_gvo_11', 'D%3Dc11', { secure: true,sameSite: 'None' });
-    // this.cookieService.set('s_gvo_21', 'Songkick%3Arod%C3%ADn%3AArtist%3AHome', {secure: true,sameSite: 'None' });
-    // this.cookieService.set('s_gvo_22', 'Songkick%3ASite', {secure: true,sameSite: 'None' });
-    // this.cookieService.set('s_gvo_51', 'Logged%20Out', { secure: true,sameSite: 'None' });
-    // this.cookieService.set('s_cc', 'true', {secure: true,sameSite: 'None' });
-    // this.cookieService.set('s_gvo_15', 'Repeat', { secure: true,sameSite: 'None' });
-    // this.cookieService.set('OptanonAlertBoxClosed', '2022-02-15T21:02:15.813Z', { secure: true,sameSite: 'None' });
-    // this.cookieService.set('AAMC_wmg_0', 'REGION%7C6', { secure: true,sameSite: 'None' });
-    // this.cookieService.set('aam_uuid', '84820227647259454630248766722725372393', {secure: true,sameSite: 'None' });
-    
-    //this.cookieService.set( name: string, value: string, options?: { expires?: number | Date, path?: string, domain?: string, secure?: boolean, sameSite?: 'Lax' | 'None' | 'Strict'}): void;
-    //this.cookie_name=this.cookieService.get('split_test_identifier');
-    this.all_cookies=this.cookieService.getAll();  
-    
   }
-   //header("Set-Cookie: cross-site-cookie=whatever; SameSite=None; Secure");
 
-  // setCookie(){
-  //   this.cookieService.set('name','Tutorialswebsite');
-  // }
-  
-  // deleteCookie(){
-  //   this.cookieService.delete('name');
-  // }
-  
-  // deleteAll(){
-  //   this.cookieService.deleteAll();
-  // }
-
-  msaapPlaylist: Track[] = 
+  msaapPlaylist: Track[] =
   [
     {
       title: 'pichòta flor',
@@ -171,47 +127,45 @@ export class HomeComponent implements OnInit, ElementRef {
       title: 'leis alas dau temps [version alternativa]',
       link: './assets/audio/leis_alas_dau_temps-version_alternativa.mp3',
       artist: 'Rodín',
-      duration: 393 
+      duration: 393
     },
     {
       title: 'pensarai en tu [version alternativa]',
       link: './assets/audio/pensarai_en_tu-version_alternativa.mp3',
       artist: 'Rodín',
-      duration: 328 
+      duration: 328
     },
     {
       title: 'vòli [amb uèi]',
       link: './assets/audio/voli-feat_uei.mp3',
       artist: 'Rodín',
-      duration: 422 
+      duration: 422
     },
     {
       title: 'lo bauç',
       link: './assets/audio/lo_bauc.mp3',
       artist: 'Rodín',
-      duration: 346 
+      duration: 346
     },
     {
       title: 'camin de l\'estela [inedit]',
       link: './assets/audio/camin_del_estela-inedit.mp3',
       artist: 'Rodín',
-      duration: 221 
+      duration: 221
     },
   ];
-  
-  init() 
+
+  init()
   {
-    var tag = document.createElement('script');
+    let tag = document.createElement('script');
     tag.src='https://www.youtube.com/iframe_api';
-    var firstScriptTag = document.getElementsByTagName('script')[0];
+    let firstScriptTag = document.getElementsByTagName('script')[0];
     firstScriptTag.parentNode!.insertBefore(tag, firstScriptTag);
-    console.log("firstScriptTag : ", firstScriptTag);
     window['onYouTubeIframeAPIReady'] = () => this.startVideo();
-    console.log("init films works");     
   }
 
-  startVideo() 
-  { 
+  startVideo()
+  {
     this.reframed = false;
     this.player = new window['YT'].Player('player', {
       playerVars: {
@@ -234,30 +188,30 @@ export class HomeComponent implements OnInit, ElementRef {
     console.log("this is films : ", this);
   }
 
-  onPlayerReady(event:any) 
+  onPlayerReady(event:any)
   {
     event.target.playVideo();
   }
 
-  videoStopper(event:any):void 
+  videoStopper(event:any):void
   {
     event.player.pauseVideo();
   }
 
-  onPlayerStateChange(event:any) 
+  onPlayerStateChange(event:any)
   {
     console.log(event)
     switch (event.data) {
       case window['YT'].PlayerState.PLAYING:
         if (this.cleanTime() == 0) { // if (this.cleanTime(event) == 0) {
-          console.log('started ' + this.cleanTime()); 
+          console.log('started ' + this.cleanTime());
         } else {
-          console.log('playing ' + this.cleanTime()) 
+          console.log('playing ' + this.cleanTime())
         };
         break;
       case window['YT'].PlayerState.PAUSED:
         if (this.player.getDuration() - this.player.getCurrentTime() != 0) {
-          console.log('paused' + ' @ ' + this.cleanTime()); 
+          console.log('paused' + ' @ ' + this.cleanTime());
         };
         break;
       case window['YT'].PlayerState.ENDED:
@@ -265,13 +219,13 @@ export class HomeComponent implements OnInit, ElementRef {
         break;
     }
   }
-      
-  cleanTime() 
-  { 
-    return Math.round(this.player.getCurrentTime()) 
+
+  cleanTime()
+  {
+    return Math.round(this.player.getCurrentTime())
   }
 
-  onPlayerError(event:any) 
+  onPlayerError(event:any)
   {
     switch (event.data) {
       case 2:
@@ -283,13 +237,13 @@ export class HomeComponent implements OnInit, ElementRef {
         break;
     }
   }
-  
+
   magDimensions()
   {
     const windowWidth = this.elr.nativeElement.getBoundingClientRect().width * 0.95;
     const windowHeight = this.elr.nativeElement.getBoundingClientRect().height * 0.95;
     console.log("windowWidth: "+windowWidth)
-    
+
     this.flipService.book.zoom = Math.min(windowWidth / this.flipService.book.width, windowHeight / this.flipService.book.height);
     console.log("this.flipService.book.width : "+this.flipService.book.width )
   }
@@ -528,53 +482,51 @@ export class HomeComponent implements OnInit, ElementRef {
     return this.uppedzindexreference;
   }
 
-  displaywindow(windowid: any): void  
+  displaywindow(windowid: any): void
   {
     this.addzindex(windowid);
 
-    if ( windowid.classList.contains('hide') ) 
-    { 
-      windowid.classList.remove('hide'); 
+    if ( windowid.classList.contains('hide') )
+    {
+      windowid.classList.remove('hide');
     }
-    if ( windowid.id === "draggablefilms" ) 
-    { 
-      this.init(); // this.init("films")
-    } 
-    if ( windowid.id === "draggablemag" ) 
-    { 
-      this.magView = true; 
+    if ( windowid.id === "draggablefilms" )
+    {
+      this.init();
+    }
+    if ( windowid.id === "draggablemag" )
+    {
+      this.magView = true;
       this.magDimensions();
     }
-    if ( windowid.id === "draggableradio" ) 
-    { 
-      const self = this
+    if ( windowid.id === "draggableradio" )
+    {
       const players = document.querySelectorAll('audio');
-      players.forEach(element => 
+      players.forEach(element =>
       {
           element.play();
       });
     }
-    if ( windowid.id === "draggablelive" ) 
+    if ( windowid.id === "draggablelive" )
     {
       document.getElementById("palomasrc")?.setAttribute('src', 'https://www.youtube.com/embed/qEpcCirzkoo'+ '?autoplay=1');
     }
-    if ( windowid.id === "draggablesnippet" ) 
-    { 
+    if ( windowid.id === "draggablesnippet" )
+    {
       document.getElementById("televisionsrc")?.setAttribute('src', 'https://www.youtube.com/embed/videoseries?list=PL81csO796eDB_jrvC1As4g4LHHxd7RYry');
-    } 
-  }   
+    }
+  }
 
-  closewindow(windowid: any): void{
+  closewindow(windowid: any): void {
     windowid.classList.add('hide');
     if(windowid.id==="draggablefilms")
     {
-      this.videoStopper(this); 
+      this.videoStopper(this);
     }
     if(windowid.id==="draggableradio")
     {
-      const self = this
       const players = document.querySelectorAll('audio');
-      players.forEach(element => 
+      players.forEach(element =>
       {
           element.pause();
       });
@@ -588,12 +540,13 @@ export class HomeComponent implements OnInit, ElementRef {
       document.getElementById("televisionsrc")?.setAttribute('src', '');
     }
   }
+
   launchbook()
   {
     this.flipService.book = {
       width: 1760,
         height: 1250,
-        zoom: 1, 
+        zoom: 1,
         cover: {
           front: {
             imageUrl: 'assets/Images/mag/mag_1.jpg',
@@ -603,13 +556,13 @@ export class HomeComponent implements OnInit, ElementRef {
           }
         },
         pages: [
-          { 
+          {
             imageUrl: 'assets/Images/mag/mag_2.jpg',
           },
           {
             imageUrl: 'assets/Images/mag/mag_3.jpg',
           },
-          { 
+          {
             imageUrl: 'assets/Images/mag/mag_4.jpg',
           },
           {
@@ -620,7 +573,7 @@ export class HomeComponent implements OnInit, ElementRef {
           },
           {
             imageUrl: 'assets/Images/mag/mag_7.jpg',
-          }, 
+          },
           {
             imageUrl: 'assets/Images/mag/mag_8.jpg',
           },
@@ -759,6 +712,6 @@ export class HomeComponent implements OnInit, ElementRef {
         startPageType: PageType.Double,
         endPageType: PageType.Double
     } as Book;
-  }  
+  }
 }
- 
+

@@ -15,8 +15,5 @@ export class MusicDetailsComponent  {
     this.title="";
   }
 
-  //ngOnInit(): void {
-  //}
-  
 }
 

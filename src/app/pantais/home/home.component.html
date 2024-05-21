@@ -1,9 +1,9 @@
 <div class="container-fluid">
-        
+
   <!--NAVBAR-->
   <nav id="navbar" class="navbar navbar-expand navbar-light topnavbar fixed-top">
     <a class="nav-link quatreponchs" id="linkquatreponchs" #pantaisclus href="https://fanlink.to/pantaisclus" target="_blank" aria-labelledby="PANTAIS CLUS">
-      <img id="quatreponchs" src="./assets/Images/crotzponchs/godas_ponchs.png"/> 
+      <img id="quatreponchs" src="./assets/Images/crotzponchs/godas_ponchs.png"/>
     </a>
     <div class="" #navbarSupportedContent>
       <ul class="navbar-nav mr-auto">
@@ -28,7 +28,7 @@
     </div>
   </nav>
 
-  <div id="draggingzone" >                
+  <div id="draggingzone" >
     <!-----------SOCIAU--------------->
     <div #draggablesociau id="draggablesociau" class="draggable todrag hide sociau" (click)="addzindex(draggablesociau)" cdkDragBoundary="#draggingzone" cdkDrag>
       <div #draggablesociauheader class="drag-header todrag" cdkDragHandle>
@@ -60,7 +60,7 @@
             <a class="soundcloud" id="soundcloud_mobile" href="https://soundcloud.com/rodiin" target="_blank"></a>
             <a class="youtube" id="youtube_mobile" href="https://www.youtube.com/c/rodínmusica" target="_blank"></a>
         </div>
-      </div>    
+      </div>
     </div>
 
     <!-----------CREDITS--------------->
@@ -73,7 +73,7 @@
           <p class="text-center">pantaisclus.art <a href="https://www.linkedin.com/in/valentinbelhomme/" target="_blank" class="textlink">©Valentin Belhomme</a> + <a href="https://neblum.art/pantaislabel" target="_blank" class="textlink">PantaisRecords</a> 2022 </p>
           <p class="hide">And a special thanks to the creators of poolsuite.net. </p>
         </div>
-      </div>    
+      </div>
     </div>
 
     <!-----------Radio--------------->
@@ -81,15 +81,15 @@
       <div #draggableradioheader class="drag-header todrag" cdkDragHandle>
         <span><img id="crotzradio" src="./assets/Images/crotzponchs/godas_crotz.png" #iconcloseradio (click)="closewindow(draggableradio)" class="draggableheadericon"alt="icon_crotz"></span> PANTAIS CLUS radio
       </div>
-      <div class="insideframe"> 
-        <ngx-audio-player class="gifK7" [playlist]="msaapPlaylist" [displayTitle]="msaapDisplayTitle" [autoPlay]="false" 
-          muted="muted" [displayPlaylist]="msaapDisplayPlayList" 
+      <div class="insideframe">
+        <ngx-audio-player class="gifK7" [playlist]="msaapPlaylist" [displayTitle]="msaapDisplayTitle" [autoPlay]="false"
+          muted="muted" [displayPlaylist]="msaapDisplayPlayList"
           [displayVolumeControls]="msaapDisplayVolumeControls" [displayRepeatControls]="msaapDisplayRepeatControls"
-          [disablePositionSlider]="msaapDisablePositionSlider" [displayArtist]="msaapDisplayArtist" 
+          [disablePositionSlider]="msaapDisablePositionSlider" [displayArtist]="msaapDisplayArtist"
           [displayDuration]="msaapDisplayDuration" [expanded]="true">
-        </ngx-audio-player> 
+        </ngx-audio-player>
       </div>
-    </div> 
+    </div>
     <!-- [pageSizeOptions]="pageSizeOptions" (trackEnded)="onEnded($event)" [autoPlay]="false"   -->
 
     <!-----------LYRICS--------------->
@@ -103,7 +103,7 @@
             <p class="text-center">[U.S. LP]</p>
             <div class="col">
               <a class="iconframe" href="https://neblum.art/Images/pdf/pantaisclus.pdf" target="_blank">
-                <img class="img-fluid" src="./assets/Images/icones/lyrics_art.png" alt="art"> 
+                <img class="img-fluid" src="./assets/Images/icones/lyrics_art.png" alt="art">
               </a>
             </div>
             <div class="col">
@@ -121,7 +121,7 @@
             <p class="text-center">[deluxe]</p>
             <div class="col">
               <a class="iconframe" href="https://neblum.art/Images/pdf/pantaisclusDLX.pdf" target="_blank">
-                <img class="img-fluid" src="./assets/Images/icones/lyrics_art_deluxe.png" alt="art_deluxe"> 
+                <img class="img-fluid" src="./assets/Images/icones/lyrics_art_deluxe.png" alt="art_deluxe">
               </a>
             </div>
             <div class="col">
@@ -136,7 +136,7 @@
             </div>
           </div>
         </div>
-      </div>    
+      </div>
     </div>
 
     <!-----------MAG---------------->
@@ -147,13 +147,13 @@
         <div class="insideframe"> <!-----------cadre interieur--------------->
           <flipbook  id="magflipbook" class="magflipbook" [model]="magazine" [startAt]="0"></flipbook>
           <!--<app-mag *ngIf="magView"></app-mag>-->
-        </div>    
+        </div>
       </div>
 
     <!-----------SHOP--------------->
     <div #draggableshop  id="draggableshop" class="draggable todrag shop hide" (click)="addzindex(draggableshop)"  cdkDragBoundary="#draggingzone" cdkDrag>
       <div #draggableshopheader class="drag-header todrag" cdkDragHandle>
-        <span><img id="crotzshop" src="./assets/Images/crotzponchs/godas_crotz.png" #iconcloseshop (click)="closewindow(draggableshop)" 
+        <span><img id="crotzshop" src="./assets/Images/crotzponchs/godas_crotz.png" #iconcloseshop (click)="closewindow(draggableshop)"
           class="draggableheadericon"alt="icon_crotz"></span> PANTAIS CLUS shop
       </div>
       <div class="shopframe"> <!-----------cadre interieur--------------->
@@ -163,53 +163,53 @@
             </div>
             <div class="row">
                 <a href="https://botiga.pantaisrecords.com/product/pantaisclus" target="_blank">
-                  <img class="img-fluid shopimage" src='./assets/Images/shop/shop_lp.png' 
-                    onmouseover="this.src='./assets/Images/shop/shop_lp_hover.png';" 
+                  <img class="img-fluid shopimage" src='./assets/Images/shop/shop_lp.png'
+                    onmouseover="this.src='./assets/Images/shop/shop_lp_hover.png';"
                     onmouseout="this.src='./assets/Images/shop/shop_lp.png';" alt="CD"/>
                 </a>
             </div>
             <div class="row">
                 <a href="https://botiga.pantaisrecords.com/product/pantaiscd" target="_blank">
-                  <img class="img-fluid shopimage" src='./assets/Images/shop/shop_cd.png' 
-                    onmouseover="this.src='./assets/Images/shop/shop_cd_hover.png';" 
+                  <img class="img-fluid shopimage" src='./assets/Images/shop/shop_cd.png'
+                    onmouseover="this.src='./assets/Images/shop/shop_cd_hover.png';"
                     onmouseout="this.src='./assets/Images/shop/shop_cd.png';" alt="CD"/>
                 </a>
             </div>
             <div class="row">
                 <a href="https://botiga.pantaisrecords.com/product/pantaisusina" target="_blank">
-                  <img class="img-fluid shopimage" src='./assets/Images/shop/shop_cdUsina.png' 
-                    onmouseover="this.src='./assets/Images/shop/shop_cdUsina_hover.png';" 
+                  <img class="img-fluid shopimage" src='./assets/Images/shop/shop_cdUsina.png'
+                    onmouseover="this.src='./assets/Images/shop/shop_cdUsina_hover.png';"
                     onmouseout="this.src='./assets/Images/shop/shop_cdUsina.png';" alt="CD_Usina"/>
                 </a>
             </div>
             <div class="row">
                 <a href="https://botiga.pantaisrecords.com/product/pantais-clus-stickers-lot-rodin" target="_blank">
-                  <img class="img-fluid shopimage" src='./assets/Images/shop/shop_stickers.png' 
-                    onmouseover="this.src='./assets/Images/shop/shop_stickers_hover.png';" 
+                  <img class="img-fluid shopimage" src='./assets/Images/shop/shop_stickers.png'
+                    onmouseover="this.src='./assets/Images/shop/shop_stickers_hover.png';"
                     onmouseout="this.src='./assets/Images/shop/shop_stickers.png';" alt="Stickers"/>
                 </a>
             </div>
             <div class="row">
                 <a href="https://botiga.pantaisrecords.com/product/pantaisclusk7" target="_blank">
-                  <img class="img-fluid shopimage" src='./assets/Images/shop/shop_k7.png' 
-                    onmouseover="this.src='./assets/Images/shop/shop_k7_hover.png';" 
+                  <img class="img-fluid shopimage" src='./assets/Images/shop/shop_k7.png'
+                    onmouseover="this.src='./assets/Images/shop/shop_k7_hover.png';"
                     onmouseout="this.src='./assets/Images/shop/shop_k7.png';" alt="k7"/>
                 </a>
             </div>
             <div class="row">
                 <a href="https://botiga.pantaisrecords.com/product/flor-sabon" target="_blank">
-                  <img class="img-fluid shopimage" src='./assets/Images/shop/shop_sabon.png' 
-                    onmouseover="this.src='./assets/Images/shop/shop_sabon_hover.png';" 
+                  <img class="img-fluid shopimage" src='./assets/Images/shop/shop_sabon.png'
+                    onmouseover="this.src='./assets/Images/shop/shop_sabon_hover.png';"
                     onmouseout="this.src='./assets/Images/shop/shop_sabon.png';" alt="sabon"/>
                 </a>
             </div>
             <div class="row">
-              <a href="https://neblum.art/pantaislabel" target="_blank">              
+              <a href="https://neblum.art/pantaislabel" target="_blank">
                 <img class="img-fluid shopimage" src='./assets/Images/shop/shop_footer.png'  alt="footer"/>
               </a>
             </div>
         </div>
-      </div>    
+      </div>
     </div>
 
     <!-----------FRIENDS--------------->
@@ -222,7 +222,7 @@
           <div class="row rowsansgutterx">
             <div class="col">
               <a class="" href="https://www.facebook.com/doradorovitchLabel" target="_blank">
-                <img class="img-fluid" src="./assets/Images/icones/dora.png" alt="dora"> 
+                <img class="img-fluid" src="./assets/Images/icones/dora.png" alt="dora">
               </a>
             </div>
             <div class="col">
@@ -242,7 +242,7 @@
             </div>
           </div>
         </div>
-      </div>    
+      </div>
     </div>
 
     <!-----------TOUR--------------->
@@ -257,7 +257,7 @@
             <script src="//widget.songkick.com/10092111/widget.js"></script>
           </div>
         </div>
-      </div>    
+      </div>
     </div>
 
     <!-----------FILMS--------------->
@@ -276,9 +276,9 @@
         <span><img id="crotzlive" src="./assets/Images/crotzponchs/godas_crotz.png" #iconcloselive (click)="closewindow(draggablelive)" class="draggableheadericon"alt="icon_crotz"></span> PANTAIS CLUS live
       </div>
       <div class="insideframe"> <!-----------cadre interieur--------------->
-        <iframe id="palomasrc" class="d-flex filmsframe" width="560" height="315" src="https://www.youtube.com/embed/qEpcCirzkoo" title="Rodín live paloma" 
+        <iframe id="palomasrc" class="d-flex filmsframe" width="560" height="315" src="https://www.youtube.com/embed/qEpcCirzkoo" title="Rodín live paloma"
         frameborder="0" allowfullscreen></iframe>
-      </div>    
+      </div>
     </div>
 
       <!-----------snippet--------------->
@@ -287,7 +287,7 @@
           <span><img id="crotzsnippet" src="./assets/Images/crotzponchs/godas_crotz.png" #iconclosetv (click)="closewindow(draggablesnippet)" class="draggableheadericon"alt="icon_crotz"></span> PANTAIS CLUS television
         </div>
         <div class="insideframe">
-          <iframe id="televisionsrc" class="d-flex filmsframe" width="624" height="456" src="https://www.youtube.com/embed/videoseries?list=PL81csO796eDB_jrvC1As4g4LHHxd7RYry" title="television" 
+          <iframe id="televisionsrc" class="d-flex filmsframe" width="624" height="456" src="https://www.youtube.com/embed/videoseries?list=PL81csO796eDB_jrvC1As4g4LHHxd7RYry" title="television"
           frameborder="0" allowfullscreen></iframe>
         </div>
       </div>
@@ -302,7 +302,7 @@
           <div class="row rowsansgutterx">
             <div class="col">
               <a class="" href="https://neblum.art/Images/pdf/press_book.pdf" target="_blank">
-                <img class="img-fluid" src="./assets/Images/icones/press.png" alt="press"> 
+                <img class="img-fluid" src="./assets/Images/icones/press.png" alt="press">
               </a>
             </div>
             <div class="col">
@@ -317,11 +317,11 @@
             </div>
           </div>
         </div>
-      </div>    
+      </div>
     </div>
 
     <app-not-found *ngIf="errorView === 404"></app-not-found>
-  
+
     <div class="cosdepagina">
       <div class="justify-content-center d-flex margin_topbottom">
         <div class="iconas">
@@ -330,7 +330,7 @@
           </a>
           <a #iconmag (click)="displaywindow(draggablemag)" >
             <img class="img-fluid margin-top" src="./assets/Images/icones/mag.png" alt="mag">
-          </a> 
+          </a>
           <a #iconlyrics (click)="displaywindow(draggablelyrics)" >
             <img class="img-fluid margin-top" src="./assets/Images/icones/lyrics.png" alt="lyrics">
           </a>
@@ -339,13 +339,13 @@
           </a>
           <a #iconshop (click)="displaywindow(draggableshop)" >
             <img class="img-fluid margin-top" src="./assets/Images/icones/shop.png" alt="shop">
-          </a>       
+          </a>
           <a #iconlinkssociau (click)="displaywindow(draggablesociau)" >
             <img class="img-fluid margin-top" src="./assets/Images/icones/links.png" alt="sociau">
           </a>
           <a #iconvideos (click)="displaywindow(draggablesnippet)" >
             <img class="img-fluid margin-top" src="./assets/Images/icones/tv.png" alt="tv">
-          </a> 
+          </a>
           <a #iconfilms (click)="displaywindow(draggablefilms)" >
             <img class="img-fluid margin-top" src="./assets/Images/icones/clips.png" alt="clips">
           </a>
@@ -363,5 +363,5 @@
         </div>
       </div>
     </div>
-  </div>   
+  </div>
 </div>
