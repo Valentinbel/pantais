@@ -1,4 +1,4 @@
-:root {
+:root {    
     --noir-background: #131518;
     --bordFenetre: #b55c5c; /*navbar+ bordsFenetres*/
     --typoPonchs: #ffba00; /*Typo + fond fenetres (ponchs)*/
@@ -24,7 +24,7 @@
     --twitterHover: ;
     --youtube: ;
     --youtubeHover: ;
-}
+}   
 
 * {
     box-sizing: border-box;
@@ -35,8 +35,8 @@
     height: 100%;
     display: flex;
     justify-content: center;
-    padding-right: 0;
-    padding-left: 0;
+    padding-right: 0px;
+    padding-left: 0px;
 }
 
 a:-webkit-any-link, a img, .underline, .dropdown-item, .draggableheadericon, .drag-header span img,
@@ -44,14 +44,14 @@ mat-icon svg, mat-icon svg path, button {
     cursor: url('./assets/Images/cursor/cursor_det.svg'), url('./assets/Images/cursorlite/cursordet.png') 3 0, auto!important;
 }
 
-.draggable a, .cosdepagina a, .iconas a, .iconas a img,
+.draggable a, .cosdepagina a, .iconas a, .iconas a img, 
 #iconclosesociau, #iconclosecredits, .draggableheadericon, .drag-header span img,
 .underline, .dropdown-item, mat-icon svg, mat-icon svg path, button {
     cursor: url('./assets/Images/cursor/cursor_det.svg'), url('./assets/Images/cursorlite/cursordet.png') 3 0, auto!important;
 }
 
-.global-item:not(.no-drag) .drag-header, .global-item:not(.no-drag),
-.drag-header .spacer, .global-item:not(.no-drag) .drag-header,
+.global-item:not(.no-drag) .drag-header, .global-item:not(.no-drag)
+.drag-header .spacer, .global-item:not(.no-drag) .drag-header
 .spacer i, .global-item:not(.no-drag) .drag-header h2{
     cursor: url('./assets/Images/cursor/cursor_man.svg'), url('./assets/Images/cursorlite/cursor_man.svg'),auto!important
 }
@@ -80,14 +80,14 @@ mat-icon svg, mat-icon svg path, button {
 }
 @media (min-width:576px) {
     .row{
-        padding-right: 0;
-        padding-left: 0;
+        padding-right: 0px;
+        padding-left: 0px;
     }
 }
 
 body {
     font-family: 'ChicagoFLF';
-    margin: 0;
+    margin: 0px;
     background-position: center;
 }
 
@@ -95,7 +95,7 @@ body, .ng-isolate-scope, home, index2, index, headerview{
     overflow: hidden;
 }
 
-@media (pointer: coarse) and (hover: none) {
+@media (pointer: coarse) and (hover: none) {  
   .embed-responsive{
       height: 100%
     }
@@ -140,8 +140,8 @@ body, .ng-isolate-scope, home, index2, index, headerview{
     height: 100vh;
     --dragHeight: calc(var(--vh, 1vh) * 100);
     height: calc(var(--dragHeight) - 24px);
-    top: 1.5em !important;
-    bottom: -1.5em !important;
+    top: 1.5em!important;
+    bottom: -1.5em!important;
     background-repeat: repeat-y;
     background-size: 100%;
     background-position-x: center;
@@ -149,7 +149,9 @@ body, .ng-isolate-scope, home, index2, index, headerview{
     -webkit-box-flex: 1;
     -ms-flex: 1;
     flex: 1;
-    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0%;
 }
 
 .fixed-top{
@@ -299,7 +301,7 @@ a, a:hover {
     z-index: 99;
     background-color: var(--bordFenetre);
     border: 1px solid var(--noir-background);
-    -webkit-box-shadow: 5px 5px 0px -2px #131518b0;
+    -webkit-box-shadow: 5px 5px 0px -2px #131518b0; 
     box-shadow: 5px 5px 0px -2px #131518b0;
 }
 
@@ -307,7 +309,7 @@ a, a:hover {
     border: 1px solid var(--noir-background);
     margin: 0px 5px 8px;
     background: var(--typoPonchs);
-    background-image: var(--fonsFenestra);
+    background-image: var(--fonsFenestra); 
     background-size: 5px 5px;
 }
 
@@ -320,7 +322,7 @@ a, a:hover {
 }*/
 
 
-.iconaslyrics a img,
+.iconaslyrics a img, 
 .iconaspro a img,
 .iconasfriends a img
 {
@@ -334,7 +336,7 @@ a, a:hover {
     background-color: var(--bordFenetre);
     border-color: var(--noir-background);
 }
-
+  
 .navbar {
     padding: 0rem 0.5rem;
 }
@@ -454,7 +456,7 @@ a, a:hover {
 }
 
 .facebook{
-	background: var(--facebook);
+	background: var(--facebook); 
     height: 45px;
 	width: 26px;
 	background-size: 26px 45px;
@@ -463,7 +465,7 @@ a, a:hover {
 .facebook:hover{
     background-image: var(--facebookHover);
 }
-
+    
 .instagram{
 	background: var(--instagram);
     height: 45px;
@@ -538,10 +540,10 @@ a, a:hover {
     background: var(--bordFenetre)!important;
 }
 
-/*
+/* 
 mat-card.mat-card.mat-focus-indicator.mat-elevation-z1.ngx-audio-player.ng-star-inserted,*/
 tr.mat-header-row.cdk-header-row.ng-star-inserted, .mat-expansion-panel-content,
-.mat-expansion-panel-header,
+.mat-expansion-panel-header, 
 .mat-slider, /*slider temps*/
 .ngx-d-none.ngx-d-sm-block.ngx-py-3.ngx-px-1 /*temps écoulé*/
  {
@@ -549,7 +551,7 @@ tr.mat-header-row.cdk-header-row.ng-star-inserted, .mat-expansion-panel-content,
 }
 
 .mat-card {
-    background: var(--fonsfenestra);
+    background: var(--fonsfenestra);    
 }
 
 .mat-table,
