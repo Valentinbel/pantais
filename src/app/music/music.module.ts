@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from "@angular/common/http";
+import { provideHttpClient, withInterceptorsFromDi } from "@angular/common/http";
 
 // PrimeNG autocomplete fro search
 //import { AutoCompleteModule } from 'primeng/primeng';
@@ -17,34 +17,27 @@ import { ApiService } from './shared/api.service';
 
 
 
-@NgModule({
-  imports: [
-    // Define imports
-    FormsModule,
-    //AutoCompleteModule,
-    HttpClientModule,
-    CommonModule, 
-  ],
-  exports: [
-    // Expose components
-    // MusicSearchComponent,
-    MusicDetailsComponent,
-    MusicPlayerComponent,
-    MusicProgressComponent
-    //MusicFooterComponent
-  ],
-  declarations: [
-    // Declare components
-    // MusicSearchComponent,
-    MusicDetailsComponent,
-    MusicPlayerComponent,
-    MusicProgressComponent
-    //MusicFooterComponent
-  ],
-  providers: [
-    // Services
-    ApiService,
-    //MusicService
-  ],
-})
+@NgModule({ exports: [
+        // Expose components
+        // MusicSearchComponent,
+        MusicDetailsComponent,
+        MusicPlayerComponent,
+        MusicProgressComponent
+        //MusicFooterComponent
+    ],
+    declarations: [
+        // Declare components
+        // MusicSearchComponent,
+        MusicDetailsComponent,
+        MusicPlayerComponent,
+        MusicProgressComponent
+        //MusicFooterComponent
+    ], imports: [
+        // Define imports
+        FormsModule,
+        CommonModule], providers: [
+        // Services
+        ApiService,
+        provideHttpClient(withInterceptorsFromDi()),
+    ] })
 export class MusicModule { }
